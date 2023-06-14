@@ -10,6 +10,7 @@ app.use(cors())
 require("dotenv").config()
 const { connection } = require("./db");
 const { DoctorRouter } = require("./Routes/doctos.routes");
+const { FeedBackRouter } = require("./Routes/feedback.routes");
 
 
 app.get("/", (req, res) => {
@@ -22,7 +23,14 @@ app.use("/appointment",AppointmentRoute)
 //--------->Doctor Route <-------//
 app.use("/doctor", DoctorRouter)
 
+
+//--------->Feedback <---------//
+app.use("/feedback", FeedBackRouter)
+
+
+
 app.listen(process.env.port,async () =>{
+
     try {
      await connection;
      console.log("connected to the db")

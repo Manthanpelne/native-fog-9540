@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments } = require('../Controller/doctor.controller');
+const { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID } = require('../Controller/doctor.controller');
 const DoctorRouter = express.Router()
 
 //------->/doctor/
@@ -8,6 +8,8 @@ DoctorRouter.get("/", getDoctors)
 DoctorRouter.post("/add", addDoctor)
 DoctorRouter.patch("/update/:id", updateDoctor)
 DoctorRouter.delete("/delete/:id", DeleteDoctor)
+DoctorRouter.get("/:id", GetDoctorByID)
+
 
 //--------> Appointments
 
