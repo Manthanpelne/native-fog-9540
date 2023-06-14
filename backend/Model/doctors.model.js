@@ -26,6 +26,6 @@ const DoctorsSchema = mongoose.Schema(
     },
     { versionKey: false }
 )
-const DoctorModel = mongoose.model("doctor", DoctorsSchema)
+const DoctorModel = mongoose.model("Doctor", DoctorsSchema)
 
 module.exports = { DoctorModel }

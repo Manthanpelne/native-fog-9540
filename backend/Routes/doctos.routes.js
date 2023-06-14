@@ -5,7 +5,7 @@ const DoctorRouter = express.Router()
 //------->/doctor/
 
 DoctorRouter.get("/", getDoctors)
-DoctorRouter.post("/add", addDoctor)
+DoctorRouter.post("/add/:id", addDoctor)
 DoctorRouter.patch("/update/:id", updateDoctor)
 DoctorRouter.delete("/delete/:id", DeleteDoctor)
 DoctorRouter.get("/:id", GetDoctorByID)
