@@ -2,6 +2,7 @@ const express = require("express")
 const cors = require('cors');
 const app = express()
 const {userRoutes} = require("./Routes/User.routes")
+const { AppointmentRoute } = require("./Routes/Appointment.routes");
 app.use(express.json())
 app.use(cors())
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/user",userRoutes)
+app.use("/appointment",AppointmentRoute)
 //--------->Doctor Route <-------//
 app.use("/doctor", DoctorRouter)
 
