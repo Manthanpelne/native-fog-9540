@@ -13,7 +13,7 @@ const addDoctor = async (req, res) => {
     const payload = req.body
     const { name } = req.body
     try {
-        const isDoctorPresent = await DoctorModel.findOne({name: name})
+        const isDoctorPresent = await DoctorModel.findOne({ name: name })
         if (isDoctorPresent) {
             return res.send({ "msg": "doctor is already present" })
         }
@@ -51,6 +51,24 @@ const DeleteDoctor = async (req, res) => {
 
     }
 }
+
+//----------> Get User By Perticular ID
+
+const GetDoctorByID = async (req, res) => {
+    try {
+        const ID = req.params.id;
+        const DoctorsData = await DoctorModel.findById({ _id: ID })
+        res.status(201).send(DoctorsData)
+
+    } catch (error) {
+        res.status(401).send({ "msg": "Bad Request 404", "ok": false, "err": error.message })
+
+    }
+}
+
+
+
+
 // ! ................. Working On IT !!!!
 //---------> Get Doctor Appointments <----------//
 
@@ -58,7 +76,7 @@ const DeleteDoctor = async (req, res) => {
 
 const getAppointments = async (req, res) => {
     try {
-        const ID = req.params.id  
+        const ID = req.params.id
         let doctor = await DoctorModel.findById(ID).populate("appointments")
 
         if (!doctor) {
@@ -74,4 +92,4 @@ const getAppointments = async (req, res) => {
     }
 }
 
-module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments }
+module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments , GetDoctorByID }
