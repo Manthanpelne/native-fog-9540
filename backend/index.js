@@ -1,16 +1,24 @@
 const express = require("express")
+const cors = require('cors');
 const app = express()
 const {userRoutes} = require("./Routes/User.routes")
 app.use(express.json())
+app.use(cors())
+
+
 require("dotenv").config()
-const {connection} = require("./db")
+const { connection } = require("./db");
+const { DoctorRouter } = require("./Routes/doctos.routes");
 
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("api run endpoint")
 })
 
+
 app.use("/user",userRoutes)
+//--------->Doctor Route <-------//
+app.use("/doctor", DoctorRouter)
 
 app.listen(process.env.port,async () =>{
     try {
@@ -22,3 +30,5 @@ app.listen(process.env.port,async () =>{
     }
     console.log(`server is running in the port:${process.env.port}`);
  })
+
+
