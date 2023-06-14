@@ -8,6 +8,7 @@ app.use(cors())
 require("dotenv").config()
 const { connection } = require("./db");
 const { DoctorRouter } = require("./Routes/doctos.routes");
+const { FeedBackRouter } = require("./Routes/feedback.routes");
 
 
 app.get("/", (req, res) => {
@@ -16,6 +17,9 @@ app.get("/", (req, res) => {
 
 //--------->Doctor Route <-------//
 app.use("/doctor", DoctorRouter)
+
+//--------->Feedback <---------//
+app.use("/feedback", FeedBackRouter)
 
 
 app.listen(4500, async () => {
