@@ -9,7 +9,7 @@ const DoctorsSchema = mongoose.Schema(
         qualification: { type: String, required: true },
         experience: { type: String, required: true },
         language: { type: String, required: true },
-        
+
         charge: { type: String, required: true },
         timings: { type: String, required: true },
         clinic: {
@@ -22,7 +22,6 @@ const DoctorsSchema = mongoose.Schema(
                 ref: "Appointment"
             }
         ]
-
 
     },
     { versionKey: false }
