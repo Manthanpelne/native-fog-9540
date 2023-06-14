@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-page</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        body{
+            background-color: rgb(250, 240, 227);
+        }
+#Head{
+    width: 100%;
+  height: 500px;
+}
+#Head img{
+width: 100%;
+}
+
+.more-photo{
+    display: flex;
+}
+
+#navbar{
+    width: 100%;
+    position: sticky;
+    height: 90px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(121, 62, 62);
+}
+#navbar>div a{
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+#mid{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 20px;
+}
+
+#mid>div{
+    border: 1px solid black;
+   width: 200px;
+   height: 160px;
+   padding: 20px;
+   text-align: center;
+   margin: auto;
+   margin-top: 30px;
+}
+
+#symptoms{
+   text-align: center;
+   margin-top: 130px;
+    font-family: sans-serif;
+    font-size: 25px;
+    color: rgb(44, 43, 43);
+}
+
+#blogs{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: sans-serif;
+    color: rgb(58, 57, 57);
+
+}
+
+
+#blogs>div img{
+    width: 100%;
+}
+#view{
+    width: 150px;
+    height: 50px;
+    margin-left: 46%;
+    background-color: rgb(251, 130, 24);
+    border: none;
+    font-size: 17px;
+    color: white;
+}
+
+#info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+#info>div img{
+    width: 100%;
+}
+#info>div:nth-child(2){
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+
+#info>div:nth-child(2)>div{
+   border: 1px solid white;
+    text-align: center;
+    padding-top: 35px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    background-color:rgb(116, 47, 47);
+}
+
+.icon{
+    font-size: 40px;
+}
+
+#footer{
+    width: 100%;
+    margin-top: 150px;
+    height: 300px;
+    background-color: rgb(100, 38, 38);
+    color: rgb(214, 188, 145);
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    font-family: sans-serif;
+}
+
+
+#footer>div{
+    border:1px solid white;
+    text-align: center;
+}
+#footer>div h2{
+    color: rgb(187, 123, 6);
+}
+
+.num{
+    color: orange;
+}
+
+@media all and (min-width:531px) and (max-width:900px){
+    #navbar{
+        width: 100%;
+    position: sticky;
+    height: 100px;
+    margin: auto;
+   display: flex;
+    align-items: center;
+    background-color: rgb(121, 62, 62); 
+    
+    }
+    #navbar>div a{ 
+        font-size: 15px;
+    }
+    #Head{
+        height: 200px;
+    }
+
+    #symptoms{
+   text-align: center;
+    font-family: sans-serif;
+    font-size: 25px;
+    color: rgb(44, 43, 43);
+}
+
+
+    #mid{
+    display: grid;
+    grid-template-columns: repeat(2,4fr);
+    grid-gap: 20px;
+}
+
+#mid>div{
+    border: 1px solid black;
+   width: 200px;
+   height: 160px;
+   padding: 20px;
+   text-align: center;
+   margin: auto;
+   
+}
+
+#blogs{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    grid-gap:30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: sans-serif;
+    color: rgb(58, 57, 57);
+
+}
+
+
+#info{
+    display: grid;
+    grid-template-columns: repeat(1,2fr);
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+#info>div img{
+    width: 100%;
+}
+#info>div:nth-child(2){
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+
+#info>div:nth-child(2)>div{
+   border: 1px solid white;
+    text-align: center;
+    padding-top: 35px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    background-color:rgb(116, 47, 47);
+}
+
+#footer{
+    width: 100%;
+    margin-top: 150px;
+    height: 600px;
+    background-color: rgb(100, 38, 38);
+    color: rgb(214, 188, 145);
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    font-family: sans-serif;
+}
+}
+
+@media all and (min-width:100px) and (max-width:530px){
+    #navbar{
+        width: 100%;
+    position: sticky;
+    height: 150px;
+    margin: auto;
+   display: grid;
+   grid-template-columns: repeat(2,2fr);
+    align-items: center;
+    background-color: rgb(121, 62, 62); 
+    
+    }
+    #navbar>div a{ 
+        font-size: 15px;
+    }
+    #Head{
+        height: 70px;
+        border: 1px solid black;
+        margin-top: 40px;
+    }
+
+    #symptoms{
+   text-align: center;
+    font-family: sans-serif;
+    font-size: 25px;
+    color: rgb(44, 43, 43);
+}
+
+
+    #mid{
+    display: grid;
+    grid-template-columns: repeat(1,12fr);
+    grid-gap: 20px;
+}
+
+#mid>div{
+    border: 1px solid black;
+   width: 200px;
+   height: 160px;
+   padding: 20px;
+   text-align: center;
+   margin: auto;
+   
+}
+
+#blogs{
+    display: grid;
+    grid-template-columns: repeat(1,4fr);
+    grid-gap:30px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: sans-serif;
+    color: rgb(58, 57, 57);
+
+}
+#blogs>div{
+    padding: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#blogs>div p{
+    font-size: 10px;
+}
+
+#blogs>div h3{
+    font-size: 12px
+}
+#view{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#info{
+    display: grid;
+    grid-template-columns: repeat(1,2fr);
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+#info>div img{
+    width: 100%;
+}
+#info>div:nth-child(2){
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+
+#info>div:nth-child(2)>div{
+   border: 1px solid white;
+    text-align: center;
+    padding-top: 35px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    background-color:rgb(116, 47, 47);
+}
+
+#footer{
+    width: 100%;
+    margin-top: 150px;
+    height: 700px;
+    background-color: rgb(100, 38, 38);
+    color: rgb(214, 188, 145);
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    font-family: sans-serif;
+}
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+    <div><img width="100px" height="70px" src="/DentDesk.png" alt=""></div>
+    <div><a href="">Dashboard</a></div>
+    <div><a href="">Our Dentists</a></div>
+    <div><a href="">Login</a></div>
+    <div><a href="">Sign Up</a></div>
+    </div>
+    <div id="Head">
+            <img
+              class="slide_image"
+              src="https://clovedental.in/wp-content/uploads/2023/06/website-banner-1.png"
+              alt=""
+            />
+    </div>
+
+    <h1 id="symptoms">SYMPTOMS & TREATMENTS</h1>
+    <div id="mid">
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/filling-icon.png" alt="">
+    <p>Dental Fillings</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/root-canal-icon.png" alt="">
+    <p>Root Canal Treatments</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/teeth-removal-icon.png" alt="">
+    <p>Wisdom Teeth Removal</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/braces-aligners-icon.png" alt="">
+    <p>Braces & Aligners</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/dental-implant-icon.png" alt="">
+    <p>Dental Implants</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/dentures-icon.png" alt="">
+    <p>Dentures</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/crowns-bridges-icon.png" alt="">
+    <p>Bridges & Crowns</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/childrens-dentistry-icon.png" alt="">
+    <p>Kids Dentistry</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/smile-makeover-icon.png" alt="">
+    <p>Smile Makeover</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/teeth-whitening-icon.png" alt="">
+    <p>Teeth Whitening</p>
+   </div>
+   <div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/mouth-ulcers-icon.png" alt="">
+    <p>Mouth Ulcers</p>
+   </div><div>
+    <img src="https://clovedental.in/wp-content/themes/clove-child/images/read-more-icon.png" alt="">
+    <p>View More</p>
+   </div>
+    </div>
+
+
+    <h1 id="symptoms">BLOGS</h1>
+<div id="blogs">
+    <div>
+        <img src="https://clovedental.in/wp-content/uploads/2023/06/Restoring-Your-Dental.jpg" alt="">
+        <p>02 June 2023</p>
+        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, error.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptate sed unde, voluptatibus dolor placeat quas. At sunt ad quam suscipit delectus, commodi quo tempora.</p>
+    </div>
+    <div>
+        <img src="https://clovedental.in/wp-content/uploads/2023/06/Restoring-Your-Smile-with-Confidence.jpg" alt="">
+        <p>08 June 2023</p>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quae.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci optio beatae sequi dignissimos cupiditate, dolore deserunt, temporibus delectus quidem labore asperiores nostrum, reprehenderit iure quis.</p>
+    </div>
+    <div>
+        <img src="https://clovedental.in/wp-content/uploads/2023/06/Factors-Affecting.jpg" alt="">
+        <p>12 June 2023</p>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, modi?</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem optio hic ab ullam ex dignissimos eaque explicabo nobis quam, eum quasi quos enim consectetur rem.</p>
+    </div>
+    <div>
+        <img src="https://clovedental.in/wp-content/uploads/2023/06/When-Dental-Implants-Fall-Short.jpg" alt="">
+        <p>15 June 2023</p>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nostrum?</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, perspiciatis dolore veritatis non impedit fugiat, explicabo eum suscipit magnam ad excepturi dolorem mollitia deleniti voluptatibus.</p>
+    </div>
+</div>
+
+<button id="view">View More</button>
+
+
+<div id="info">
+    <div class="one">
+        <img src="https://clovedental.in/wp-content/uploads/2020/10/activity-img-min.jpg" alt="">
+    </div>
+    <div class="two">
+        <div>
+            <ion-icon class="icon" name="videocam-outline"></ion-icon>
+            <p>Dental Educational Videos</p>
+        </div>
+        <div>
+            <ion-icon class="icon" name="newspaper-outline"></ion-icon>
+            <p>News & Media</p>
+        </div>
+        <div>
+            <ion-icon class="icon" name="newspaper-outline"></ion-icon>
+            <p>Blogs</p>
+        </div>
+        <div>
+            <ion-icon class="icon" name="people-outline"></ion-icon>
+            <p>Career</p>
+        </div>
+    </div>
+</div>
+
+
+<div id="footer">
+    <div>
+        <h2 class="heading">DentDesk Advantage</h2>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+       
+    </div>
+    <div>
+        <h2 class="heading">About Us</h2>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+       
+    </div>
+    <div>
+        <h2 class="heading">Careers</h2>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+        <p>▶ Lorem ipsum.</p>
+
+    
+    </div>
+    <div>
+        <h2 class="heading">Call Us</h2>
+        <p>▶ Lorem <p class="num">0245 4586 125</p></p>
+        <p>▶ Lorem <p class="num">0245 4586 125</p></p>
+        <p>▶ Lorem <p class="num">0245 4586 125</p></p>
+       
+    </div>
+</div>
+</body>
+</html>
+<script src="index.js"></script>
