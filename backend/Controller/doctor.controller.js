@@ -1,24 +1,38 @@
+const { ClinicModel } = require("../Model/Clinic.model")
 const { DoctorModel } = require("../Model/doctors.model")
 
 const getDoctors = async (req, res) => {
     try {
-        const data = await DoctorModel.find()
+        const data = await DoctorModel.find().populate("clinic")
         res.status(201).send(data)
     } catch (error) {
         res.status(401).send({ "msg": "Bad Request 404", "ok": false, "err": error.message })
     }
 }
-
+// 
 const addDoctor = async (req, res) => {
     const payload = req.body
     const { name } = req.body
+    const ClinicID = req.params.id
+
+
     try {
+
+        const isClinicPresent = await ClinicModel.findById(ClinicID)
+        if (!isClinicPresent) {
+            return res.status(404).send({ "msg": "clinic is not present" })
+
+        }
+
         const isDoctorPresent = await DoctorModel.findOne({ name: name })
         if (isDoctorPresent) {
             return res.send({ "msg": "doctor is already present" })
         }
+        payload.clinic = ClinicID
         const data = new DoctorModel(payload)
+
         await data.save()
+
         res.status(201).send({ "msg": "Doctor Added SuccesFully", "ok": true })
     } catch (error) {
         res.status(401).send({ "msg": "Bad Request 404", "ok": false, "err": error.message })
@@ -92,4 +106,6 @@ const getAppointments = async (req, res) => {
     }
 }
 
-module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments , GetDoctorByID }
+
+
+module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID }

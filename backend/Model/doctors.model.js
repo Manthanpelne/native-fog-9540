@@ -14,12 +14,12 @@ const DoctorsSchema = mongoose.Schema(
         timings: { type: String, required: true },
         clinic: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "clinic"
+            ref: "Clinic"
         },
         appointments: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "appointment"
+                ref: "Appointment"
             }
         ]
 
@@ -27,6 +27,6 @@ const DoctorsSchema = mongoose.Schema(
     },
     { versionKey: false }
 )
-const DoctorModel = mongoose.model("doctor", DoctorsSchema)
+const DoctorModel = mongoose.model("Doctor", DoctorsSchema)
 
 module.exports = { DoctorModel }
