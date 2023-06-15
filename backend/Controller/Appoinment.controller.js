@@ -144,8 +144,8 @@ const updateAppointment = async (req, res) => {
         }
         const formattedDate = updatedAppointment.date.toLocaleDateString('en-GB');
         // Send email notifications based on the updated status
-        const user = await UserModel.findOne({_id:updatedAppointment.user})
-        const doctor = await DoctorModel.findOne({_id:updatedAppointment.doctor})
+        const user = await UserModel.findOne({ _id: updatedAppointment.user })
+        const doctor = await DoctorModel.findOne({ _id: updatedAppointment.doctor })
         switch (status) {
             case 'confirmed':
                 sendEmail({
