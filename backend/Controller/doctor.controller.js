@@ -18,17 +18,17 @@ const addDoctor = async (req, res) => {
 
     try {
 
-        const isClinicPresent = await ClinicModel.findById(ClinicID)
-        if (!isClinicPresent) {
-            return res.status(404).send({ "msg": "clinic is not present" })
+        // const isClinicPresent = await ClinicModel.findById(ClinicID)
+        // if (!isClinicPresent) {
+        //     return res.status(404).send({ "msg": "clinic is not present" })
 
-        }
+        // }
 
         const isDoctorPresent = await DoctorModel.findOne({ name: name })
         if (isDoctorPresent) {
             return res.send({ "msg": "doctor is already present" })
         }
-        payload.clinic = ClinicID
+        // payload.clinic = ClinicID
         const data = new DoctorModel(payload)
 
         await data.save()
@@ -40,7 +40,7 @@ const addDoctor = async (req, res) => {
     }
 }
 
-const updateDoctor = async (req, res) => {
+const updateDoctor = async (req, res) => { //admin
     const ID = req.params.id
     const Payload = req.body
     try {
@@ -53,7 +53,7 @@ const updateDoctor = async (req, res) => {
     }
 }
 
-const DeleteDoctor = async (req, res) => {
+const DeleteDoctor = async (req, res) => {//admin
     try {
         const ID = req.params.id
         await DoctorModel.findByIdAndDelete({ _id: ID })
@@ -106,6 +106,35 @@ const getAppointments = async (req, res) => {
     }
 }
 
+//----------> Search RegExp
+
+//==>GET ->> /doctor/searchDoc?name=name&location=location
+
+const getSearchedData = async (req, res) => {
+    try {
+        const { name, location } = req.query
+        let query = {};
+        if (name) {
+            const regEx_Name = new RegExp(name, "i")
+            query.name = { $regex: regEx_Name }
+
+        }
+        if (location) {
+            const regEx_location = new RegExp(location, "i")
+            query.location = { $regex: regEx_location }
+
+        }
+
+        // console.log(name, location);
+        // console.log(query)
+        const searchDoctor = await DoctorModel.find(query).populate("clinic")
+        res.status(200).send(searchDoctor)
+    } catch (error) {
+        res.status(401).send({ "msg": "Bad Request 404", "ok": false, "err": error.message })
+
+    }
+}
 
 
-module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID }
+
+module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID, getSearchedData }

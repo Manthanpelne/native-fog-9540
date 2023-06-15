@@ -1,4 +1,5 @@
 const { ClinicModel } = require("../Model/Clinic.model")
+const { DoctorModel } = require("../Model/doctors.model")
 
 
 const getClinic = async (req, res) => {
@@ -12,10 +13,7 @@ const getClinic = async (req, res) => {
 const postClinic = async (req, res) => {
     try {
         const Payload = req.body
-        // const isClinicPresent = await ClinicModel.find()
-        // if (isClinicPresent) {
-        //     return res.status(404).send({ "msg": "Clinic is present Already", "ok": false })
-        // }
+
         const Postdata = new ClinicModel(Payload)
         await Postdata.save()
         res.status(200).send({ "msg": "Clinic Added Succesfully", "ok": true, "data": Postdata })
@@ -26,4 +24,61 @@ const postClinic = async (req, res) => {
     }
 
 }
-module.exports = { getClinic, postClinic }
+
+const updateClinic = async (req, res) => {
+    try {
+        const ID = req.params.id
+        const payload = req.body
+
+        await ClinicModel.findByIdAndUpdate({ _id: ID }, payload)
+        res.status(200).send({ "msg": "Clinic Updated Succesfully", "ok": true })
+
+    } catch (error) {
+        res.status(404).send({ "msg": "404 Bad Request", "ok": false, "err": error.message })
+
+    }
+}
+
+const deleteClinic = async (req, res) => {
+    try {
+        const ID = req.params.id
+        await ClinicModel.findByIdAndDelete({ _id: ID })
+        res.status(200).send({ "msg": "Clinic Deleted Succesfully", "ok": true })
+
+    } catch (error) {
+        res.status(404).send({ "msg": "404 Bad Request", "ok": false, "err": error.message })
+
+    }
+}
+
+/*
+ add doctor to clinic
+---> /clinic/add-doctor/:id
+In Body --> clinicID = ""
+*/
+
+
+const addDoctorToClinic = async (req, res) => {
+    try {
+        const DoctorID = req.params.id
+        const clinicID = req.body.clinicID
+        const doctor = await DoctorModel.findById(DoctorID)
+        if (!doctor) {
+            return res.status(404).send({ "msg": "Doctor Not Found" })
+        }
+        const clinic = await ClinicModel.findById(clinicID)
+        if (!clinic) {
+            return res.status(404).send({ "msg": "Clinic Not Found" })
+
+        }
+        clinic.doctors.push(DoctorID)
+        await clinic.save()
+        res.status(200).send({ "msg": "Doctor Added To Clinic Succesfully", "ok": true, "data": clinic })
+
+
+    } catch (error) {
+        res.status(404).send({ "msg": "404 Bad Request", "ok": false, "err": error.message })
+
+    }
+}
+module.exports = { getClinic, postClinic, updateClinic, deleteClinic, addDoctorToClinic }
