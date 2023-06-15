@@ -11,18 +11,15 @@ const getDoctors = async (req, res) => {
 }
 // 
 const addDoctor = async (req, res) => {
-    const payload = req.body
-    const { name } = req.body
-    const ClinicID = req.params.id
-
-
     try {
+        const payload = req.body
+        const { name } = req.body
+        const ClinicID = req.params.ClinicId
+        const isClinicPresent = await ClinicModel.findOne({_id:ClinicID})
+        if (!isClinicPresent) {
+            return res.status(404).send({ "msg": "clinic is not present" })
 
-        // const isClinicPresent = await ClinicModel.findById(ClinicID)
-        // if (!isClinicPresent) {
-        //     return res.status(404).send({ "msg": "clinic is not present" })
-
-        // }
+        }
 
         const isDoctorPresent = await DoctorModel.findOne({ name: name })
         if (isDoctorPresent) {
@@ -32,7 +29,10 @@ const addDoctor = async (req, res) => {
         const data = new DoctorModel(payload)
 
         await data.save()
-
+        if (!isClinicPresent.doctors.includes(data._id)) {
+            isClinicPresent.doctors.push(data._id)
+        }
+        await isClinicPresent.save()
         res.status(201).send({ "msg": "Doctor Added SuccesFully", "ok": true })
     } catch (error) {
         res.status(401).send({ "msg": "Bad Request 404", "ok": false, "err": error.message })

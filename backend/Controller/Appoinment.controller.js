@@ -11,7 +11,7 @@ const AddAppointment = async (req, res) => {
         const user = await UserModel.findOne({ _id: req.body.UserId })
 
         if (!user) {
-            return res.status(400).send('user not found or Login first');
+            return res.status(400).send({"msg":'user not found or Login first'});
         }
         const existingAppointment = await AppointmentModel.findOne({
             user: req.body.UserId,
