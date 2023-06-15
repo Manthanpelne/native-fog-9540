@@ -1,0 +1,86 @@
+{"data":[ 
+    {
+        "name": "Dr Aakrati Raina",
+        "phone": "+91 9696969696",
+        "image": "https://travocure.com/wp-content/uploads/2022/04/Aakrati-Raina_Clove-1-180x180.jpeg",
+        "about": "I specialize in Dental Fillings, Root Canal Treatment (RCT), Crowns, Bridges, Teeth Whitening, General Dentistry, Scaling & Polishing, Veneer, and Preventive Dentistry.",
+        "qualification": "MDS (Endodontics)",
+        "experience": "8 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "400",
+        "timings": "10 AM - 2 PM",
+        "location": "Gurgaon"
+    },
+    {
+        "name": "Dr Aatman Sharma",
+        "phone": "+91 9595959595",
+        "image": "https://media.licdn.com/dms/image/D5603AQHwjvczv4Cq1w/profile-displayphoto-shrink_400_400/0/1678959970681?e=1692230400&v=beta&t=8yn-QtIDAli5YnNv5P1v7vgz2h15t3gsiEuBbgLFIgs",
+        "about": "I specialize in Dental Fillings, Root Canal Treatment (RCT), Crowns, Bridges, Dentures, Teeth Whitening, Smile Design, Mouth Ulcers, Laser Dentistry, General Dentistry, Tooth Extraction, Scaling & Polishing, Veneer, and Preventive Dentistry.",
+        "qualification": "MDS (Oral Medicine & Radiology)",
+        "experience": "6 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "500",
+        "timings": "11 AM - 3 PM",
+        "location": "Bengaluru"
+    },
+    {
+        "name": "Dr Aditee Jhingan",
+        "phone": "+91 9898989898",
+        "image": "https://media.licdn.com/dms/image/C5603AQG6rLhkXjeevA/profile-displayphoto-shrink_800_800/0/1632159603450?e=1692230400&v=beta&t=Bb93uWtTX05AZf_uCTX0fnCuj-CnZaf4z8Z06Ism64k",
+        "about": "I specialize in Dental Fillings, Root Canal Treatment (RCT), Crowns, Bridges, Dentures, Teeth Whitening, Smile Design, Mouth Ulcers, Laser Dentistry, General Dentistry, Tooth Extraction, Scaling & Polishing, Veneer, and Preventive Dentistry.",
+        "qualification": "MDS (Oral Medicine & Radiology)",
+        "experience": "7 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "700",
+        "timings": "4 PM - 8 PM",
+        "location": "Mumbai"
+    },
+    {
+        "name": "Dr Abhishek Setpal",
+        "phone": "+91 9898989898",
+        "image": "https://media.licdn.com/dms/image/C4E03AQFkXH8H2FbrsA/profile-displayphoto-shrink_800_800/0/1537444044802?e=1692230400&v=beta&t=uRo7x8B8EbyOMssfM0gqiGPDnxaCyueq07ZDUE14mzk",
+        "about": "I specialize in Dental Fillings, Root Canal Treatment (RCT), Crowns, Bridges, Dentures, Teeth Whitening, Smile Design, Mouth Ulcers",
+        "qualification": " BDS Prosthodontist/Clinic Head at Clove Dental",
+        "experience": "3 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "300",
+        "timings": "2 PM - 6 PM",
+        "location": "Pune"
+    },
+    {
+        "name": "Dr Ajay Sangwan",
+        "phone": "+91 956585698",
+        "image": "https://media.licdn.com/dms/image/C4E03AQENKglGivIa3g/profile-displayphoto-shrink_800_800/0/1647927647457?e=2147483647&v=beta&t=P3Y9u9rt9kxqwIiFxhinzGJo24wCKavYJDvSStaMPx0",
+        "about": "I specialize in Dental Fillings, Crowns, Bridges, Dentures, Smile Design, General Dentistry, Tooth Extraction, Scaling & Polishing, Veneer, Preventive Dentistry",
+        "qualification": " MDS (Prosthodontics)",
+        "experience": "10 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "900",
+        "timings": "6 PM - 8 PM",
+        "location": "Delhi"
+    },
+    {
+        "name": "Dr Akshat Srivastava",
+        "phone": "+91 9989445784",
+        "image": "https://media.licdn.com/dms/image/C4D03AQEKGAwLqazPjg/profile-displayphoto-shrink_800_800/0/1661361376967?e=1692230400&v=beta&t=eUonTOX2A2wph8eesqRm0djLe5v1CIAqlUWWmk3s_pM",
+        "about": "I specialize in Dental Fillings, Crowns, Bridges, Dentures, Smile Design, General Dentistry, Tooth Extraction, Scaling & Polishing, Veneer, Preventive Dentistry",
+        "qualification": "MDS (Endodontics)",
+        "experience": "13 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "1500",
+        "timings": "7 PM - 10 PM",
+        "location": "Hydrabad"
+    },
+    {
+        "name": "Dr Anamika Choudhary",
+        "phone": "+91 895646784",
+        "image": "https://media.licdn.com/dms/image/C5603AQHGwkgQ7wwF8g/profile-displayphoto-shrink_800_800/0/1604282088897?e=1692230400&v=beta&t=DpS78EY8HLLOKtxh8L6s5LEmK-MVYocxmfsCLP30Qvk",
+        "about": "I specialize in Dental Fillings, Crowns, Bridges, Dentures, Smile Design, General Dentistry, Tooth Extraction, Scaling & Polishing, Veneer, Preventive Dentistry",
+        "qualification": "MDS (Endodontics)",
+        "experience": "5 Years of Clinical Experience",
+        "language": "English | Hindi",
+        "charge": "600",
+        "timings": "8 AM - 12 PM",
+        "location": "Noida"
+    }
+]}

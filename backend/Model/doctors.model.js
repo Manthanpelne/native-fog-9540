@@ -12,6 +12,7 @@ const DoctorsSchema = mongoose.Schema(
 
         charge: { type: String, required: true },
         timings: { type: String, required: true },
+        location:{ type: String, required: true },
         clinic: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Clinic"

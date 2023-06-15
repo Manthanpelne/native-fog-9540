@@ -1,0 +1,95 @@
+#our{
+    width: 300px;
+}
+.Newdoc{
+    color: rgb(222, 64, 17);
+}
+
+#form{
+    max-width: 400px;
+    border: 1px solid rgb(240, 165, 44);
+    height: 330px;
+    margin: auto;
+   padding-left: 10%;
+   font-size: 17px;
+   background-color: rgb(148, 74, 74);
+   font-family: sans-serif;
+}
+#form label{
+    color:white;
+    font-weight: bold;
+}
+#form label:nth-child(2){
+    padding-right: 32px;
+}
+
+#form input{
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 200px;
+    height: 40px;
+}
+
+.sub{
+    background-color: rgb(213, 125, 36);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.sub:hover{
+    background-color: rgb(238, 110, 31);
+}
+.f-head{
+color: white;
+margin-left: 40px;
+padding-top: 10px;
+}
+
+@media all and (min-width:100px) and (max-width:530px){
+#form{
+    max-width: 400px;
+    border: 1px solid rgb(240, 165, 44);
+    height: 300px;
+    margin: auto;
+   padding-left: 10%;
+   font-size: 17px;
+   background-color: rgb(148, 74, 74);
+   font-family: sans-serif;
+}
+#form label{
+    color:white;
+    font-weight: bold;
+}
+#form label:nth-child(2){
+    padding-right: 32px;
+}
+
+#form input{
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 130px;
+    height: 20px;
+}
+
+.sub{
+    background-color: rgb(213, 125, 36);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.sub:hover{
+    background-color: rgb(238, 110, 31);
+}
+.f-head{
+color: white;
+margin-left: 40px;
+padding-top: 10px;
+}
+}
