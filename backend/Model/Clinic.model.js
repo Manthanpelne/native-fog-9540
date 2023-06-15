@@ -15,4 +15,4 @@ const clinicSchema = new mongoose.Schema({
 
 const ClinicModel = mongoose.model('Clinic', clinicSchema);
 
-module.exports = {ClinicModel};
+module.exports = { ClinicModel };

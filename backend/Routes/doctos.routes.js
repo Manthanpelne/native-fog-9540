@@ -1,19 +1,23 @@
 const express = require('express');
-const { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID } = require('../Controller/doctor.controller');
+const { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID, getSearchedData } = require('../Controller/doctor.controller');
+const { auth } = require('../Middleware/Auth.middleware');
+const { role } = require('../Middleware/Role.middleware');
 const DoctorRouter = express.Router()
 
 //------->/doctor/
 
 DoctorRouter.get("/", getDoctors)
-DoctorRouter.post("/add/:id", addDoctor)
-DoctorRouter.patch("/update/:id", updateDoctor)
-DoctorRouter.delete("/delete/:id", DeleteDoctor)
-DoctorRouter.get("/:id", GetDoctorByID)
+DoctorRouter.post("/add",  addDoctor)
+DoctorRouter.patch("/update/:id", auth, role(["Admin"]), updateDoctor)
+DoctorRouter.delete("/delete/:id", auth, role(["Admin"]), DeleteDoctor)
+DoctorRouter.get("/byid/:id", GetDoctorByID)
 
 
 //--------> Appointments
 
 DoctorRouter.get("/appoint/:id", getAppointments)
+
+DoctorRouter.get("/searchDoc", getSearchedData)
 
 
 
