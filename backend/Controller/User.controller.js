@@ -56,7 +56,7 @@ const logout = async (req,res)=>{
 
 const Alluser = async (req,res)=>{
     try {
-        const users = await UserModel.find()
+        const users = await UserModel.find({role:"User"})
         res.status(200).send({"msg": "all users",users})
     } catch (err) {
         res.send(err.message)
