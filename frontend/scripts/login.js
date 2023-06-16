@@ -16,7 +16,16 @@ form.addEventListener("submit", (e) => {
         .then((res) => res.json())
         .then((res) => {
 
+            console.log(res.user)
+
             if (res.msg == "login Success") {
+                const user = {
+                    name: res.user.name,
+                    email:res.user.email,
+                    role: res.user.role,
+                };
+                localStorage.setItem("user", JSON.stringify(user));
+                localStorage.setItem("token", res.accessToken);
                 Swal.fire({
                     position: "centre",
                     icon: "success",
@@ -26,8 +35,12 @@ form.addEventListener("submit", (e) => {
                 });
                 
                 setTimeout(() => {
-                    window.location.href = "index.html"
-                }, 2500)
+                    if (user.role === "Admin") {
+                        window.location.href = "admin.html";
+                    } else {
+                        window.location.href = "index.html";
+                    }
+                }, 2500);
             } else {
                 Swal.fire({
                     position: "centre",
