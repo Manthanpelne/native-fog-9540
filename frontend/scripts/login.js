@@ -15,7 +15,9 @@ form.addEventListener("submit", (e) => {
     })
         .then((res) => res.json())
         .then((res) => {
+
             console.log(res.user)
+
             if (res.msg == "login Success") {
                 const user = {
                     name: res.user.name,
@@ -31,6 +33,7 @@ form.addEventListener("submit", (e) => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
+                
                 setTimeout(() => {
                     if (user.role === "Admin") {
                         window.location.href = "admin.html";

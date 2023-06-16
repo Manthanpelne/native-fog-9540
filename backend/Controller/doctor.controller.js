@@ -71,7 +71,7 @@ const DeleteDoctor = async (req, res) => {//admin
 const GetDoctorByID = async (req, res) => {
     try {
         const ID = req.params.id;
-        const DoctorsData = await DoctorModel.findById({ _id: ID })
+        const DoctorsData = await DoctorModel.findById({ _id: ID }).populate("appointments")
         res.status(201).send(DoctorsData)
 
     } catch (error) {
