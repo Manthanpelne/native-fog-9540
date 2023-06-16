@@ -135,6 +135,28 @@ const getSearchedData = async (req, res) => {
     }
 }
 
+// doctor by name and email
+
+const Doctorbyname =  async (req, res) => {
+    const { name, email } = req.query;
+  
+    try {
+      const foundDoctors = await DoctorModel.find({
+        name: { $regex: new RegExp(name, 'i') },
+        email: { $regex: new RegExp(email, 'i') }
+      });
+  
+      if (foundDoctors.length === 0) {
+        return res.status(404).send({ "msg": 'No doctors found' });
+      }
+  
+      res.status(200).send({"msg":"Doctor Found" , doctor:foundDoctors});
+    } catch (error) {
+      console.error('Error searching for doctors:', error);
+      res.status(500).send({ msg: error.message});
+    }
+}
 
 
-module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID, getSearchedData }
+
+module.exports = { getDoctors, addDoctor, updateDoctor, DeleteDoctor, getAppointments, GetDoctorByID, getSearchedData ,Doctorbyname}
