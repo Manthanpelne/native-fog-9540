@@ -15,6 +15,7 @@ form.addEventListener("submit", (e) => {
     })
         .then((res) => res.json())
         .then((res) => {
+
             if (res.msg == "login Success") {
                 Swal.fire({
                     position: "centre",
@@ -23,6 +24,7 @@ form.addEventListener("submit", (e) => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
+                
                 setTimeout(() => {
                     window.location.href = "index.html"
                 }, 2500)
