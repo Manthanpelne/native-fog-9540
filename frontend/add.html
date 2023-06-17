@@ -11,19 +11,7 @@
     <link rel="stylesheet" href="./styles/add.css" />
     <title>Dent Care Admin Panel</title>
     <style>
-        
-        #addmale {
-  height: 200px !important;
-}
-        #addmale,
-#addstylists {
-    margin-top: 150px;
-  display: inline-block;
-  width: 30%;
- height: 200px;
-
-}
-
+      
     </style>
   </head>
   <body>
@@ -39,20 +27,83 @@
       </div>
     </div>
 
-    <div id="postform">
-      <div id="addmale">
+    <div class="toggle-forms">
+      <button id="form1-btn" class="active">Add Clinic</button>
+      <button id="form2-btn">Add Doctors</button>
+
+      <div id="form1" class="form active">
         <h1>Add Clinic</h1>
-        <a href="addclinic.html"><input type="submit" value="Click" /></a>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" /><br />
+
+          <label for="image">Address:</label>
+          <textarea id="details" name="address"></textarea><br />
+
+          <label for="image">Phone:</label>
+          <input type="text" id="image" name="number" /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" /><br />
+
+          <input type="submit" value="Submit" />
+        </form>
       </div>
 
-      <div id="addstylists">
+      <div id="form2" class="form">
         <h1>Add Doctors</h1>
-        <a href="adddoctors.html"><input type="submit" value="Click" /></a>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" /><br />
+
+          <label for="image">Phone:</label>
+          <input type="text" id="image" name="number" /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+
+          <label for="image">Image:</label>
+          <input type="text" id="image" name="image" /><br />
+
+          <label for="about">About:</label>
+          <textarea id="details" name="about"></textarea><br />
+
+          <label for="location">Location:</label>
+          <textarea id="details" name="location"></textarea><br />
+
+          <label for="qualification">Qualification:</label>
+          <input type="text" id="qualification" name="qualification" /><br />
+
+          <label for="experience">Experience:</label>
+          <input type="number" id="experience" name="experience" /><br />
+
+          <label for="language">Language:</label>
+          <input type="text" id="language" name="language" /><br />
+
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     </div>
-
-    
   </body>
 </html>
 
-<script src="admin.js"></script>
+<script>
+  const form1Button = document.getElementById("form1-btn");
+  const form2Button = document.getElementById("form2-btn");
+  const form1 = document.getElementById("form1");
+  const form2 = document.getElementById("form2");
+
+  form1Button.addEventListener("click", function () {
+    form1Button.classList.add("active");
+    form2Button.classList.remove("active");
+    form1.classList.add("active");
+    form2.classList.remove("active");
+  });
+
+  form2Button.addEventListener("click", function () {
+    form2Button.classList.add("active");
+    form1Button.classList.remove("active");
+    form2.classList.add("active");
+    form1.classList.remove("active");
+  });
+</script>
