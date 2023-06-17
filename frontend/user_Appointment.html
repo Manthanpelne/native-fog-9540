@@ -30,13 +30,13 @@
                         </span><a href="./user_Appointment.html">Appointments</a></li>
                     <li><span class="material-symbols-outlined">
                             account_circle
-                        </span><a href="#">My Account</a></li>
+                        </span><a href="./user_Account.html">My Account</a></li>
                     <li><span class="material-symbols-outlined">
-                            category
-                        </span><a href="#">Categories</a></li>
-                    <li><span class="material-symbols-outlined">
+                        outpatient_med
+                        </span><a href="./clinics.html">Clinics</a></li>
+                    <!-- <li><span class="material-symbols-outlined">
                             logout
-                        </span><a id="Logout" href="#">Logout</a></li>
+                        </span><a id="Logout" href="#">Logout</a></li> -->
                 </ul>
             </div>
             <!-- <div id="child1btn">
@@ -47,21 +47,23 @@
         </div>
         <div class="child2">
             <div class="up">
-                <div id="date-filt">
+                <!-- <div id="date-filt">
                     <input type="date" name="date" id="date-filter">
-                </div>
+                </div> -->
                 <div class="sel1">
                     <select id="filter">
-                        <option>Status</option>
-                        <option value="Accepted">Accepted</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Rejected">Rejected</option>
+                        <option value="all">Status</option>
+                        <option value="scheduled">scheduled</option>
+                        <option value="confirmed">confirmed</option>
+                        <option value="completed">completed</option>
+                        <option value="canceled">canceled</option>
                     </select>
                 </div>
 
                 <div class="dat">
                     <select id="sort">
-                        <option>Date Sort</option>
+
+                        <option value="">SORT BY DATE</option>
                         <option value="NTO">New To Old</option>
                         <option value="OTN">Old To New</option>
 
@@ -80,7 +82,7 @@
                             <th>Date</th>
                             <th>Status</th>
                             <th>Bill</th>
-                            <th id="rejected-head">Reject</th>
+
                         </tr>
                     </thead>
                     <tbody id="tbody">

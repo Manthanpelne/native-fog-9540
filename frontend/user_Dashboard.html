@@ -10,6 +10,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
     </style>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./styles/user_Dashboard.css">
 </head>
 
@@ -27,36 +28,45 @@
                 </span><a href="./user_Appointment.html">Appointments</a></li>
             <li><span class="material-symbols-outlined">
                     account_circle
-                </span><a href="#">My Account</a></li>
+                </span><a href="./user_Account.html">My Account</a></li>
             <li><span class="material-symbols-outlined">
-                    category
-                </span><a href="#">Categories</a></li>
+                outpatient_med
+                </span><a href="./clinics.html">Clinics</a></li>
             <li><span class="material-symbols-outlined">
                     logout
-                </span><a id="Logout" href="#">Logout</a></li>
+                </span><a id="Logout-anch" href="#">Logout</a></li>
         </ul>
     </div>
 
     <div id="content">
-        <button>Book Appointment</button>
+        <button id="book-app">Book Appointment</button>
+        <h2 id="show"></h2>
 
         <div class="dashboard-card">
             <h3>Total Appointments</h3>
+            <p id="total-App"></p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Total Scheduled</h3>
+            <p id="scheduled-App"></p>
 
         </div>
 
         <div class="dashboard-card">
-            <h3>Total Solved</h3>
+            <h3>Total Confirmed</h3>
+            <p id="confirmed-App"></p>
 
         </div>
 
         <div class="dashboard-card">
-            <h3>Total Pending</h3>
+            <h3>Total Completed</h3>
+            <p id="completed-App"></p>
 
         </div>
-
         <div class="dashboard-card">
-            <h3>Total Cancelled</h3>
+            <h3>Total Canceled</h3>
+            <p id="canceled-App"></p>
 
         </div>
     </div>

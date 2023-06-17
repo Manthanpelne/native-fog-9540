@@ -117,7 +117,7 @@ a:hover {
 }
 
 #tablehead {
-    background-color: #0E2954;
+    background-color: #3E2723;
     color: white;
 }
 
@@ -233,7 +233,7 @@ a:hover {
 }
 #sidebar {
     width: 300px;
-    background-color: #0E2954;
+    background-color: #3E2723;
     padding: 20px;
     height: 100vh;
     position: fixed;
@@ -290,3 +290,52 @@ a:hover{
         margin-left: 0;
     }
 }
+.sel1 select {
+    width: 200px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .sel1 select:focus {
+    outline: none;
+    border-color: #F1C376;
+    box-shadow: 0 0 0 2px #F1C376;
+  }
+  .dat select {
+    width: 200px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .dat select:focus {
+    outline: none;
+    border-color: #F1C376;
+    box-shadow: 0 0 0 2px #F1C376;
+  }
+  #date-filt input[type="date"] {
+    width: 200px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  #date-filt input[type="date"]:focus {
+    outline: none;
+    border-color: #F1C376;
+    box-shadow: 0 0 0 2px #F1C376;
+  }
+  

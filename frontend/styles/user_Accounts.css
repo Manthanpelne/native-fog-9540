@@ -1,19 +1,24 @@
+
+
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
-a:hover{
+
+a:hover {
     color: #F1C376;
 }
 
 #sidebar {
     width: 300px;
-    background-color:  #3E2723;
+    background-color: #3E2723;
     padding: 20px;
     height: 100vh;
     position: fixed;
@@ -31,18 +36,16 @@ a:hover{
     list-style-type: none;
     padding: 0;
     text-decoration: none;
-    /* color: #F1C376; */
 }
 
 #sidebar li {
-
     align-items: center;
     margin-bottom: 10px;
     padding: 5px;
     font-size: 20px;
- 
 }
-#sidebar li:hover{
+
+#sidebar li:hover {
     text-decoration: underline;
     color: #F1C376;
 }
@@ -63,12 +66,12 @@ a:hover{
     cursor: pointer;
     margin-left: 5px;
 }
-#content button:hover{
+
+#content button:hover {
     padding: 10px 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     font-size: 18px;
     background-color: #333;
-
 }
 
 .dashboard-card {
@@ -79,7 +82,8 @@ a:hover{
     padding: 20px;
     margin-bottom: 20px;
 }
-.dashboard-card:hover{
+
+.dashboard-card:hover {
     background-color: #A7ECEE;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -96,7 +100,8 @@ a:hover{
     font-size: 16px;
     color: #666;
 }
-span{
+
+span {
     margin: 5px;
     color: white;
 }
@@ -110,11 +115,97 @@ span{
 
     #content {
         margin-left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .dashboard-card {
+        margin-left: 0;
     }
 }
-.dashboard-card p {
+
+.profile-container {
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #FFFDE7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-container:hover {
+    cursor: pointer;
+    background-color: #FFE082;
+
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-details {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile-details h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile-details p {
     font-size: 18px;
-    font-weight: 900;
-    color: black;
-  }
-  
+    color: #666;
+    margin: 0;
+}
+
+.logout-button {
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #3E2723;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    padding: 10px 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    font-size: 18px;
+    background-color: #757575;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+
+    .dashboard-card p {
+        font-size: 18px;
+        font-weight: 900;
+        color: black;
+    }
+}
