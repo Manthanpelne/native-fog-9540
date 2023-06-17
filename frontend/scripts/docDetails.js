@@ -4,7 +4,7 @@
     const id = newid
     getDetailsofDoc(id)
      async function getDetailsofDoc(id){
-         const Data = await fetch(`http://localhost:4500/doctor/${id}`, {
+         const Data = await fetch(`http://localhost:4500/doctor/byid/${id}`, {
      method: "GET",
      headers: {
        "content-type": "application/json",
@@ -47,5 +47,30 @@
    });
    secmaincontainer.innerHTML = arr.join(" ");
  }
+
+
+
+ /////////////////////////////////////
+
+ let mail = document.querySelector("#email")
+let name = document.querySelector("#name")
  
- 
+ let a = []
+ let userid = localStorage.getItem("userID")
+ userFun(userid)
+     async function userFun(id){
+         const Data = await fetch(`http://localhost:4500/user/${id}`, {
+     method: "GET",
+     headers: {
+       "content-type": "application/json",
+     },
+   });
+   if (Data.ok) {
+     const userdata = await Data.json();
+     a.push(userdata.user)
+     mail.value = a[0].email
+     name.value = a[0].name
+   }
+  }
+
+  

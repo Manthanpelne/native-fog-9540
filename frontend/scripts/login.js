@@ -1,5 +1,6 @@
 let form = document.getElementById("formcont");
 
+let arr = []
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let data = {
@@ -15,6 +16,8 @@ form.addEventListener("submit", (e) => {
     })
         .then((res) => res.json())
         .then((res) => {
+            arr.push(res.user._id)
+            localStorage.setItem("userID",arr)
             if (res.msg == "login Success") {
                 Swal.fire({
                     position: "centre",
