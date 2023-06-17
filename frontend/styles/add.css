@@ -65,6 +65,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="number"],
+#form2 select,
 textarea {
   width: 80%;
   padding: 0.5rem;
