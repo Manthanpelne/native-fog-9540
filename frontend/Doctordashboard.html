@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/docdash.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <div><img width="100px" height="70px" src="/DentDesk.png" alt="" /></div>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="">Dashboard</a></div>
+        <div><a href="">Login</a></div>
+        <div><a href="">Sign Up</a></div>
+    </div>
+
+    <div id="our">
+        <p>Home</p>
+        <p>>></p>
+        <p class="Newdoc">DoctorsDashboard</p>
+    </div>
+    <form id="updateForm">
+        <button id="closeButton" type="button">&times;</button>
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+          <option value="scheduled">Scheduled</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="completed">Completed</option>
+          <option value="canceled">Canceled</option>
+        </select>
+        <input type="submit" value="Update">
+      </form>
+      
+      
+    <div id="Doctordetails">
+        <div id="detailsdoc"></div>
+        <div id="appointmentdiv">
+            <h2>Appointments</h2>
+            <table id="appointment-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="footer">
+        <div>
+            <h2 class="heading">DentDesk Advantage</h2>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+
+        </div>
+        <div>
+            <h2 class="heading">About Us</h2>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+
+        </div>
+        <div>
+            <h2 class="heading">Careers</h2>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+
+
+        </div>
+        <div>
+            <h2 class="heading">Call Us</h2>
+            <p>▶ Lorem
+            <p class="num">0245 4586 125</p>
+            </p>
+            <p>▶ Lorem
+            <p class="num">0245 4586 125</p>
+            </p>
+            <p>▶ Lorem
+            <p class="num">0245 4586 125</p>
+            </p>
+
+        </div>
+    </div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/frontend/scripts/docdash.js"></script>
+</html>

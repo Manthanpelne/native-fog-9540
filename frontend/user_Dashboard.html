@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User dashboard</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+    </style>
+    <link rel="stylesheet" href="./styles/user_Dashboard.css">
+</head>
+
+<body>
+
+
+    <div id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><span class="material-symbols-outlined">
+                    dashboard
+                </span><a href="./user_Dashboard.html">Dashboard</a></li>
+            <li> <span class="material-symbols-outlined">
+                    badge
+                </span><a href="./user_Appointment.html">Appointments</a></li>
+            <li><span class="material-symbols-outlined">
+                    account_circle
+                </span><a href="#">My Account</a></li>
+            <li><span class="material-symbols-outlined">
+                    category
+                </span><a href="#">Categories</a></li>
+            <li><span class="material-symbols-outlined">
+                    logout
+                </span><a id="Logout" href="#">Logout</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <button>Book Appointment</button>
+
+        <div class="dashboard-card">
+            <h3>Total Appointments</h3>
+
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Total Solved</h3>
+
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Total Pending</h3>
+
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Total Cancelled</h3>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="scripts/user_Dashboard.js"></script>
+
+</html>

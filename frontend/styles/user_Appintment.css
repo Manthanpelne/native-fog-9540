@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #F1C376;
+}
+
+.main-cont {
+    display: flex;
+}
+
+.child1 {
+    width: 300px;
+    /* background-color: #0E2954; */
+    padding: 20px;
+    height: 100vh;
+}
+
+.child1 h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.child1 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.child1 li {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.child1 li a {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.child1 li a:hover {
+    text-decoration: underline;
+    color: #F1C376;
+}
+
+#child1btn {
+    margin-top: 20px;
+}
+.td1{
+    color: black;
+}
+/* #child1btn button {
+    border-radius: 8px;
+    background-color: #0e5438;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+} */
+
+#child1btn button:hover {
+    padding: 10px 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    font-size: 18px;
+    background-color: #1bd477;
+}
+
+.child2 {
+    flex: 1;
+    padding: 20px;
+}
+
+.up {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#date-filt {
+    margin-right: 20px;
+}
+
+.sel1 select,
+.dat select {
+    border-radius: 8px;
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.mid table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mid th,
+.mid td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    color: white;
+}
+
+#tablehead {
+    background-color: #0E2954;
+    color: white;
+}
+
+#tablehead th {
+    font-weight: bold;
+    color: white;
+}
+
+#tablehead th:nth-child(7) {
+    text-align: center;
+}
+
+#rejected-head {
+    width: 100px;
+}
+
+/* Common styles for dashboard cards */
+
+.dashboard-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-card:hover {
+    background-color: #A7ECEE;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.dashboard-card p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+    .main-cont {
+        flex-direction: column;
+    }
+
+    .child1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .child2 {
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .up {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+
+    #date-filt,
+    .sel1,
+    .dat {
+        margin-bottom: 10px;
+    }
+
+    .mid table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        padding: 10px;
+    }
+
+    #sidebar h2 {
+        font-size: 20px;
+    }
+
+    #sidebar li {
+        font-size: 18px;
+    }
+
+    #content {
+        padding: 10px;
+    }
+
+    #content button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .dashboard-card {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 16px;
+    }
+
+    .dashboard-card p {
+        font-size: 14px;
+    }
+}
+#sidebar {
+    width: 300px;
+    background-color: #0E2954;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+    /* color: #F1C376; */
+}
+span{
+    margin: 5px;
+    color: white;
+}
+
+
+#sidebar li {
+
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+ 
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: #F1C376;
+}
+
+#sidebar li:hover{
+    text-decoration: underline;
+    color: #F1C376;
+}
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+    }
+
+    #content {
+        margin-left: 0;
+    }
+}

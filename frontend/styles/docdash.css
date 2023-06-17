@@ -1,0 +1,199 @@
+.Newdoc {
+    color: rgb(222, 64, 17);
+}
+#our {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+.cardagain {
+    display: flex;
+    border: none;
+    margin: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cardagain>div:nth-child(1) {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(239, 239, 239);
+}
+
+.cardagain>div img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.cardagain>div {
+    flex: 1;
+    padding: 20px;
+    font-size: 17px;
+    color: rgb(50, 49, 49);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.cardagain h3,
+.cardagain h5,
+.cardagain p {
+    margin: 0;
+}
+
+.cardagain h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.cardagain h5 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.cardagain p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.cardagain p:last-child {
+    margin-bottom: 0;
+}
+
+#appointmentdiv {
+    margin-top: 20px;
+}
+
+#appointmentdiv h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#appointment-table th,
+#appointment-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#appointment-table th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+#appointment-table td:last-child {
+    text-align: center;
+}
+
+#appointmentdiv {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+#appointmentdiv h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+#appointment-table th,
+#appointment-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+#appointment-table th:last-child,
+#appointment-table td:last-child {
+    border-right: none;
+}
+
+#appointment-table th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+#updateForm {
+    display: none;
+width: 500px;
+position: fixed;
+top:80px;
+left: 35%; 
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+background-color: #e0dfdf ;
+border: 1px solid #ccc;
+border-radius: 5px;
+z-index: 1;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#updateForm label {
+display: inline-block;
+width: 150px;
+font-weight: bold;
+}
+#updateForm select {
+width: 300px;
+padding: 5px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-bottom: 10px;
+}
+#updateForm input[type="submit"]{
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.status-update-btn{
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+#updateForm input[type="submit"]:hover ,.status-update-btn:hover{
+background-color: #45a049;
+}
+#closeButton {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: transparent;
+border: none;
+font-size: 20px;
+cursor: pointer;
+color: #000;
+}
+
+#closeButton:hover {
+color: #ff0000;
+}
