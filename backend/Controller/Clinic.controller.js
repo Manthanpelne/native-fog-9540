@@ -96,4 +96,12 @@ const addDoctorToClinic = async (req, res) => {
 
     }
 }
-module.exports = { getClinic,GetClinicByID, postClinic, updateClinic, deleteClinic, addDoctorToClinic }
+const getAllClinic = async (req, res) => {
+    try {
+        const data = await ClinicModel.find()
+        res.status(200).send(data)
+    } catch (error) {
+        res.status(404).send({ "msg": "404 Bad Request", "err": error.message })
+    }
+}
+module.exports = { getClinic,GetClinicByID, postClinic, updateClinic, deleteClinic, addDoctorToClinic ,getAllClinic}
