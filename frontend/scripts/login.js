@@ -52,9 +52,42 @@ form.addEventListener("submit", (e) => {
             }
         })
         .catch((err) => console.log(err));
-});
+}); 
 
-
+  document.getElementById("forget").addEventListener("click", function () {
+    // Display SweetAlert modal
+    Swal.fire({
+      title: "Reset Password",
+      input: "email",
+      inputPlaceholder: "Enter your email",
+      showCancelButton: true,
+      confirmButtonText: "Submit",
+    }).then((result) => {
+      // Handle submit button click
+      if (result.isConfirmed) {
+        // Send API request to your backend route for password reset
+        fetch("http://localhost:4500/user/reset-password", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: result.value,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Display success message or error message from the response
+            Swal.fire(data.msg);
+          })
+          .catch((error) => {
+            console.error(error);
+            // Display error message
+            Swal.fire("An error occurred. Please try again.");
+          });
+      }
+    });
+  });
 // let googleBtn = document.getElementById("gbtn");
 
 // googleBtn.addEventListener("click", () => {
