@@ -16,6 +16,8 @@ form.addEventListener("submit", (e) => {
     })
         .then((res) => res.json())
         .then((res) => {
+            arr.push(res.user._id)
+            localStorage.setItem("userID",arr)
             if (res.msg == "login Success") {
                 const user = {
                     name: res.user.name,
