@@ -10,6 +10,21 @@ const getClinic = async (req, res) => {
         res.status(404).send({ "msg": "404 Bad Request", "err": error.message })
     }
 }
+
+
+const GetClinicByID = async (req, res) => {
+    try {
+        const ID = req.params.id;
+        const clinicData = await ClinicModel.findById({ _id: ID }).populate("doctors")
+        res.status(201).send(clinicData)
+
+    } catch (error) {
+        res.status(401).send({ "msg": "Bad Request 404", "ok": false, "err": error.message })
+
+    }
+}
+
+
 const postClinic = async (req, res) => {
     try {
         const Payload = req.body
@@ -81,7 +96,6 @@ const addDoctorToClinic = async (req, res) => {
 
     }
 }
-
 const getAllClinic = async (req, res) => {
     try {
         const data = await ClinicModel.find()
@@ -90,4 +104,4 @@ const getAllClinic = async (req, res) => {
         res.status(404).send({ "msg": "404 Bad Request", "err": error.message })
     }
 }
-module.exports = { getClinic, postClinic, updateClinic, deleteClinic, addDoctorToClinic,getAllClinic }
+module.exports = { getClinic,GetClinicByID, postClinic, updateClinic, deleteClinic, addDoctorToClinic ,getAllClinic}
