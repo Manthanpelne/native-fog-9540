@@ -74,6 +74,11 @@
           <label for="qualification">Qualification:</label>
           <input type="text" id="qualification" name="qualification" /><br />
 
+          <label for="clinic">Clinic:</label>
+          <select id="clinic" name="clinic" required>
+                        <!-- options will be dynamically added by JavaScript -->
+          </select><br><br>
+
           <label for="experience">Experience:</label>
           <input type="number" id="experience" name="experience" /><br />
 
@@ -106,4 +111,36 @@
     form2.classList.add("active");
     form1.classList.remove("active");
   });
+
+  async function fetchData() {
+  try {
+    let res = await fetch(`http://localhost:4500/clinic/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    let data = await res.json();
+
+    const selectClinic = document.getElementById("clinic");
+    selectClinic.innerHTML = "";
+    const selectClinicOption = document.createElement("option");
+    selectClinicOption.value = "select_clinic";
+    selectClinicOption.text = "Select Clinic";
+    selectClinic.appendChild(selectClinicOption);
+    data.forEach((element) => {
+      const option = document.createElement("option");
+      option.value = element._id;
+      option.text = element.name;
+      selectClinic.appendChild(option);
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+fetchData();
+
 </script>
