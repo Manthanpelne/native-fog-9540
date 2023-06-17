@@ -1,10 +1,11 @@
 const express = require('express');
-const { getClinic, postClinic, updateClinic, deleteClinic, addDoctorToClinic } = require('../Controller/Clinic.controller');
+const { getClinic, postClinic, updateClinic, deleteClinic,GetClinicByID, addDoctorToClinic } = require('../Controller/Clinic.controller');
 const { auth } = require('../Middleware/Auth.middleware');
 const { role } = require('../Middleware/Role.middleware');
 const ClinicRouter = express.Router()
 
 ClinicRouter.get("/", getClinic)
+ClinicRouter.get("/:id",GetClinicByID)
 ClinicRouter.post("/add", auth, role(["Admin"]), postClinic)
 ClinicRouter.patch("/update/:id", auth, role(["Admin"]), updateClinic)
 ClinicRouter.delete("/delete/:id", auth, role(['Admin']), deleteClinic)
