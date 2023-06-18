@@ -8,7 +8,7 @@ form.addEventListener("submit", (e) => {
         password: document.getElementById("password").value
     };
     // console.log(data);
-    fetch(`http://localhost:4500/user/register`, {
+    fetch(`https://hilarious-bear-vestments.cyclic.app/user/register`, {
         method: "POST",
         headers: {
             "content-type": "application/json",

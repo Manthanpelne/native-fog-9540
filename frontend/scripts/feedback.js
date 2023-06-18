@@ -1,4 +1,4 @@
-const BASE_SERVER_URL = `http://localhost:4500`
+const BASE_SERVER_URL = `https://hilarious-bear-vestments.cyclic.app`
 
 let formele = document.querySelector("form")
 
