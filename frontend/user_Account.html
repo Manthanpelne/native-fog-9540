@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
     </style>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" type="image/x-icon" href="/DentDesk.png">
-    
+
     <link rel="stylesheet" href="./styles/user_Accounts.css">
-    <title>  User Accounts</title>
+    <title> User Accounts</title>
 </head>
+
 <body>
     <div id="sidebar">
         <h2>Menu</h2>
@@ -25,17 +27,26 @@
                 <span class="material-symbols-outlined">badge</span><a href="./user_Appointment.html">Appointments</a>
             </li>
             <li>
-                <span class="material-symbols-outlined">account_circle</span><a href="./user_Account.html">My Account</a>
+                <span class="material-symbols-outlined">account_circle</span><a href="./user_Account.html">My
+                    Account</a>
             </li>
             <li>
                 <span class="material-symbols-outlined">
                     outpatient_med
                 </span><a href="./clinics.html">Clinics</a>
             </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    home
+                    </span><a href="./index.html">Home Page</a>
+            </li>
             <!-- <li>
                 <span class="material-symbols-outlined">logout</span><a id="Logout-anch" href="#">Logout</a>
             </li> -->
         </ul>
+    </div>
+    <div id="display-user-name">
+        <h2 id="show-name"></h2>
     </div>
 
     <div id="content">
@@ -64,4 +75,5 @@
 
     <script src="./scripts/user_Accounts.js"></script>
 </body>
+
 </html>

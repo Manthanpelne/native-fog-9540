@@ -135,3 +135,11 @@ Logout_anch.addEventListener("click", async () => {
 
 
 })
+let userLS = JSON.parse(localStorage.getItem("user"))|| []
+let show_name = document.getElementById("show-name")
+let display_user_name= document.getElementById("display-user-name")
+if (token) {
+    show_name.textContent = `Mr . ${userLS.name}`
+}else{
+    display_user_name.style.display = "none"
+}

@@ -42,7 +42,7 @@ logout_btn.addEventListener("click", async () => {
                 showConfirmButton: false,
                 timer: 1500,
             });
-         
+
             setTimeout(() => {
                 localStorage.clear("token")
                 window.location.reload()
@@ -57,9 +57,16 @@ logout_btn.addEventListener("click", async () => {
 
 
 })
-if(!token){
+if (!token) {
     logout_btn.textContent = "Login"
-    logout_btn.addEventListener("click",()=>{
+    logout_btn.addEventListener("click", () => {
         window.location.href = "./login.html"
     })
+}
+let show_name = document.getElementById("show-name")
+let display_user_name= document.getElementById("display-user-name")
+if (token) {
+    show_name.textContent = `Mr . ${userLS.name}`
+}else{
+    display_user_name.style.display = "none"
 }

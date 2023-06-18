@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
 #our {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     width: 150px;
   }
+  /* body{
+    font-family: 'Open Sans', sans-serif;
+  } */
   .doc {
     color: rgb(255, 77, 0);
   }
@@ -17,13 +22,19 @@
   }
 
   #pune {
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
     width: 250px;
     font-size: 17px;
     background-color: rgb(249, 118, 70);
     color: white;
     padding: 10px;
   }
-
+  /* #pune :hover{
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    /* background-color: black; */
+  /* } */ */
   #doctors {
     width: 85%;
     margin: auto;
@@ -31,6 +42,8 @@
   }
 
   .cardagain {
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
     display: flex;
     border: 1px solid rgb(221, 151, 71);
     margin: 40px;
@@ -42,12 +55,18 @@
   }
  .cardagain>div p{
   padding-top: 7px;
+  margin: 5px;
+  font-size: 17px;
  }
   .cardagain > div img {
+    /* margin: 20px; */
     width: 75%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border: 1px solid black;
     margin-top: 20px;
+  }
+  .cardagain h5{
+    font-size: 19px;
   }
   .cardagain > div {
     width: 50%;
@@ -71,6 +90,7 @@
 
   @media all and (min-width:531px) and (max-width:900px){
 #navbar{
+  font-family: 'Open Sans', sans-serif;
 width: 100%;
 position: sticky;
 height: 100px;
@@ -93,11 +113,15 @@ font-size: 15px;
   }
 
 #pune{
+  border-radius: 5px;
 width: 150px;
 font-size: 13px;
 font-weight: bold;
 }
+.cardagain:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+}
 .cardagain {
     display: flex;
     flex-wrap: wrap;
@@ -153,6 +177,7 @@ font-size: 12px;
   }
 
 #pune{
+  border-radius: 5px;
 width: 160px;
 font-size: 13px;
 font-weight: bold;
@@ -173,6 +198,7 @@ padding-top: 30px;
   }
 
   .book {
+    border-radius: 5px;
     border: none;
     width:100px;
     height: 20px;
@@ -191,4 +217,33 @@ padding-top: 30px;
    margin-top: 0px;
   }
 
+}
+
+#speciality-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+#speciality-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#speciality-form input[type="submit"] {
+  background-color: rgb(249, 118, 70);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
 }

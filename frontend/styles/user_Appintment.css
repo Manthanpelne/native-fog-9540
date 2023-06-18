@@ -231,9 +231,32 @@ a:hover {
         font-size: 14px;
     }
 }
+#display-user-name {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F1C376;
+    color: #333;
+  }
+  
+  
+  #display-user-name:hover {
+    background-color: #795548;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  
+  
+  #show-name {
+    margin: 0;
+  }
+  
 #sidebar {
     width: 300px;
-    background-color: #3E2723;
+    background-color: #795548;
     padding: 20px;
     height: 100vh;
     position: fixed;

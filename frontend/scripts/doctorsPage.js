@@ -11,6 +11,9 @@ async function getDoctors() {
     console.log(fetchdata);
     doc.push(...fetchdata);
     renderDocData(doc);
+    FilterByInp(fetchdata)
+    FilterdatabyLocation(fetchdata)
+    SortByPrice(fetchdata)
   }
 }
 getDoctors();
@@ -67,11 +70,63 @@ function clickBook() {
     });
   }
 }
-// let bookele = document.getElementsByClassName("book")
 
-// bookele.addEventListener("click",()=>{
-//   if(token){
-//     window.location.href
-//   }
-// })
+
+let formele = document.getElementById("speciality-form")
+let nameinp = document.getElementById("speciality-input")
+
+const FilterByInp = (data) => {
+  formele.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const inputValue = nameinp.value.trim().toLowerCase(); // 
+    if (inputValue === "") {
+
+      renderDocData(data);
+      return;
+    }
+
+    let fiteredata = data.filter((ele) => {
+      let name = ele.name.toLowerCase();
+      let location = ele.location.toLowerCase();
+      return name.includes(inputValue) || location.includes(inputValue);
+    });
+    renderDocData(fiteredata);
+  });
+};
+let puneele = document.getElementById("pune");
+
+const FilterdatabyLocation = (data) => {
+  let arr = data;
+  console.log(arr);
+
+  puneele.addEventListener("change", () => {
+    if (puneele.value === "all") {
+      window.location.reload()
+      renderDocData(arr);
+    } else {
+      let filteredvaluebased = data.filter((ele) => {
+        return ele.location === puneele.value;
+      });
+      renderDocData(filteredvaluebased);
+    }
+  });
+};
+let newidele = document.querySelector(".addnew")
+function SortByPrice(data) {
+
+  newidele.addEventListener("change", () => {
+    if (newidele.value == "asc") {
+      let ascsort = [...data].sort((a, b) => a.charge - b.charge)
+      renderDocData(ascsort)
+    } else if (newidele.value == "desc") {
+      let descsort = [...data].sort((a, b) => b.charge - a.charge)
+      renderDocData(descsort)
+    } else {
+      renderDocData(data)
+    }
+// console.log(newidele.value);
+  })
+}
+
 

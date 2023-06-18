@@ -135,7 +135,7 @@ form.addEventListener("submit", (e) => {
 
 //     // Submit form
 //     console.log(data)
-//     fetch("http://localhost:4500/user/login", {
+//     fetch("https://hilarious-bear-vestments.cyclic.app/user/login", {
 //         method: "post",
 //         headers: {
 //             "Content-Type": "application/json"
@@ -173,7 +173,7 @@ form.addEventListener("submit", (e) => {
 //     // console.log(form[0].value,form[1].value);
 // })
 // function fetchLogin(data) {
-//     fetch("http://localhost:4500/user/login", {
+//     fetch("https://hilarious-bear-vestments.cyclic.app/user/login", {
 //         method: "post",
 //         headers: {
 //             "Content-Type": "application/json"

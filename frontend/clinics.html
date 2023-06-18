@@ -1,86 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clinics page</title>
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/DoctorsPage.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clinics page</title>
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/DoctorsPage.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/DentDesk.png">
 </head>
 <style>
-    .cardagain>div img{
-        width: 80%;
-        margin-top: 20px;
-    }
-    .cardagain{
-        width: 70%;
-        margin: auto;
-        margin-top: 50px;
-    }
-</style>
-<body>
-    <div id="navbar">
-        <div><img width="100px" height="70px" src="/DentDesk.png" alt="" /></div>
-        <div><a href="index.html">Home</a></div>
-        <div><a href="">Dashboard</a></div>
-        <div><a href="">Login</a></div>
-        <div><a href="">Sign Up</a></div>
-      </div>
-  
-      <div id="our">
-        <p>Home</p>
-        <p>>></p>
-        <p class="doc">Clinics</p>
-      </div>
-  
-      <div id="filters">
-        <select name="" onchange="searchClinic()" class="cities" id="pune">
-          <option value="Select city">Select City</option>
-          <option value="Pune">Pune</option>
-          <option value="Mumbai">Mumbai</option>
-          <option value="Bengluru">Bangalore</option>
-          <option value="Gurgaon">Gurgaon</option>
-          <option value="Delhi">Delhi</option>
-          <option value="Chennai">Chennai</option>
-          <option value="Kolkata">Kolkata</option>
-        </select>
-        <select name="" id="pune">
-          <option value="Select Treatment">Select Treatment</option>
-        </select>
-        <select name="" id="pune">
-          <option value="Select Speciality">Select Speciality</option>
-        </select>
-      </div>
+  .cardagain>div img {
+    width: 80%;
+    margin-top: 20px;
+  }
 
-   <div id="clinics"></div>
+  .cardagain {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+  }
+</style>
+
+<body>
+  <div id="navbar">
+    <div><a href="./index.html"><img style="width: 100px; height: 70px;" src="/DentDesk.png" alt=""></a></div>
+    <div><a id="toggle-dashboard">Dashboard</a></div>
+
+    <div><a href="doctors.html">Our Doctors</a></div>
+    <div><a href="clinics.html">Hospitals</a></div>
+
+    <div><a id="signup-logout">Login</a></div>
+    <div class="loginUser">
+      <img
+        src="https://th.bing.com/th?id=OIP.f3DM2upCo-p_NPRwBAwbKQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+        alt="">
+      <p class="loginName"></p>
+    </div>
+  </div>
+
+  <div id="our">
+    <p>Home</p>
+    <p>>></p>
+    <p class="doc">Clinics</p>
+  </div>
+
+  <div id="filters">
+    <select name="" onchange="searchClinic()" class="cities" id="pune">
+      <option value="Select city">Select City</option>
+      <option value="Pune">Pune</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Bengluru">Bangalore</option>
+      <option value="Gurgaon">Gurgaon</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Kolkata">Kolkata</option>
+    </select>
+    <select name="" id="pune">
+      <option value="Select Treatment">Select Treatment</option>
+    </select>
+    <select name="" id="pune">
+      <option value="Select Speciality">Select Speciality</option>
+    </select>
+  </div>
+
+  <div id="clinics"></div>
 
 </body>
+
 </html>
 
 <script>
-    let doc = [];
-async function getDoctors() {
-  const data = await fetch("https://hilarious-bear-vestments.cyclic.app/clinic/", {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  if (data.ok) {
-    const fetchdata = await data.json();
-    console.log(fetchdata);
-    doc.push(...fetchdata);
-    cofeedata = doc
-    renderDocData(doc);
+  let doc = [];
+  async function getDoctors() {
+    const data = await fetch("https://hilarious-bear-vestments.cyclic.app/clinic/", {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+    if (data.ok) {
+      const fetchdata = await data.json();
+      console.log(fetchdata);
+      doc.push(...fetchdata);
+      cofeedata = doc
+      renderDocData(doc);
+    }
   }
-}
-getDoctors();
+  getDoctors();
 
-function renderDocData(doc) {
-  let secmaincontainer = document.querySelector("#clinics");
-  secmaincontainer.innerHTML = "";
-  let newarr = doc.map((item) => {
-    return `
+  function renderDocData(doc) {
+    let secmaincontainer = document.querySelector("#clinics");
+    secmaincontainer.innerHTML = "";
+    let newarr = doc.map((item) => {
+      return `
   <div class="cardagain">
       <div>
       <img src="${item.image}"> 
@@ -94,29 +107,30 @@ function renderDocData(doc) {
       </div>
   </div>
   `;
-  });
+    });
 
-  secmaincontainer.innerHTML = newarr.join(" ");
-}
-
-function searchClinic(){
-  let val = document.getElementById("pune").value 
-  for(let i=0;i<doc.length;i++){
-    let newdata = doc.filter(function(el){
-      return el.name.toLowerCase().includes(val.toLowerCase())
-    })
-    renderDocData(newdata)
+    secmaincontainer.innerHTML = newarr.join(" ");
   }
-}
 
-function getDoc(){
- let id = event.target.dataset.id
- localStorage.setItem("clinicID",id)
- setTimeout(()=>{
-  window.location.href = "clinicDoctors.html"
- },2000)
-}
+  function searchClinic() {
+    let val = document.getElementById("pune").value
+    for (let i = 0; i < doc.length; i++) {
+      let newdata = doc.filter(function (el) {
+        return el.name.toLowerCase().includes(val.toLowerCase())
+      })
+      renderDocData(newdata)
+    }
+  }
+
+  function getDoc() {
+    let id = event.target.dataset.id
+    localStorage.setItem("clinicID", id)
+    setTimeout(() => {
+      window.location.href = "clinicDoctors.html"
+    }, 2000)
+  }
 
 
 
 </script>
+<script src="./scripts/navbar.js"></script>

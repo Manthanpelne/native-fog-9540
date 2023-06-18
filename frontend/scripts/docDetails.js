@@ -1,5 +1,4 @@
 
- 
 
 let newarr = []
 const newid = localStorage.getItem("bookID")
