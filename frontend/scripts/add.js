@@ -20,25 +20,25 @@ form.addEventListener("submit", (e) => {
     };
     // const newid = localStorage.getItem("bookID")
     // const id = newid
-    
-    
-    const id = data.clinic
-    console.log(data,id); 
 
-    
-         fetch(`http://localhost:4500/doctor/add/${data.clinic}`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `${token}`
-             },
-                body:JSON.stringify(data)
-            })
-                .then((res) => res.json())
-                .then((data) => {
-    
-                    console.log(data)
-                                if (data.ok) {
+
+    const id = data.clinic
+    console.log(data, id);
+
+
+    fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/add/${data.clinic}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `${token}`
+        },
+        body: JSON.stringify(data)
+    })
+        .then((res) => res.json())
+        .then((data) => {
+
+            console.log(data)
+            if (data.ok) {
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -55,9 +55,9 @@ form.addEventListener("submit", (e) => {
                     text: res.message,
                 });
             }
-                }).catch((err) => { 
-                    console.log(err);
-                })
+        }).catch((err) => {
+            console.log(err);
+        })
 
 });
 
@@ -76,7 +76,7 @@ addClinicForm.addEventListener("submit", (e) => {
         email: document.getElementById("email1").value,
     };
     console.log(data);
-    fetch(`http://localhost:4500/clinic/add`, {
+    fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/add`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -95,8 +95,13 @@ addClinicForm.addEventListener("submit", (e) => {
                     showConfirmButton: false,
                     timer: 1500,
                 });
-                addClinicForm.reset();
-                fetchClinics();
+                document.getElementById("name1").value = ""
+                document.getElementById("address1").value = ""
+                document.getElementById("image1").value = ""
+                document.getElementById("Phone1").value = ""
+                document.getElementById("email1").value = ""
+                // addClinicForm.reset();
+                // fetchClinics();
             } else {
                 Swal.fire({
                     position: "center",
@@ -114,7 +119,7 @@ addClinicForm.addEventListener("submit", (e) => {
                 title: "Failed to add clinic",
                 text: "An error occurred while processing your request.",
             });
-         });
+        });
 });
 
 
@@ -132,7 +137,7 @@ addClinicForm.addEventListener("submit", (e) => {
 //         email: document.getElementById("email3").value,
 //     };
 
-//     fetch("http://localhost:4500/clinic/update", {
+//     fetch("https://hilarious-bear-vestments.cyclic.app/clinic/update", {
 //         method: "PUT",
 //         headers: {
 //             "Content-Type": "application/json",
@@ -194,7 +199,7 @@ addClinicForm.addEventListener("submit", (e) => {
 //         time: document.getElementById("time4").value,
 //     };
 
-//     fetch("http://localhost:4500/doctors/update", {
+//     fetch("https://hilarious-bear-vestments.cyclic.app/doctors/update", {
 //         method: "PUT",
 //         headers: {
 //             "Content-Type": "application/json",
@@ -239,25 +244,34 @@ let docid = localStorage.getItem("bookID")
 console.log(docid)
 userFun(docid)
 async function userFun(id) {
-const Data = await fetch(`http://localhost:4500/doctor/byid/${id}`, {
-  method: "GET",
-  headers: {
-    "content-type": "application/json",
-  },
-});
-if (Data.ok) {
-  const userdata = await Data.json();
- array.push(userdata)
- console.log(array[0])
- mail.value = array[0].email,
- name.value = array[0].name,
- phones.value=array[0].phone,
- qualification.value = array[0].qualification,
- language.value = array[0].language,
- img.value = array[0].image,
- about.value = array[0].about,
- loc.value =array[0].location,
- experience.value = array[0].experience
+    const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+        method: "GET",
+        headers: {
+            "content-type": "application/json",
+        },
+    });
+    if (Data.ok) {
+        const userdata = await Data.json();
+        array.push(userdata)
+        console.log(array[0])
+        mail.value = array[0].email,
+            name.value = array[0].name,
+            phones.value = array[0].phone,
+            qualification.value = array[0].qualification,
+            language.value = array[0].language,
+            img.value = array[0].image,
+            about.value = array[0].about,
+            loc.value = array[0].location,
+            experience.value = array[0].experience
+    }
 }
-}
+let userLS = JSON.parse(localStorage.getItem("user")) || []
 
+
+let show_name = document.getElementById("show-name")
+let display_user_name = document.getElementById("display-user-name")
+if (token) {
+    show_name.textContent = `Mr . ${userLS.name}`
+} else {
+    display_user_name.style.display = "none"
+}

@@ -1,111 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/add.css" />
-    <title>Dent Care Admin Panel</title>
-   
-   
-  </head>
-  <body>
-    <div id="navbar">
-      <div>
-        <h1>DENTDESK</h1>
-      </div>
-      <div>
-        <h1>Admin Panel</h1>
-      </div>
-      <div>
-        <h1>Admin Side</h1>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+  </style>
+  <link rel="stylesheet" href="./styles/add.css" />
+  <title>Dent Care Admin Panel</title>
+
+
+</head>
+
+<body>
+  <div id="sidebar">
+    <h2>ADMIN DASHBOARD</h2>
+    <ul>
+      <li><span class="material-symbols-outlined">
+          dashboard
+        </span><a href="./admin.html">Admin Panel</a></li>
+      <li> <span class="material-symbols-outlined">
+          badge
+        </span><a href="./add.html">Add Doctor/Clinic</a></li>
+      <li><span class="material-symbols-outlined">
+          account_circle
+        </span><a href="./updateclinic.html">Update/Delete CLINIC</a></li>
+      <li><span class="material-symbols-outlined">
+          outpatient_med
+        </span><a href="#">update/Delete DOCTOR</a></li>
+
+      <li><span class="material-symbols-outlined">
+          logout
+        </span><a id="Logout-anch" href="#">Logout</a></li>
+    </ul>
+  </div>
+  <div id="display-user-name">
+    <h2 id="show-name"></h2>
+  </div>
+
+  <div class="toggle-forms">
+    <button id="form1-btn" class="active">Add Clinic</button>
+    <button id="form2-btn">Add Doctors</button>
+
+    <div id="form1" class="form active">
+      <h1>Add Clinic</h1>
+
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name1" name="name" required /><br />
+
+        <label for="address">Address:</label>
+        <textarea id="address1" name="address"></textarea><br />
+
+        <label for="image">Image:</label>
+        <input type="text" id="image1" name="image" /><br />
+
+        <label for="Phone">Phone:</label>
+        <input type="text" id="Phone1" name="number" required /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email1" /><br />
+
+        <input id="submit1" type="submit" value="Submit" />
+      </form>
     </div>
 
-    <div class="toggle-forms">
-      <button id="form1-btn" class="active">Add Clinic</button>
-      <button id="form2-btn">Add Doctors</button>
+    <div id="form2" class="form">
+      <h1>Add Doctors</h1>
+      <form id="docform">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required /><br />
 
-      <div id="form1" class="form active">
-        <h1>Add Clinic</h1>
+        <label for="Phone">Phone:</label>
+        <input type="number" id="phone" name="number" /><br />
 
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name1" name="name" /><br />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
 
-          <label for="address">Address:</label>
-          <textarea id="address1" name="address"></textarea><br />
+        <label for="image">Image:</label>
+        <input type="text" id="image" name="image" /><br />
 
-          <label for="image">Image:</label>
-          <input type="text" id="image1" name="image" /><br />
+        <label for="about">About:</label>
+        <textarea id="about" name="about"></textarea><br />
 
-          <label for="Phone">Phone:</label>
-          <input type="text" id="Phone1" name="number" /><br />
+        <label for="location">Location:</label>
+        <textarea id="location" name="location"></textarea><br />
 
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email1" /><br />
+        <label for="qualification">Qualification:</label>
+        <input type="text" id="qualification" name="qualification" /><br />
 
-          <input id="submit1" type="submit" value="Submit" />
-        </form>
-      </div>
+        <label for="clinic">Clinic:</label>
+        <select id="clinic" name="clinic">
+          <!-- options will be dynamically added by JavaScript required-->
+        </select><br><br>
 
-      <div id="form2" class="form">
-        <h1>Add Doctors</h1>
-        <form id="docform">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" /><br />
+        <label for="experience">Experience:</label>
+        <input type="number" id="experience" name="experience" /><br />
 
-          <label for="Phone">Phone:</label>
-          <input type="number" id="phone" name="number" /><br />
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language" /><br />
 
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" />
+        <label for="charge">Charge:</label>
+        <input type="number" id="charge" name="charge" /><br />
 
-          <label for="image">Image:</label>
-          <input type="text" id="image" name="image" /><br />
+        <label for="time">Timing:</label>
+        <input type="text" id="time" name="Timing" required /><br />
 
-          <label for="about">About:</label>
-          <textarea id="about" name="about"></textarea><br />
-
-          <label for="location">Location:</label>
-          <textarea id="location" name="location"></textarea><br />
-
-          <label for="qualification">Qualification:</label>
-          <input type="text" id="qualification" name="qualification" /><br />
-
-          <label for="clinic">Clinic:</label>
-          <select id="clinic" name="clinic" >
-                        <!-- options will be dynamically added by JavaScript required-->
-          </select><br><br>
-
-          <label for="experience">Experience:</label>
-          <input type="number" id="experience" name="experience" /><br />
-
-          <label for="language">Language:</label>
-          <input type="text" id="language" name="language" /><br />
-
-          <label for="charge">Charge:</label>
-          <input type="number" id="charge" name="charge" /><br />
-
-          <label for="time">Timing:</label>
-          <input type="text" id="time" name="Timing" /><br />
-
-          <input id="submit" type="submit" value="Submit" />
-        </form>
-      </div>
-    
+        <input id="submit" type="submit" value="Submit" />
+      </form>
     </div>
-<!-- update -->
-    <!-- <div class="toggle-forms"> -->
-      <!-- <button id="form3-btn" class="active">Update Clinic</button>
+
+  </div>
+  <!-- update -->
+  <!-- <div class="toggle-forms"> -->
+  <!-- <button id="form3-btn" class="active">Update Clinic</button>
       <button id="form4-btn">Update Doctors</button>
        -->
 
-      <!-- <div id="form3" class="form active">
+  <!-- <div id="form3" class="form active">
         <h1>Update Clinic</h1>
 
         <form>
@@ -125,7 +142,7 @@
         </form>
       </div> -->
 
-      <!-- <div id="form4" class="form">
+  <!-- <div id="form4" class="form">
         <h1>Update Doctors</h1>
         <form>
           <label for="name">Name:</label>
@@ -170,8 +187,9 @@
           <input id="submit4" type="submit" value="Submit" />
         </form>
       </div> -->
-    <!-- </div> -->
-  </body>
+  <!-- </div> -->
+</body>
+
 </html>
 
 <script>
@@ -194,60 +212,62 @@
     form1.classList.remove("active");
   });
 
-//Update clinic and doctors active
-//   const form3Button = document.getElementById("form3-btn");
-//   const form4Button = document.getElementById("form4-btn");
-//   const form3 = document.getElementById("form3");
-//   const form4 = document.getElementById("form4");
+  //Update clinic and doctors active
+  //   const form3Button = document.getElementById("form3-btn");
+  //   const form4Button = document.getElementById("form4-btn");
+  //   const form3 = document.getElementById("form3");
+  //   const form4 = document.getElementById("form4");
 
-//   form3Button.addEventListener("click", function () {
-//     form3Button.classList.add("active");
-//     form4Button.classList.remove("active");
-//     form3.classList.add("active");
-//     form4.classList.remove("active");
-//   });
+  //   form3Button.addEventListener("click", function () {
+  //     form3Button.classList.add("active");
+  //     form4Button.classList.remove("active");
+  //     form3.classList.add("active");
+  //     form4.classList.remove("active");
+  //   });
 
-//   form4Button.addEventListener("click", function () {
-//     form4Button.classList.add("active");
-//     form3Button.classList.remove("active");
-//     form4.classList.add("active");
-//     form3.classList.remove("active");
-//   });
-    
+  //   form4Button.addEventListener("click", function () {
+  //     form4Button.classList.add("active");
+  //     form3Button.classList.remove("active");
+  //     form4.classList.add("active");
+  //     form3.classList.remove("active");
+  //   });
 
-   function fetchData() {
-  try {
-    let res =  fetch(`http://localhost:4500/clinic/`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((response) =>response.json())
-    .then((data)=>{console.log(data)
-    const selectClinic = document.getElementById("clinic");
-    selectClinic.innerHTML = "";
-    const selectClinicOption = document.createElement("option");
-    selectClinicOption.value = "select_clinic";
-    selectClinicOption.text = "Select Clinic";
-    selectClinic.appendChild(selectClinicOption);
-    data.forEach((element) => {
-      const option = document.createElement("option");
-      option.value = element._id;
-      option.text = element.name;
-      selectClinic.appendChild(option);
-    });
-    })
-    
 
-  } catch (error) {
-    console.log(error);
+  function fetchData() {
+    try {
+      let res = fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+          const selectClinic = document.getElementById("clinic");
+          selectClinic.innerHTML = "";
+          const selectClinicOption = document.createElement("option");
+          selectClinicOption.value = "select_clinic";
+          selectClinicOption.text = "Select Clinic";
+          selectClinic.appendChild(selectClinicOption);
+          data.forEach((element) => {
+            const option = document.createElement("option");
+            option.value = element._id;
+            option.text = element.name;
+            selectClinic.appendChild(option);
+          });
+        })
+
+
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
 
-fetchData();
+  fetchData();
 
 </script>
+<!-- <script src="./scripts/navbar.js"></script> -->
 <script src="./scripts/add.js"></script>
-    
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./scripts/Logout.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

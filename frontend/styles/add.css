@@ -4,9 +4,9 @@ body {
   font-family: "Poppins", sans-serif;
   padding: 0;
 
-  background-image: url("https://tse2.mm.bing.net/th?id=OIP.niipNwmymJCvIsd7caO_wQHaEo&pid=Api&P=0&h=180");
-  background-size: cover;
-  background-attachment: fixed;
+  /* background-image: url("https://tse2.mm.bing.net/th?id=OIP.niipNwmymJCvIsd7caO_wQHaEo&pid=Api&P=0&h=180"); */
+  /* background-size: cover;
+  background-attachment: fixed; */
 }
 /* Navbar styles */
 #navbar {
@@ -25,7 +25,72 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+#sidebar {
+  width: 300px;
+  background-color: #F1C376;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+}
 
+#sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: black;
+}
+
+#display-user-name {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #F1C376;
+  color: #333;
+}
+
+#display-user-name:hover {
+  background-color: #795548;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#show-name {
+  margin: 0;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+#sidebar li {
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#sidebar li a {
+  color: black;
+  text-decoration: none;
+}
+
+#sidebar li a:hover {
+  text-decoration: underline;
+  color: gray;
+}
+#sidebar span:hover{
+  text-decoration: underline;
+  color: brown;
+}
+#sidebar span{
+  color: black;
+}
 
 
 #form2,
@@ -33,7 +98,7 @@ body {
   margin: auto;
   padding: 12px 0px;
   width: 50%;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
   display: inline-block;
   padding-bottom: 1.5rem;
@@ -120,6 +185,7 @@ input[type="submit"]:hover {
 
 
 .toggle-forms button {
+  margin-top: 30px;
   padding: 10px 20px;
   background-color: #ccc;
   border: none;
@@ -140,7 +206,7 @@ input[type="submit"]:hover {
 .toggle-forms .form.active {
   display: block !important;
 }
-@media screen and (max-width: 799px) {
+/* @media screen and (max-width: 799px) {
   #form1 > form,
   #form2 > form,
   #form3 > form,
@@ -178,6 +244,118 @@ input[type="submit"]:hover {
     width: 72%;
   }
 
+  #navbar h1 {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 799px) {
+  #form1 > form,
+  #form2 > form,
+  #form3 > form,
+  #form4 > form {
+    width: 80%;
+    margin: auto;
+  }
+
+  #form1,
+  #form2,
+  #form3,
+  #form4 {
+    width: 60%;
+  }
+
+  #navbar h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  #form1 > form,
+  #form2 > form,
+  #form3 > form,
+  #form4 > form {
+    width: 80%;
+  }
+
+  #form1,
+  #form2,
+  #form3,
+  #form4 {
+    width: 72%;
+  }
+
+  #navbar h1 {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 799px) {
+  #sidebar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 799px) {
+  #form1,
+  #form2,
+  #form3,
+  #form4 {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+} */
+/* Media queries */
+@media screen and (max-width: 799px) {
+  /* Move the sidebar above the form */
+  #sidebar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  /* Adjust form width */
+  #form1,
+  #form2,
+  #form3,
+  #form4 {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust navbar heading font size */
+  #navbar h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  /* Move the sidebar above the form */
+  #sidebar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  /* Adjust form width */
+  #form1,
+  #form2,
+  #form3,
+  #form4 {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* Adjust navbar heading font size */
   #navbar h1 {
     font-size: 12px;
   }
