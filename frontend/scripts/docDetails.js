@@ -30,7 +30,7 @@
 
 let newarr = []
 const newid = localStorage.getItem("bookID")
-const token = localStorage.getItem("token")
+// const token = localStorage.getItem("token")
 const id = newid
 getDetailsofDoc(id)
 async function getDetailsofDoc(id) {
