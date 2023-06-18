@@ -35,18 +35,21 @@
 
         <form>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" /><br />
+          <input type="text" id="name1" name="name" /><br />
 
-          <label for="image">Address:</label>
-          <textarea id="details" name="address"></textarea><br />
+          <label for="address">Address:</label>
+          <textarea id="address1" name="address"></textarea><br />
 
-          <label for="image">Phone:</label>
-          <input type="text" id="image" name="number" /><br />
+          <label for="image">Image:</label>
+          <input type="text" id="image1" name="image" /><br />
+
+          <label for="Phone">Phone:</label>
+          <input type="text" id="Phone1" name="number" /><br />
 
           <label for="email">Email:</label>
-          <input type="email" name="email" id="email" /><br />
+          <input type="email" name="email" id="email1" /><br />
 
-          <input type="submit" value="Submit" />
+          <input id="submit1" type="submit" value="Submit" />
         </form>
       </div>
 
@@ -63,10 +66,10 @@
           <input type="email" name="email" id="email" />
 
           <label for="image">Image:</label>
-          <input type="url" id="image" name="image" /><br />
+          <input type="text" id="image" name="image" /><br />
 
-          <label for="details">About:</label>
-          <textarea id="details" name="details"></textarea><br />
+          <label for="about">About:</label>
+          <textarea id="about" name="about"></textarea><br />
 
           <label for="location">Location:</label>
           <textarea id="location" name="location"></textarea><br />
@@ -85,78 +88,89 @@
           <label for="language">Language:</label>
           <input type="text" id="language" name="language" /><br />
 
+          <label for="charge">Charge:</label>
+          <input type="number" id="charge" name="charge" /><br />
+
           <label for="time">Timing:</label>
-          <input type="time" id="time" name="Timing" /><br />
+          <input type="text" id="time" name="Timing" /><br />
 
           <input id="submit" type="submit" value="Submit" />
         </form>
       </div>
+    
     </div>
 <!-- update -->
-    <div class="toggle-forms">
-      <button id="form3-btn" class="active">Update Clinic</button>
+    <!-- <div class="toggle-forms"> -->
+      <!-- <button id="form3-btn" class="active">Update Clinic</button>
       <button id="form4-btn">Update Doctors</button>
-      
+       -->
 
-      <div id="form3" class="form active">
+      <!-- <div id="form3" class="form active">
         <h1>Update Clinic</h1>
 
         <form>
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" /><br />
+          <input type="text" id="name3" name="name" /><br />
 
-          <label for="image">Address:</label>
-          <textarea id="details" name="address"></textarea><br />
+          <label for="address">Address:</label>
+          <textarea id="address3" name="address"></textarea><br />
 
-          <label for="image">Phone:</label>
-          <input type="text" id="image" name="number" /><br />
+          <label for="number">Phone:</label>
+          <input type="number" id="number3" name="number" /><br />
 
           <label for="email">Email:</label>
-          <input type="email" name="email" id="email" /><br />
+          <input type="email2" name="email3" id="email" /><br />
 
-          <input type="submit" value="Submit" />
+          <input id="submit3" type="submit" value="Submit" />
         </form>
-      </div>
+      </div> -->
 
-      <div id="form4" class="form">
+      <!-- <div id="form4" class="form">
         <h1>Update Doctors</h1>
         <form>
           <label for="name">Name:</label>
-          <input type="text" id="names" name="name" /><br />
+          <input type="text" id="name4" name="name" /><br />
 
-          <label for="image">Phone:</label>
-          <input type="text" id="phones" name="number" /><br />
+          <label for="Phone">Phone:</label>
+          <input type="number" id="phone4" name="number" /><br />
 
           <label for="email">Email:</label>
-          <input type="email" name="email" id="mail" />
+          <input type="email" name="email4" id="email" />
 
           <label for="image">Image:</label>
-          <input type="text" id="images" name="image" /><br />
+          <input type="text" id="image4" name="image" /><br />
 
           <label for="about">About:</label>
-          <textarea id="abouts" name="about"></textarea><br />
+          <textarea id="about4" name="about"></textarea><br />
 
           <label for="location">Location:</label>
-          <textarea id="locations" name="location"></textarea><br />
+          <textarea id="location4" name="location"></textarea><br />
 
           <label for="qualification">Qualification:</label>
-          <input type="text" id="qualifications" name="qualification" /><br />
+          <input type="text" id="qualification4" name="qualification" /><br />
+=
 
           <label for="clinic">Clinic:</label>
           <select id="clinic" name="clinic" required>
-                        <!-- options will be dynamically added by JavaScript -->
+                       
           </select><br><br>
 
           <label for="experience">Experience:</label>
-          <input type="text" id="exp" name="experience" /><br />
+
+          <input type="number" id="experience4" name="experience" /><br />
 
           <label for="language">Language:</label>
-          <input type="text" id="languages" name="language" /><br />
+          <input type="text" id="language4" name="language" /><br />
 
-          <input id="submit" type="submit" value="Submit" />
+<!--           <input type="text" id="exp" name="experience" /><br />
+
+          <label for="language">Language:</label>
+          <input type="text" id="languages" name="language" /><br /> 
+
+          <input id="submit4" type="submit" value="Submit" />
         </form>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
   </body>
 </html>
 
@@ -181,37 +195,35 @@
   });
 
 //Update clinic and doctors active
-  const form3Button = document.getElementById("form3-btn");
-  const form4Button = document.getElementById("form4-btn");
-  const form3 = document.getElementById("form3");
-  const form4 = document.getElementById("form4");
+//   const form3Button = document.getElementById("form3-btn");
+//   const form4Button = document.getElementById("form4-btn");
+//   const form3 = document.getElementById("form3");
+//   const form4 = document.getElementById("form4");
 
-  form3Button.addEventListener("click", function () {
-    form3Button.classList.add("active");
-    form4Button.classList.remove("active");
-    form3.classList.add("active");
-    form4.classList.remove("active");
-  });
+//   form3Button.addEventListener("click", function () {
+//     form3Button.classList.add("active");
+//     form4Button.classList.remove("active");
+//     form3.classList.add("active");
+//     form4.classList.remove("active");
+//   });
 
-  form4Button.addEventListener("click", function () {
-    form4Button.classList.add("active");
-    form3Button.classList.remove("active");
-    form4.classList.add("active");
-    form3.classList.remove("active");
-  });
+//   form4Button.addEventListener("click", function () {
+//     form4Button.classList.add("active");
+//     form3Button.classList.remove("active");
+//     form4.classList.add("active");
+//     form3.classList.remove("active");
+//   });
     
 
-  async function fetchData() {
+   function fetchData() {
   try {
-    let res = await fetch(`http://localhost:4500/clinic/`, {
+    let res =  fetch(`http://localhost:4500/clinic/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-    });
-
-    let data = await res.json();
-
+    }).then((response) =>response.json())
+    .then((data)=>{console.log(data)
     const selectClinic = document.getElementById("clinic");
     selectClinic.innerHTML = "";
     const selectClinicOption = document.createElement("option");
@@ -224,6 +236,8 @@
       option.text = element.name;
       selectClinic.appendChild(option);
     });
+    })
+    
 
   } catch (error) {
     console.log(error);
@@ -234,4 +248,6 @@ fetchData();
 
 </script>
 <script src="./scripts/add.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

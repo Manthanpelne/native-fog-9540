@@ -45,6 +45,8 @@ function renderDocData(doc) {
   secmaincontainer.innerHTML = newarr.join(" ");
 }
 
+
+
 function clickBook() {
 
   if (token) {
@@ -72,3 +74,4 @@ function clickBook() {
 //     window.location.href
 //   }
 // })
+
