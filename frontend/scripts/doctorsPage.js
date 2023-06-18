@@ -45,10 +45,30 @@ function renderDocData(doc) {
   secmaincontainer.innerHTML = newarr.join(" ");
 }
 
-function clickBook(){
-  const  id = event.target.dataset.id
-  localStorage.setItem("bookID",id)
-  setTimeout(() => {
-    window.location.href = "doctorDetails.html"
-  }, 1000);
+function clickBook() {
+
+  if (token) {
+    const id = event.target.dataset.id
+    localStorage.setItem("bookID", id)
+
+    setTimeout(() => {
+      window.location.href = "doctorDetails.html"
+    }, 1000);
+
+  } else {
+    Swal.fire({
+      position: "centre",
+      icon: "error",
+      title: `Please Login First`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 }
+// let bookele = document.getElementsByClassName("book")
+
+// bookele.addEventListener("click",()=>{
+//   if(token){
+//     window.location.href
+//   }
+// })
