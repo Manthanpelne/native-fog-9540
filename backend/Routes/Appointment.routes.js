@@ -16,8 +16,8 @@ AppointmentRoute.get("/all", getallAppointment)
 AppointmentRoute.get("/userAppointment", auth, getuserAppointment);
 
 // all the appointments of the doctor
-AppointmentRoute.get("/doctorAppointment/:id", auth, role(["Doctor"]), getdoctorAppointment);
+AppointmentRoute.get("/doctorAppointment/:id", auth,  getdoctorAppointment);
 // update the appointment
-AppointmentRoute.patch("/doctorAppointment/:id", auth, role(["Doctor"]), updateAppointment);
+AppointmentRoute.patch("/doctorAppointment/:id",  updateAppointment);
 
 module.exports = { AppointmentRoute }

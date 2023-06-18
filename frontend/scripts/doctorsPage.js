@@ -1,6 +1,6 @@
 let doc = [];
 async function getDoctors() {
-  const data = await fetch("http://localhost:4500/doctor/", {
+  const data = await fetch("https://hilarious-bear-vestments.cyclic.app/doctor/", {
     method: "GET",
     headers: {
       "content-type": "application/json",
