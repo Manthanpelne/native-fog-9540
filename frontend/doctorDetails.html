@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="./styles/index.css">
   <link rel="stylesheet" href="./styles/DoctorsPage.css">
   <link rel="stylesheet" href="./styles/docDetails.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="/frontend/styles/loader.css">
+  <script src="/frontend/scripts/loader.js"></script>
+
+  <div id="loader" class="loader"></div>
 </head>
 
 <body>
@@ -34,8 +39,8 @@
     <h3 class="f-head">Book Appointment</h3>
     <label for="date">Name</label><input id="name" placeholder="Enter Name" type="text"><br>
     <label for="date">Email</label><input id="email" placeholder="Enter Email" type="text"><br>
-    <label for="date">Date</label><input id="date" placeholder="Enter Date" type="date"><br>
-    <label for="duration">Timing</label><input id="time" placeholder="Enter Time" type="time"><br>
+    <label for="date">Date</label><input id="date" placeholder="Enter Date" type="date" required><br>
+    <label for="duration">Timing</label><input id="time" placeholder="Enter Time" type="time" required><br>
     <input class="sub" id="Book-APP" type="submit" value="Book Now">
   </form>
 </body>
@@ -67,6 +72,28 @@
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.msg == "Appointment") {
+          Swal.fire({
+            // position: "centre",
+            icon: "success",
+            title: `Appointment Booked Succesfully`,
+            showConfirmButton: true,
+            // timer: 1500,
+          });
+          setTimeout(() => {
+            window.location.href="./user_Dashboard.html"
+          }, 3500);
+        } else {
+          Swal.fire({
+            // position: "centre",
+            icon: "error",
+            title: `${data.msg}`,
+            showConfirmButton: true,
+            // timer: 1500,
+          });
+        }
+
+
       })
       .catch((err) => {
         console.log(err);

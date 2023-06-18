@@ -134,3 +134,49 @@ form{
     margin: 5px 0px 30px 0px;
 }
 
+/* ... previous code ... */
+
+
+@media screen and (max-width: 900px) {
+    #container {
+      width: 80%;
+    }
+  
+    #logo {
+      margin-left: 5%;
+    }
+  
+    #leftmain {
+      width: 70%;
+      margin-left: 15%;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #container {
+      width: 90%;
+    }
+  
+    #logo h3 {
+      font-size: 24px;
+    }
+  
+    #leftmain {
+      width: 90%;
+      margin-left: 5%;
+      padding: 15px;
+    }
+  
+    #continue {
+      margin-bottom: 20px;
+    }
+  }
+  #already {
+    color: white;
+    text-decoration: none;
+  }
+  
+  #already:hover {
+    color: lightgray;
+  }
+  

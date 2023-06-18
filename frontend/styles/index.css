@@ -30,6 +30,7 @@ align-items: center;
 background-color: rgb(121, 62, 62);
 }
 #navbar>div a{
+    cursor: pointer;
 text-decoration: none;
 color: white;
 font-family: sans-serif;

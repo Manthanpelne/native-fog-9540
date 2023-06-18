@@ -1,181 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-page</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<link rel="stylesheet" href="./styles/index.css">
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/DentDesk.png">
+    <link rel="stylesheet" href="./styles/index.css">
     <style>
-     
+
     </style>
 </head>
+
 <body>
     <div id="navbar">
-    <div><img style="width: 100px; height: 70px;" src="/DentDesk.png" alt=""></div>
-    <div><a href="user_Dashboard.html">Dashboard</a></div>
-    <div><a href="doctors.html">Our Doctors</a></div>
-    <div><a href="clinics.html">Hospitals</a></div>
-    <div><a href="login.html">Login</a></div>
-    <div><a href="register.html">Sign Up</a></div>
-    <div class="loginUser">
-        <img src="https://th.bing.com/th?id=OIP.f3DM2upCo-p_NPRwBAwbKQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="">
-        <p class="loginName"></p>
-    </div>
+        <div><img style="width: 100px; height: 70px;" src="/DentDesk.png" alt=""></div>
+        <div><a href="user_Dashboard.html">Dashboard</a></div>
+        <div><a href="doctors.html">Our Doctors</a></div>
+        <div><a href="clinics.html">Hospitals</a></div>
+
+        <div><a id="signup-logout">Login</a></div>
+        <div class="loginUser">
+            <img src="https://th.bing.com/th?id=OIP.f3DM2upCo-p_NPRwBAwbKQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                alt="">
+            <p class="loginName"></p>
+        </div>
     </div>
     <div id="Head">
-            <img
-              class="slide_image"
-              src="https://clovedental.in/wp-content/uploads/2023/06/website-banner-1.png"
-              alt=""
-            />
+        <img class="slide_image" src="https://clovedental.in/wp-content/uploads/2023/06/website-banner-1.png" alt="" />
     </div>
 
     <h1 id="symptoms">SYMPTOMS & TREATMENTS</h1>
     <div id="mid">
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/filling-icon.png" alt="">
-    <p>Dental Fillings</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/root-canal-icon.png" alt="">
-    <p>Root Canal Treatments</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/teeth-removal-icon.png" alt="">
-    <p>Wisdom Teeth Removal</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/braces-aligners-icon.png" alt="">
-    <p>Braces & Aligners</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/dental-implant-icon.png" alt="">
-    <p>Dental Implants</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/dentures-icon.png" alt="">
-    <p>Dentures</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/crowns-bridges-icon.png" alt="">
-    <p>Bridges & Crowns</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/childrens-dentistry-icon.png" alt="">
-    <p>Kids Dentistry</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/smile-makeover-icon.png" alt="">
-    <p>Smile Makeover</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/teeth-whitening-icon.png" alt="">
-    <p>Teeth Whitening</p>
-   </div>
-   <div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/mouth-ulcers-icon.png" alt="">
-    <p>Mouth Ulcers</p>
-   </div><div>
-    <img src="https://clovedental.in/wp-content/themes/clove-child/images/read-more-icon.png" alt="">
-    <p>View More</p>
-   </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/filling-icon.png" alt="">
+            <p>Dental Fillings</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/root-canal-icon.png" alt="">
+            <p>Root Canal Treatments</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/teeth-removal-icon.png" alt="">
+            <p>Wisdom Teeth Removal</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/braces-aligners-icon.png" alt="">
+            <p>Braces & Aligners</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/dental-implant-icon.png" alt="">
+            <p>Dental Implants</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/dentures-icon.png" alt="">
+            <p>Dentures</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/crowns-bridges-icon.png" alt="">
+            <p>Bridges & Crowns</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/childrens-dentistry-icon.png" alt="">
+            <p>Kids Dentistry</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/smile-makeover-icon.png" alt="">
+            <p>Smile Makeover</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/teeth-whitening-icon.png" alt="">
+            <p>Teeth Whitening</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/mouth-ulcers-icon.png" alt="">
+            <p>Mouth Ulcers</p>
+        </div>
+        <div>
+            <img src="https://clovedental.in/wp-content/themes/clove-child/images/read-more-icon.png" alt="">
+            <p>View More</p>
+        </div>
     </div>
 
 
     <h1 id="symptoms">BLOGS</h1>
-<div id="blogs">
-    <div>
-        <img src="https://clovedental.in/wp-content/uploads/2023/06/Restoring-Your-Dental.jpg" alt="">
-        <p>02 June 2023</p>
-        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, error.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptate sed unde, voluptatibus dolor placeat quas. At sunt ad quam suscipit delectus, commodi quo tempora.</p>
-    </div>
-    <div>
-        <img src="https://clovedental.in/wp-content/uploads/2023/06/Restoring-Your-Smile-with-Confidence.jpg" alt="">
-        <p>08 June 2023</p>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quae.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci optio beatae sequi dignissimos cupiditate, dolore deserunt, temporibus delectus quidem labore asperiores nostrum, reprehenderit iure quis.</p>
-    </div>
-    <div>
-        <img src="https://clovedental.in/wp-content/uploads/2023/06/Factors-Affecting.jpg" alt="">
-        <p>12 June 2023</p>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, modi?</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem optio hic ab ullam ex dignissimos eaque explicabo nobis quam, eum quasi quos enim consectetur rem.</p>
-    </div>
-    <div>
-        <img src="https://clovedental.in/wp-content/uploads/2023/06/When-Dental-Implants-Fall-Short.jpg" alt="">
-        <p>15 June 2023</p>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nostrum?</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, perspiciatis dolore veritatis non impedit fugiat, explicabo eum suscipit magnam ad excepturi dolorem mollitia deleniti voluptatibus.</p>
-    </div>
-</div>
-
-<button id="view">View More</button>
-
-
-<div id="info">
-    <div class="one">
-        <img src="https://clovedental.in/wp-content/uploads/2020/10/activity-img-min.jpg" alt="">
-    </div>
-    <div class="two">
+    <div id="blogs">
         <div>
-            <ion-icon class="icon" name="videocam-outline"></ion-icon>
-            <p>Dental Educational Videos</p>
+            <img src="https://clovedental.in/wp-content/uploads/2023/06/Restoring-Your-Dental.jpg" alt="">
+            <p>02 June 2023</p>
+            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, error.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptate sed unde, voluptatibus
+                dolor placeat quas. At sunt ad quam suscipit delectus, commodi quo tempora.</p>
         </div>
         <div>
-            <ion-icon class="icon" name="newspaper-outline"></ion-icon>
-            <p>News & Media</p>
+            <img src="https://clovedental.in/wp-content/uploads/2023/06/Restoring-Your-Smile-with-Confidence.jpg"
+                alt="">
+            <p>08 June 2023</p>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quae.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci optio beatae sequi dignissimos
+                cupiditate, dolore deserunt, temporibus delectus quidem labore asperiores nostrum, reprehenderit iure
+                quis.</p>
         </div>
         <div>
-            <ion-icon class="icon" name="newspaper-outline"></ion-icon>
-            <p>Blogs</p>
+            <img src="https://clovedental.in/wp-content/uploads/2023/06/Factors-Affecting.jpg" alt="">
+            <p>12 June 2023</p>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, modi?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem optio hic ab ullam ex dignissimos eaque
+                explicabo nobis quam, eum quasi quos enim consectetur rem.</p>
         </div>
         <div>
-            <ion-icon class="icon" name="people-outline"></ion-icon>
-            <p>Career</p>
+            <img src="https://clovedental.in/wp-content/uploads/2023/06/When-Dental-Implants-Fall-Short.jpg" alt="">
+            <p>15 June 2023</p>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, nostrum?</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, perspiciatis dolore veritatis non
+                impedit fugiat, explicabo eum suscipit magnam ad excepturi dolorem mollitia deleniti voluptatibus.</p>
         </div>
     </div>
-</div>
+
+    <button id="view">View More</button>
 
 
-<div id="footer">
-    <div>
-        <h2 class="heading">DentDesk Advantage</h2>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-       
+    <div id="info">
+        <div class="one">
+            <img src="https://clovedental.in/wp-content/uploads/2020/10/activity-img-min.jpg" alt="">
+        </div>
+        <div class="two">
+            <div>
+                <ion-icon class="icon" name="videocam-outline"></ion-icon>
+                <p>Dental Educational Videos</p>
+            </div>
+            <div>
+                <ion-icon class="icon" name="newspaper-outline"></ion-icon>
+                <p>News & Media</p>
+            </div>
+            <div>
+                <ion-icon class="icon" name="newspaper-outline"></ion-icon>
+                <p>Blogs</p>
+            </div>
+            <div>
+                <ion-icon class="icon" name="people-outline"></ion-icon>
+                <p>Career</p>
+            </div>
+        </div>
     </div>
-    <div>
-        <h2 class="heading">About Us</h2>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-       
-    </div>
-    <div>
-        <h2 class="heading">Careers</h2>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
-        <p>▶ Lorem ipsum.</p>
 
-    
+
+    <div id="footer">
+        <div>
+            <h2 class="heading">DentDesk Advantage</h2>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+
+        </div>
+        <div>
+            <h2 class="heading">About Us</h2>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+
+        </div>
+        <div>
+            <h2 class="heading">Careers</h2>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+            <p>▶ Lorem ipsum.</p>
+
+
+        </div>
+        <div>
+            <h2 class="heading">Call Us</h2>
+            <p>▶ Lorem
+            <p class="num">0245 4586 125</p>
+            </p>
+            <p>▶ Lorem
+            <p class="num">0245 4586 125</p>
+            </p>
+            <p>▶ Lorem
+            <p class="num">0245 4586 125</p>
+            </p>
+
+        </div>
     </div>
-    <div>
-        <h2 class="heading">Call Us</h2>
-        <p>▶ Lorem <p class="num">0245 4586 125</p></p>
-        <p>▶ Lorem <p class="num">0245 4586 125</p></p>
-        <p>▶ Lorem <p class="num">0245 4586 125</p></p>
-       
-    </div>
-</div>
 </body>
+
 </html>
 <script src="./scripts/index.js"></script>
