@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
     };
-    fetch(`http://localhost:4500/user/login`, {
+    fetch(`https://hilarious-bear-vestments.cyclic.app/user/login`, {
         method: "POST",
         headers: {
             "content-type": "application/json",
@@ -66,7 +66,7 @@ form.addEventListener("submit", (e) => {
       // Handle submit button click
       if (result.isConfirmed) {
         // Send API request to your backend route for password reset
-        fetch("http://localhost:4500/user/reset-password", {
+        fetch("https://hilarious-bear-vestments.cyclic.app/user/reset-password", {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const AddAppointment = async (req, res) => {
         const user = await UserModel.findOne({ _id: req.body.UserId })
 
         if (!user) {
-            return res.status(400).send({"msg":'user not found or Login first'});
+            return res.status(400).send({ "msg": 'user not found or Login first' });
         }
         const existingAppointment = await AppointmentModel.findOne({
             user: req.body.UserId,
@@ -28,7 +28,7 @@ const AddAppointment = async (req, res) => {
 
         const appointment = new AppointmentModel({ user: req.body.UserId, doctor: doctorid, date, time, status })
         await appointment.save()
-
+        console.log(appointment);
         const updateddoctor = await DoctorModel.findOne({ _id: doctorid });
 
         if (!updateddoctor.appointments.includes(appointment._id)) {
@@ -36,12 +36,13 @@ const AddAppointment = async (req, res) => {
         }
 
         await updateddoctor.save()
-
+        console.log(updateddoctor);
         if (!user.appointments.includes(appointment._id)) {
             user.appointments.push(appointment._id)
         }
 
         await user.save()
+        console.log(user);
         const formattedDate = appointment.date.toLocaleDateString('en-GB');
         sendEmail({
             email: `${user.email}`,
@@ -113,33 +114,33 @@ const getallAppointment = async (req, res) => {
 // }
 const getuserAppointment = async (req, res) => {
     try {
-      console.log(req.body.UserId);
-      const user = await UserModel.findOne({ _id: req.body.UserId })
-        .populate({
-          path: 'appointments',
-          populate: {
-            path: 'doctor',
-            model: 'Doctor'
-          }
-        })
-        .populate({
-          path: 'appointments',
-          populate: {
-            path: 'user',
-            model: 'User'
-          }
-        });
-  
-      if (!user) {
-        return res.status(404).send({ message: 'User not found' });
-      }
-  
-      res.status(200).send({ data: user.appointments });
+        console.log(req.body.UserId);
+        const user = await UserModel.findOne({ _id: req.body.UserId })
+            .populate({
+                path: 'appointments',
+                populate: {
+                    path: 'doctor',
+                    model: 'Doctor'
+                }
+            })
+            .populate({
+                path: 'appointments',
+                populate: {
+                    path: 'user',
+                    model: 'User'
+                }
+            });
+
+        if (!user) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+
+        res.status(200).send({ data: user.appointments });
     } catch (error) {
-      res.status(500).send({ message: error.message });
+        res.status(500).send({ message: error.message });
     }
-  };
-  
+};
+
 
 // all the appointment of the doctor
 
