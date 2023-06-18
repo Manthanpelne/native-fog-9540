@@ -17,3 +17,6 @@ setInterval(two,6000)
 setInterval(three,9000)
 setInterval(four,12000)
 
+let name = JSON.parse(localStorage.getItem("user"))
+let loginUser = document.querySelector(".loginName")
+loginUser.innerHTML=name.name
