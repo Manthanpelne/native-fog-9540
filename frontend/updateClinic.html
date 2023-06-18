@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clinics page</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/DoctorsPage.css">
+</head>
+<style>
+    .cardagain>div img{
+        width: 80%;
+        margin-top: 20px;
+    }
+    .cardagain{
+        width: 70%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    #updateClinic{
+        display: none;
+    }
+</style>
+<body>
+    <div id="navbar">
+        <div><img width="100px" height="70px" src="/DentDesk.png" alt="" /></div>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="">Dashboard</a></div>
+        <div><a href="">Login</a></div>
+        <div><a href="">Sign Up</a></div>
+      </div>
+  
+      <div id="our">
+        <p>Home</p>
+        <p>>></p>
+        <p class="doc">Clinics</p>
+      </div>
+
+      <form id="updateClinic">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br />
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea><br />
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phones" name="phone" /><br />
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" /><br />
+
+        <label for="image">Image:</label>
+        <input type="text" name="image" id="image" /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+  
+    
+
+   <div id="clinics"></div>
+
+</body>
+</html>
+
+<script>
+
+    let updateid = localStorage.getItem("clinicID")
+
+let update = document.querySelector("#updateClinic")
+update.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    const requestBody = {
+        name:document.getElementById("name").value,
+        email:document.getElementById("email").value,
+        phone:document.getElementById("phones").value,
+        image:document.getElementById("image").value,
+        address:document.getElementById("address").value
+    };
+    console.log(requestBody)
+    console.log("object");
+     fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/update/${updateid}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+        },
+        body: JSON.stringify(requestBody)
+    }).then(res => res.json())
+        .then(data => {
+              console.log(data)
+        }).catch((error) => {
+            console.log(error)
+        })
+        console.log("after");
+});
+
+
+///////////////
+    let doc = [];
+async function getDoctors() {
+  const data = await fetch("https://hilarious-bear-vestments.cyclic.app/clinic/", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (data.ok) {
+    const fetchdata = await data.json();
+    console.log(fetchdata);
+    doc.push(...fetchdata);
+    cofeedata = doc
+    renderDocData(doc);
+  }
+}
+getDoctors();
+
+function renderDocData(doc) {
+  let secmaincontainer = document.querySelector("#clinics");
+  secmaincontainer.innerHTML = "";
+  let newarr = doc.map((item) => {
+    return `
+  <div class="cardagain">
+      <div>
+      <img src="${item.image}"> 
+      </div>
+      <div>
+          <h3> <h5>Name:</h5>  ${item.name}</h3>
+          <p> <h5>Contact:</h5> ${item.phone}</p>
+          <p>  <h5>Address:</h5>  ${item.address}</p>
+          <p>  <h5>Email:</h5>  ${item.email}</p>
+          <button data-id=${item._id} class="book" onclick="getDoc()">Update clinic</button>
+      </div>
+  </div>
+  `;
+  });
+
+  secmaincontainer.innerHTML = newarr.join(" ");
+}
+
+function searchClinic(){
+  let val = document.getElementById("pune").value 
+  for(let i=0;i<doc.length;i++){
+    let newdata = doc.filter(function(el){
+      return el.name.toLowerCase().includes(val.toLowerCase())
+    })
+    renderDocData(newdata)
+  }
+}
+
+function getDoc(){
+ let id = event.target.dataset.id
+ localStorage.setItem("clinicID",id)
+update.style.display="block"
+updateClinics(id)
+async function updateClinics(id) {
+  const data = await fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/${id}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (data.ok) {
+    const fetchdata = await data.json();
+    console.log(fetchdata)
+    document.getElementById("name").value=fetchdata.name
+       document.getElementById("email").value=fetchdata.email
+       document.getElementById("phones").value=fetchdata.phone
+        document.getElementById("image").value=fetchdata.image
+        document.getElementById("address").value=fetchdata.address
+  }
+}
+}
+
+
+
+</script>
