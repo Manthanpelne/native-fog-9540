@@ -29,7 +29,7 @@ body {
 
 
 #form2,
-#form1 {
+#form1,#form3,#form4 {
   margin: auto;
   padding: 12px 0px;
   width: 50%;
@@ -48,7 +48,8 @@ body {
   opacity: 0.8;
 }
 #form2:hover,
-#form1:hover {
+#form1:hover,
+#form3:hover,#form4:hover {
   background: rgb(122, 52, 52);
  
 }
@@ -107,7 +108,9 @@ input[type="submit"]:hover {
   text-align: center;
 }
 #form1 > form,
-#form2 > form {
+#form2 > form,
+#form3 > form,
+#form4 > form {
   width: 90%;
   margin: auto;
   padding: 0px 30px;
@@ -139,14 +142,18 @@ input[type="submit"]:hover {
 }
 @media screen and (max-width: 799px) {
   #form1 > form,
-  #form2 > form {
+  #form2 > form,
+  #form3 > form,
+#form4 > form {
     width: 80%;
     margin: auto;
     
   }
 
   #form1,
-  #form2 {
+  #form2,
+  #form3 ,
+#form4 {
     width: 60%;
   }
   #navbar h1 {
@@ -156,14 +163,18 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 421px) {
   #form1 > form,
-  #form2 > form {
+  #form2 > form,
+  #form3 > form,
+#form4 > form {
     width: 80%;
    
    
   }
 
   #form1,
-  #form2 {
+  #form2,
+  #form3,
+  #form4  {
     width: 72%;
   }
 

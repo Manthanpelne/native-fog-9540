@@ -32,6 +32,7 @@
 
       <div id="form1" class="form active">
         <h1>Add Clinic</h1>
+
         <form>
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" /><br />
@@ -51,6 +52,74 @@
 
       <div id="form2" class="form">
         <h1>Add Doctors</h1>
+        <form id="docform">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" /><br />
+
+          <label for="Phone">Phone:</label>
+          <input type="number" id="phone" name="number" /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+
+          <label for="image">Image:</label>
+          <input type="url" id="image" name="image" /><br />
+
+          <label for="details">About:</label>
+          <textarea id="details" name="details"></textarea><br />
+
+          <label for="location">Location:</label>
+          <textarea id="location" name="location"></textarea><br />
+
+          <label for="qualification">Qualification:</label>
+          <input type="text" id="qualification" name="qualification" /><br />
+
+          <label for="clinic">Clinic:</label>
+          <select id="clinic" name="clinic" >
+                        <!-- options will be dynamically added by JavaScript required-->
+          </select><br><br>
+
+          <label for="experience">Experience:</label>
+          <input type="number" id="experience" name="experience" /><br />
+
+          <label for="language">Language:</label>
+          <input type="text" id="language" name="language" /><br />
+
+          <label for="time">Timing:</label>
+          <input type="time" id="time" name="Timing" /><br />
+
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+<!-- update -->
+    <div class="toggle-forms">
+      <button id="form3-btn" class="active">Update Clinic</button>
+      <button id="form4-btn">Update Doctors</button>
+      
+
+      <div id="form3" class="form active">
+        <h1>Update Clinic</h1>
+
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" /><br />
+
+          <label for="image">Address:</label>
+          <textarea id="details" name="address"></textarea><br />
+
+          <label for="image">Phone:</label>
+          <input type="text" id="image" name="number" /><br />
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" /><br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
+      <div id="form4" class="form">
+        <h1>Update Doctors</h1>
         <form>
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" /><br />
@@ -84,7 +153,7 @@
           <label for="language">Language:</label>
           <input type="text" id="language" name="language" /><br />
 
-          <input type="submit" value="Submit" />
+          <input id="submit" type="submit" value="Submit" />
         </form>
       </div>
     </div>
@@ -110,6 +179,27 @@
     form2.classList.add("active");
     form1.classList.remove("active");
   });
+
+//Update clinic and doctors active
+  const form3Button = document.getElementById("form3-btn");
+  const form4Button = document.getElementById("form4-btn");
+  const form3 = document.getElementById("form3");
+  const form4 = document.getElementById("form4");
+
+  form3Button.addEventListener("click", function () {
+    form3Button.classList.add("active");
+    form4Button.classList.remove("active");
+    form3.classList.add("active");
+    form4.classList.remove("active");
+  });
+
+  form4Button.addEventListener("click", function () {
+    form4Button.classList.add("active");
+    form3Button.classList.remove("active");
+    form4.classList.add("active");
+    form3.classList.remove("active");
+  });
+    
 
   async function fetchData() {
   try {
@@ -143,3 +233,4 @@
 fetchData();
 
 </script>
+<script src="./scripts/add.js"></script>
