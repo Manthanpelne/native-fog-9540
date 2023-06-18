@@ -52,3 +52,4 @@ function clickBook(){
     window.location.href = "doctorDetails.html"
   }, 1000);
 }
+clickBook();
