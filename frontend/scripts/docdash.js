@@ -23,7 +23,7 @@ clsbtn.addEventListener("click",()=>{
 })
 async function fetchdata() {
     try {
-        let res = await fetch(`http://localhost:4500/doctor/byname?name=${user1.name}&email=${user1.email}`, {
+        let res = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byname?name=${user1.name}&email=${user1.email}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -73,7 +73,7 @@ function renderData(doc) {
 
 async function fetchdata1() {
     try {
-        let res = await fetch(`http://localhost:4500/appointment/doctorAppointment/${doctorid}`, {
+        let res = await fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/doctorAppointment/${doctorid}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -108,7 +108,7 @@ function displayData(data) {
         Dat.innerText = formattedDate;
         Time.innerText = element.time;
         Status.innerText = element.status;
-        await fetch(`http://localhost:4500/user/${element.user}`, {
+        await fetch(`https://hilarious-bear-vestments.cyclic.app/user/${element.user}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -132,7 +132,7 @@ function displayData(data) {
 
               updateform.style.display = 'block'
 
-              await fetch(`http://localhost:4500/appointment/appoint/${AppointmentId}`, {
+              await fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/appoint/${AppointmentId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -158,7 +158,7 @@ formel.addEventListener("submit",async(e)=>{
   status: statusvl.value
 };
 console.log(requestBody)
-    await fetch(`http://localhost:4500/appointment/doctorAppointment/${AppointmentId}`, {
+    await fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/doctorAppointment/${AppointmentId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

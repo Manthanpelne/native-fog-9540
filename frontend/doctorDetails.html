@@ -1,43 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel="stylesheet" href="./styles/DoctorsPage.css">
-    <link rel="stylesheet" href="./styles/docDetails.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./styles/DoctorsPage.css">
+  <link rel="stylesheet" href="./styles/docDetails.css">
 </head>
+
 <body>
-    <div id="navbar">
-        <div><img width="100px" height="70px" src="/DentDesk.png" alt="" /></div>
-        <div><a href="index.html">Home</a></div>
-        <div><a href="">Dashboard</a></div>
-        <div><a href="">Login</a></div>
-        <div><a href="">Sign Up</a></div>
-      </div>
-  
-      <div id="our">
-        <p>Home</p>
-        <p>>></p>
-        <p>Our Doctors</p>
-        <p>>></p>
-        <p class="Newdoc">Book Appointment</p>
-      </div>
+  <div id="navbar">
+    <div><img width="100px" height="70px" src="/DentDesk.png" alt="" /></div>
+    <div><a href="index.html">Home</a></div>
+    <div><a href="">Dashboard</a></div>
+    <div><a href="">Login</a></div>
+    <div><a href="">Sign Up</a></div>
+  </div>
 
-      <div id="doctors">
-      </div>
+  <div id="our">
+    <p>Home</p>
+    <p>>></p>
+    <p>Our Doctors</p>
+    <p>>></p>
+    <p class="Newdoc">Book Appointment</p>
+  </div>
 
-      <form id="form" action="post">
-        <h3 class="f-head">Book Appointment</h3>
-        <label for="date">Name</label><input id="name" placeholder="Enter Name" type="text"><br>
-        <label for="date">Email</label><input id="email" placeholder="Enter Email" type="text"><br>
-        <label for="date">Date</label><input id="date" placeholder="Enter Date" type="text"><br>
-        <label for="duration">Timing</label><input id="time" placeholder="Enter Time" type="text"><br>
-        <input class="sub" type="submit" value="Book Now">
-      </form>
+  <div id="doctors">
+  </div>
+
+  <form id="form">
+    <h3 class="f-head">Book Appointment</h3>
+    <label for="date">Name</label><input id="name" placeholder="Enter Name" type="text"><br>
+    <label for="date">Email</label><input id="email" placeholder="Enter Email" type="text"><br>
+    <label for="date">Date</label><input id="date" placeholder="Enter Date" type="date"><br>
+    <label for="duration">Timing</label><input id="time" placeholder="Enter Time" type="time"><br>
+    <input class="sub" id="Book-APP" type="submit" value="Book Now">
+  </form>
 </body>
-</html>
 
-<script src="./scripts/docDetails.js">
+</html>
+<script src="./scripts/docDetails.js"></script>
+<script>
+  // const newid = localStorage.getItem("bookID")
+  // const token = localStorage.getItem("token")
+  let formele = document.getElementById("form")
+  let timeinp = document.getElementById("time")
+  let dateinp = document.getElementById("date")
+
+  formele.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let reqBody = {
+      date: dateinp.value,
+      time: timeinp.value
+    }
+
+    fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/Book/${newid}`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `${token}`
+      },
+      body: JSON.stringify(reqBody)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  })
+
 </script>
