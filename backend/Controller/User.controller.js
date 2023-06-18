@@ -112,19 +112,20 @@ const resetPassword = async (req, res) => {
       await UserModel.updateOne({ email }, { $set: { password: hashedPassword } });
   
       // Send the email with the plain text password
-      let data = {
-        email: user.email,
+
+      sendEmail({
+        email: `${user.email}`,
         subject: "Password Reset",
         body: `
-          Hi,<br>
-          Your password has been reset. Your new password is:<br>
-          ${plainTextPassword}<br>
-          Please change your password once you log in.<br>
-          Thanks,<br>
-          Dent Desk
-        `,
-      };
-      await sendEmail(data);
+        Hi ${user.name},<br>
+        Your password has been reset. Your new password is:<br>
+        ${plainTextPassword}<br>
+        Please change your password once you log in.<br>
+        Thanks,<br>
+        Dent Desk
+      `,
+    });
+     
   
       res.status(200).send({
         msg: "Password has been reset",
