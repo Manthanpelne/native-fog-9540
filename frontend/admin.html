@@ -3,186 +3,197 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/e962f2728f.js" crossorigin="anonymous"></script>
-    <title>DASHBOARD</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
-        #menu .items li:nth-child(1) {
-            border-left: 4px solid white;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
     </style>
-    <link rel="stylesheet" href="./styles/adminPage.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/DentDesk.png">
+
+    <link rel="stylesheet" href="./styles/user_Accounts.css">
+    <title>ADMIN DASHBOARD</title>
 </head>
 
 <body>
-    <!-- side nav bar -->
-    <section id="menu">
-        <div class="logo">
-            <a href="index.html"><img src="./image/Hangout copy.jpg" alt=""></a>
-            <h4>Hangout</h4>
+    <div id="sidebar">
+        <h2>ADMIN DASHBOARD</h2>
+        <ul>
+            <li><span class="material-symbols-outlined">
+                    dashboard
+                </span><a href="./admin.html">Admin Panel</a></li>
+            <li> <span class="material-symbols-outlined">
+                    badge
+                </span><a href="./add.html">Add Doctor/Clinic</a></li>
+            <li><span class="material-symbols-outlined">
+                    account_circle
+                </span><a href="./updateclinic.html">Update/Delete CLINIC</a></li>
+            <li><span class="material-symbols-outlined">
+                    outpatient_med
+                </span><a href="#">update/Delete DOCTOR</a></li>
+
+            <li><span class="material-symbols-outlined">
+                    logout
+                </span><a id="Logout-anch" href="#">Logout</a></li>
+        </ul>
+    </div>
+    <div id="display-user-name">
+        <h2 id="show-name"></h2>
+    </div>
+
+    <div id="content">
+
+        <h2 id="show"></h2>
+
+        <div class="dashboard-card">
+            <h3>Total Users</h3>
+            <p id="total-Users"></p>
         </div>
-        <div class="items">
-            <li><i class="fa-solid fa-chart-simple"></i> <a href="./admin.html">DASHBOARD</a></li>
-            <li><i class="fa-solid fa-circle-info"></i> <a href="./userinfo.html">USER INFO</a></li>
-            <li><i class="fa-solid fa-people-group"></i> <a href="./totalCustomer.html">TOTAL CUSTOMER</a></li>
+
+        <div class="dashboard-card">
+            <h3>Total Doctor</h3>
+            <p id="scheduled-Doctor"></p>
 
         </div>
-    </section>
-    <!-- top search section -->
-    <section id="interface">
-        <div class="navigation">
-            <div class="n1">
-                <div>
-                    <i id="menu-btn" class="fa-solid fa-bars"></i>
-                </div>
-                <!-- <div class="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="search" id="">
-                </div> -->
-            </div>
-            <!-- profile section -->
-            <div class="profile">
-                <i class="fa-solid fa-bell"></i>
-                <img id="pro" src="./image/person-logo.png" alt="">
-            </div>
+
+        <div class="dashboard-card">
+            <h3>Total Appointments</h3>
+            <p id="total-Appoint"></p>
+
         </div>
-        <!-- info box -->
-        <h3 class="i-name">DASHBOARD</h3>
-        <div class="values">
-            <!-- 1st-->
-            <div class="val-box">
-                <i class="fa-solid fa-users"></i>
-                <div>
-                    <h3>9000</h3>
-                    <span>TOTAL LOGINS</span>
-                </div>
-            </div> 
-            <!-- 2nd -->
-            <div class="val-box">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <div>
-                    <h3>000</h3>
-                    <span>TOTAL ORDERS</span>
-                </div>
-            </div>
-            <!-- 3rd -->
-            <div class="val-box">
-                
-                <i class="fa-solid fa-chart-simple"></i>
 
-                <div>
-                    <h3>56000</h3>
-                    <span>PRODUCT SELL</span>
-                </div>
-            </div>
-            <!-- 4th -->
-            <div class="val-box">
-                <i class="fa-solid fa-sack-dollar"></i> 
-                <div>
-                    <h3>000</h3>
-                    <span>EARNING</span>
-                </div>
-            </div>
+        <div class="dashboard-card">
+            <h3>Total Clinics</h3>
+            <p id="total-Clinics"></p>
+
         </div>
-        <div class="board">
-            <table width="100%">
-                <thead>
-                    <tr>
-                        <td>NAME</td>
-                        <td>TITLE</td>
-                        <td>STATUS</td>
-                        <td>ROLE</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
 
-                </tbody>
-            </table>
-        </div>
-    </section>
-    <script>
-        // toggle
-        $(`#menu-btn`).click(function () {
-            $(`#menu`).toggleClass("active")
-        })
-        // variables
-        let tbody = document.querySelector("tbody")
-        let changeProfile = document.getElementById("pro")
-        let email = localStorage.getItem("e")
-        let data = JSON.parse(localStorage.getItem("email"))
-        let x;
-        let edit = document.querySelectorAll(".edit")
-        // getting profile
-        data.forEach((ele) => {
-            if (ele.email == email) {
-                x = ele.profile
-            }
-        });
-        changeProfile.src = `${x}`
-
-        // admin data
-        let arr = [{ img: "image/himanshu.png", name: "Himanshu", email: "himanshu@gmail.com", desc: "owner", p: "web devloper", active: "active", role: "Team lead", edit: "View Profile", work: "", contact: { number: 09898709, github: "https://github.com/himanshu60", linkdin: "" } },
-        { img: "image/person-logo.png", name: "Rahul", email: "rahul@gmail.com", desc: "section", p: "web devloper", active: "active", role: "developer", edit: "View Profile", work: "", contact: { number: 09898709, github: "https://github.com/257277", linkdin: "", } },
-        { img: "image/saloni.png", name: "saloni", email: "saloni@gmail.com", desc: "section", p: "web devloper", active: "active", role: "developer", edit: "View Profile", work: "", contact: { number: 09898709, github: "https://github.com/Saloni0282", linkdin: "" } },
-        { img: "image/person-logo.png", name: "Yuvraj", email: "yuvraj@gmail.com", desc: "section", p: "web devloper", active: "active", role: "developer", edit: "View Profile", work: "", contact: { number: 09898709, github: "https://github.com/Yuvraj1307", linkdin: "", } },
-        ]
+    </div>
 
 
-        arr.forEach((ele) => {
-            let tr = document.createElement("tr")
-            // 1st td
-            let td1 = document.createElement("td")
-            td1.classList.add("people")
-            let img = document.createElement("img")
-            img.setAttribute("src", `${ele.img}`)
-            let div = document.createElement("div")
-            div.classList.add("people-de")
-            let h5 = document.createElement("h5")
-            h5.innerText = `${ele.name}`
-            let p = document.createElement("p")
-            p.innerText = `${ele.email}`
-            div.append(h5, p)
-            td1.append(img, div)
-            // 2nd td
-            let td2 = document.createElement("td")
-            td2.classList.add("people-des")
-            let h52 = document.createElement("h5")
-            h52.innerText = `${ele.desc}`
-            let p2 = document.createElement("p")
-            p2.innerText = `${ele.p}`
-            td2.append(h52, p2)
-            // 3rd td
-            let td3 = document.createElement("td")
-            td3.classList.add("active")
-            let p3 = document.createElement("p")
-            p3.innerText = `${ele.active}`
-            td3.append(p3)
-            // 4th td
-            let td4 = document.createElement("td")
-            td4.classList.add("role")
-            let p4 = document.createElement("p")
-            p4.innerText = `${ele.role}`
-            td4.append(p4)
-            // 5th td
-            let td5 = document.createElement("td")
-            td5.classList.add("edit")
-            let a = document.createElement("a")
-            a.setAttribute("href", "#")
-            a.addEventListener("click", () => {
-                localStorage.setItem("see", JSON.stringify(ele))
-                self.location = "edit.html"
-            })
-            a.innerText = `${ele.edit}`
-            td5.append(a)
-            tr.append(td1, td2, td3, td4, td5)
-            tbody.append(tr)
-        })
-
-    </script>
 </body>
+<script>
+    let userLS = JSON.parse(localStorage.getItem("user")) || []
+    let token = localStorage.getItem("token") || ""
+    const URL = "https://hilarious-bear-vestments.cyclic.app"
 
+    let show_name = document.getElementById("show-name")
+    let display_user_name = document.getElementById("display-user-name")
+    if (token) {
+        show_name.textContent = `Mr . ${userLS.name}`
+    } else {
+        display_user_name.style.display = "none"
+    }
+
+
+    let total_Users = document.getElementById("total-Users")
+    let scheduled_Doctor = document.getElementById("scheduled-Doctor")
+    let total_Appoint = document.getElementById("total-Appoint")
+    let total_Clinics = document.getElementById("total-Clinics")
+    
+    const FetchedData = async () => {
+        let res
+        try {
+            res = await fetch(`${URL}/user/Alluser`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                }
+            })
+            // arr.push(data.data[0]._id)
+            // console.log(data.data[0]._id);
+            
+        } catch (error) {
+            console.log(error);
+        }
+        let data = await res.json()
+        // console.log(data);
+        total_Users.textContent = data.users.length
+        
+        let x
+        try {
+            x = await fetch(`${URL}/clinic/`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                   
+                }
+            })
+            // arr.push(data.data[0]._id)
+            // console.log(data.data[0]._id);
+
+        } catch (error) {
+            console.log(error);
+        }
+        let da = await x.json()
+        // console.log(data1);
+        // console.log(data2);
+        scheduled_Doctor.textContent = da.length
+        
+        
+        
+        let re
+        try {
+            re = await fetch(`${URL}/appointment/all`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                }
+            })
+            // arr.push(data.data[0]._id)
+            // console.log(data.data[0]._id);
+            
+        } catch (error) {
+            console.log(error);
+        }
+        let data1 = await re.json()
+        // console.log(data1);
+        // console.log(data);
+        total_Appoint.textContent = data1.appointments.length
+        
+        
+        
+        //clinic
+
+
+        let eror
+        try {
+            resp = await fetch(`${URL}/clinic/`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                   
+                }
+            })
+            // arr.push(data.data[0]._id)
+            // console.log(data.data[0]._id);
+
+        } catch (error) {
+            console.log(error);
+        }
+        let data2 = await resp.json()
+        // console.log(data1);
+        // console.log(data2);
+        total_Clinics.textContent = data2.length
+        
+        
+        
+        //doctor get
+        
+        
+    }
+    FetchedData()
+
+    
+
+    
+    
+    
+</script>
+
+
+<script src="./scripts/Logout.js"></script>
 </html>
