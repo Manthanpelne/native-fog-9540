@@ -48,6 +48,8 @@ function renderDocData(doc) {
   secmaincontainer.innerHTML = newarr.join(" ");
 }
 
+
+
 function clickBook() {
 
   if (token) {
@@ -68,6 +70,7 @@ function clickBook() {
     });
   }
 }
+
 
 let formele = document.getElementById("speciality-form")
 let nameinp = document.getElementById("speciality-input")
@@ -125,4 +128,5 @@ function SortByPrice(data) {
 // console.log(newidele.value);
   })
 }
+
 
