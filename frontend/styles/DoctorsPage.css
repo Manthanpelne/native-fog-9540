@@ -40,12 +40,14 @@
   .cardagain > div:nth-child(1) {
     text-align: center;
   }
- 
+ .cardagain>div p{
+  padding-top: 7px;
+ }
   .cardagain > div img {
-    width: 85%;
+    width: 75%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border: 1px solid black;
-    margin-top: 70px;
+    margin-top: 20px;
   }
   .cardagain > div {
     width: 50%;

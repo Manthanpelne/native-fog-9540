@@ -6,11 +6,12 @@
 }
 
 #form{
-    max-width: 400px;
+    max-width: 550px;
     border: 1px solid rgb(240, 165, 44);
-    height: 480px;
+    height: 400px;
     margin: auto;
-   padding-left: 10%;
+    margin-bottom: 20px;
+   padding-left: 5%;
    font-size: 17px;
    background-color: rgb(148, 74, 74);
    font-family: sans-serif;
@@ -20,15 +21,16 @@
     font-weight: bold;
 }
 #form label:nth-child(2){
-    padding-right: 32px;
+    padding-right: 0px;
 }
 
 #form input{
     margin-top: 30px;
-    margin-left: 30px;
-    width: 200px;
+    margin-left: 10px;
+    width: 300px;
     height: 40px;
 }
+
 
 .sub{
     background-color: rgb(213, 125, 36);

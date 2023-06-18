@@ -34,12 +34,29 @@ text-decoration: none;
 color: white;
 font-family: sans-serif;
 font-weight: bold;
-font-size: 22px;
+font-size: 19px;
 }
 #mid{
 display: grid;
 grid-template-columns: repeat(6,1fr);
 grid-gap: 20px;
+}
+.loginUser{
+    display: flex;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    font-family: sans-serif;
+    width: 120px;
+    justify-content: space-around;
+}
+.loginUser img{
+width: 30px;
+border-radius: 100%;
+}
+.loginUser p{
+    padding-left: 10px;
+    padding-top: 2px;
 }
 
 #mid>div{
@@ -131,6 +148,7 @@ font-family: sans-serif;
 #footer>div{
 border:1px solid white;
 text-align: center;
+padding-top: 50px;
 }
 #footer>div h2{
 color: rgb(187, 123, 6);
