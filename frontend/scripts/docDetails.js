@@ -1,32 +1,34 @@
-    
+
+ 
+
+let newarr = []
+const newid = localStorage.getItem("bookID")
+// const token = localStorage.getItem("token")
+const id = newid
+getDetailsofDoc(id)
+async function getDetailsofDoc(id) {
+  const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (Data.ok) {
+    const fetchdata = await Data.json();
+    newarr.push(fetchdata);
+    console.log(newarr)
+    renderDocData(newarr)
+  }
+}
 
 
-    let newarr = []
-    const newid = localStorage.getItem("bookID")
-    const id = newid
-    getDetailsofDoc(id)
-     async function getDetailsofDoc(id){
-         const Data = await fetch(`http://localhost:4500/doctor/byid/${id}`, {
-     method: "GET",
-     headers: {
-       "content-type": "application/json",
-     },
-   });
-   if (Data.ok) {
-     const fetchdata = await Data.json();
-     newarr.push(fetchdata);
-     console.log(newarr)
-     renderDocData(newarr)
-   }
-     }
- 
- 
-     function renderDocData(newarr) {
-   let secmaincontainer = document.querySelector("#doctors");
-   secmaincontainer.innerHTML = "";
- 
-   let arr = newarr.map((item) => {
-     return `
+function renderDocData(newarr) {
+  let secmaincontainer = document.querySelector("#doctors");
+  secmaincontainer.innerHTML = "";
+
+  let arr = newarr.map((item) => {
+    return `
+
    <div class="cardagain">
        <div>
        <img src="${item.image}"> 
@@ -46,33 +48,34 @@
        </div>
    </div>
    `;
-   });
-   secmaincontainer.innerHTML = arr.join(" ");
- }
+  });
+  secmaincontainer.innerHTML = arr.join(" ");
+}
 
 
 
- /////////////////////////////////////
+/////////////////////////////////////
 
- let mail = document.querySelector("#email")
+let mail = document.querySelector("#email")
 let name = document.querySelector("#name")
- 
- let a = []
- let userid = localStorage.getItem("userID")
- userFun(userid)
-     async function userFun(id){
-         const Data = await fetch(`http://localhost:4500/user/${id}`, {
-     method: "GET",
-     headers: {
-       "content-type": "application/json",
-     },
-   });
-   if (Data.ok) {
-     const userdata = await Data.json();
-     a.push(userdata.user)
-     mail.value = a[0].email
-     name.value = a[0].name
-   }
-  }
 
-  
+let a = []
+let userid = localStorage.getItem("userID")
+userFun(userid)
+async function userFun(id) {
+  const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/user/${id}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (Data.ok) {
+    const userdata = await Data.json();
+    a.push(userdata.user)
+    mail.value = a[0].email
+    name.value = a[0].name
+  }
+}
+
+
+

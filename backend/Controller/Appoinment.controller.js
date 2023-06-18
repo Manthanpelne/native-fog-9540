@@ -113,33 +113,33 @@ const getallAppointment = async (req, res) => {
 // }
 const getuserAppointment = async (req, res) => {
     try {
-      console.log(req.body.UserId);
-      const user = await UserModel.findOne({ _id: req.body.UserId })
-        .populate({
-          path: 'appointments',
-          populate: {
-            path: 'doctor',
-            model: 'Doctor'
-          }
-        })
-        .populate({
-          path: 'appointments',
-          populate: {
-            path: 'user',
-            model: 'User'
-          }
-        });
-  
-      if (!user) {
-        return res.status(404).send({ message: 'User not found' });
-      }
-  
-      res.status(200).send({ data: user.appointments });
+        console.log(req.body.UserId);
+        const user = await UserModel.findOne({ _id: req.body.UserId })
+            .populate({
+                path: 'appointments',
+                populate: {
+                    path: 'doctor',
+                    model: 'Doctor'
+                }
+            })
+            .populate({
+                path: 'appointments',
+                populate: {
+                    path: 'user',
+                    model: 'User'
+                }
+            });
+
+        if (!user) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+
+        res.status(200).send({ data: user.appointments });
     } catch (error) {
-      res.status(500).send({ message: error.message });
+        res.status(500).send({ message: error.message });
     }
-  };
-  
+};
+
 
 // all the appointment of the doctor
 

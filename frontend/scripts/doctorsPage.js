@@ -1,6 +1,6 @@
 let doc = [];
 async function getDoctors() {
-  const data = await fetch("http://localhost:4500/doctor/", {
+  const data = await fetch("https://hilarious-bear-vestments.cyclic.app/doctor/", {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -45,11 +45,33 @@ function renderDocData(doc) {
   secmaincontainer.innerHTML = newarr.join(" ");
 }
 
-function clickBook(){
-  const  id = event.target.dataset.id
-  localStorage.setItem("bookID",id)
-  setTimeout(() => {
-    window.location.href = "doctorDetails.html"
-  }, 1000);
+
+
+function clickBook() {
+
+  if (token) {
+    const id = event.target.dataset.id
+    localStorage.setItem("bookID", id)
+
+    setTimeout(() => {
+      window.location.href = "doctorDetails.html"
+    }, 1000);
+
+  } else {
+    Swal.fire({
+      position: "centre",
+      icon: "error",
+      title: `Please Login First`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }
 }
-clickBook();
+// let bookele = document.getElementsByClassName("book")
+
+// bookele.addEventListener("click",()=>{
+//   if(token){
+//     window.location.href
+//   }
+// })
+

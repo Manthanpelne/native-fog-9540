@@ -117,6 +117,7 @@ addClinicForm.addEventListener("submit", (e) => {
          });
 });
 
+
 // Update Clinic
 // const updateClinicForm = document.getElementById("form3");
 // const updateClinicSubmit = document.getElementById("submit3");
@@ -219,3 +220,44 @@ addClinicForm.addEventListener("submit", (e) => {
 //                     title: "Failed to update doctor",
 //                     text: res.message,
 //                 });
+
+// update doctors
+
+let mail = document.querySelector("#mail")
+let name = document.querySelector("#names")
+let phones = document.querySelector("#phones")
+let experience = document.querySelector("#exp")
+let qualification = document.querySelector("#qualifications")
+let language = document.querySelector("#languages")
+let img = document.querySelector("#images")
+let about = document.querySelector("#abouts")
+let loc = document.querySelector("#locations")
+
+
+let array = []
+let docid = localStorage.getItem("bookID")
+console.log(docid)
+userFun(docid)
+async function userFun(id) {
+const Data = await fetch(`http://localhost:4500/doctor/byid/${id}`, {
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+  },
+});
+if (Data.ok) {
+  const userdata = await Data.json();
+ array.push(userdata)
+ console.log(array[0])
+ mail.value = array[0].email,
+ name.value = array[0].name,
+ phones.value=array[0].phone,
+ qualification.value = array[0].qualification,
+ language.value = array[0].language,
+ img.value = array[0].image,
+ about.value = array[0].about,
+ loc.value =array[0].location,
+ experience.value = array[0].experience
+}
+}
+

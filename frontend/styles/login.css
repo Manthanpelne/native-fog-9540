@@ -166,29 +166,74 @@ form{
     margin-bottom: 11px;
 }
 /* .echeck */
-.authcheck{
+/* ... previous code ... */
+
+/* .echeck */
+.authcheck {
     font-size: medium;
     width: 100%;
     padding: 13px 0px 13px 5px;
     text-decoration: none;
     border-radius: 6px;
-    /* background-color:#704949; */
     color: white;
     border-width: 0.5px;
     margin-bottom: 30px;
     margin-top: 10px;
-}
-
-/* #spanid */
-#signup{
+  }
+  
+  #signup {
     color: #0073ef;
-}
-
-@media screen and (max-width:700px){
-    #container{
-        max-width: 30vw;
+  }
+  
+  @media screen and (max-width: 700px) {
+    #container {
+      max-width: 80%;
+      margin-top: 30px;
     }
-    /* body{
-        background-image: none;
-    } */
-}
+  
+    #leftmain {
+      margin-left: 5%;
+      width: 90%;
+    }
+  
+    #logo h3 {
+      font-size: 24px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    #container {
+      max-width: 95%;
+      margin-top: 30px;
+    }
+  
+    #leftmain {
+      margin-left: 5%;
+      width: 90%;
+    }
+  
+    #logo h3 {
+      font-size: 20px;
+    }
+  
+    .box {
+      font-size: 14px;
+    }
+  
+    #continue {
+      font-size: 14px;
+    }
+  
+    #forget {
+      font-size: 14px;
+    }
+  
+    #signup {
+      font-size: 14px;
+    }
+  
+    .authcheck {
+      font-size: 14px;
+    }
+  }
+  
