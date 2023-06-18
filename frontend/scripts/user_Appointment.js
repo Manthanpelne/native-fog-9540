@@ -25,7 +25,7 @@ const FetchData = () => {
             FilterByStatus(data.data)
             DisplayDataInTable(data.data)
             dateandSort(data.data)
-
+            // DisplayDoctors(data.data)
             console.log(data);
         })
         .catch((err) => {
@@ -83,17 +83,17 @@ const DisplayDataInTable = (data) => {
 
 const FilterByStatus = (data) => {
     filterele.addEventListener("change", () => {
-      const selectedValue = filterele.value;
-      let filteredData;
-      if (selectedValue === "all") {
-        filteredData = data;
-      } else {
-        filteredData = data.filter((ele) => ele.status === selectedValue);
-      }
-      DisplayDataInTable(filteredData);
+        const selectedValue = filterele.value;
+        let filteredData;
+        if (selectedValue === "all") {
+            filteredData = data;
+        } else {
+            filteredData = data.filter((ele) => ele.status === selectedValue);
+        }
+        DisplayDataInTable(filteredData);
     });
-  };
-  
+};
+
 
 
 
@@ -118,3 +118,33 @@ function dateandSort(data) {
 
     })
 }
+let userLS = JSON.parse(localStorage.getItem("user")) || []
+let show_name = document.getElementById("show-name")
+let display_user_name = document.getElementById("display-user-name")
+if (token) {
+    show_name.textContent = `Mr . ${userLS.name}`
+} else {
+    display_user_name.style.display = "none"
+}
+
+let display_Doctors = document.getElementById("display-Doctors")
+
+// const DisplayDoctors = (data) => {
+//     display_Doctors.innerHTML=""
+
+//     let div = document.createElement("div")
+
+//     data.forEach((ele)=>{
+//         let namedoc = document.createElement("h2")
+//         namedoc.textContent = ele.doctor.name
+//         let img = document.createElement("img")
+//         img.src= ele.doctor.image
+        
+//         let statusdoc = document.createElement("h2")
+//         statusdoc.textContent = ele.status 
+
+//         div.append(namedoc,img,statusdoc)
+//         display_Doctors.append(div)
+        
+//     })
+// }

@@ -1,32 +1,3 @@
- 
-
-
-    let newarr = []
-    const newid = localStorage.getItem("bookID")
-    const id = newid
-    getDetailsofDoc(id)
-     async function getDetailsofDoc(id){
-         const Data = await fetch(`http://localhost:4500/doctor/byid/${id}`, {
-     method: "GET",
-     headers: {
-       "content-type": "application/json",
-     },
-   });
-   if (Data.ok) {
-     const fetchdata = await Data.json();
-     newarr.push(fetchdata);
-     console.log(newarr)
-     renderDocData(newarr)
-   }
-     }
- 
- 
-     function renderDocData(newarr) {
-   let secmaincontainer = document.querySelector("#doctors");
-   secmaincontainer.innerHTML = "";
- 
-   let arr = newarr.map((item) => {
-     return `
 
 let newarr = []
 const newid = localStorage.getItem("bookID")
