@@ -5,7 +5,7 @@ let roleele = document.getElementById("role")
 let userLS = JSON.parse(localStorage.getItem("user")) || []
 let token = localStorage.getItem("token")
 
-const BASE_SERVER_URL = "https://hilarious-bear-vestments.cyclic.app"
+const BASE_SERVER_URL = "https://motionless-seal-windbreaker.cyclic.app"
 
 let logout_btn = document.getElementById("logout-btn")
 

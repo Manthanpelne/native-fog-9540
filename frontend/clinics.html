@@ -47,21 +47,19 @@
 
   <div id="filters">
     <select name="" onchange="searchClinic()" class="cities" id="pune">
-      <option value="Select city">Select City</option>
-      <option value="Pune">Pune</option>
-      <option value="Mumbai">Mumbai</option>
-      <option value="Bengluru">Bangalore</option>
-      <option value="Gurgaon">Gurgaon</option>
-      <option value="Delhi">Delhi</option>
-      <option value="Chennai">Chennai</option>
-      <option value="Kolkata">Kolkata</option>
+      <option value="Select city">Select By Clinics</option>
+      <option value="Delhi Healthcare Clinic">Delhi Healthcare Clinic</option>
+      <option value="Delhi Family Wellness Clinic">Delhi Family Wellness Clinic</option>
+      <option value="Mumbai Healthcare Clinic">Mumbai Healthcare Clinic</option>
+      <option value="Mumbai Medical Center">Mumbai Medical Center</option>
+      <option value="Mumbai Family Wellness Clinic">Mumbai Family Wellness Clinic</option>
+      <option value="Chennai Healthcare Clinic">Chennai Healthcare Clinic</option>
+      <option value="Chennai Medical Center">Chennai Medical Center</option>
+      <option value="Chennai Community Health Center">Chennai Community Health Center
+      </option>
+      <option value="Kolkata Community Health Center">Kolkata Community Health Center</option>
     </select>
-    <select name="" id="pune">
-      <option value="Select Treatment">Select Treatment</option>
-    </select>
-    <select name="" id="pune">
-      <option value="Select Speciality">Select Speciality</option>
-    </select>
+
   </div>
 
   <div id="clinics"></div>
@@ -73,7 +71,7 @@
 <script>
   let doc = [];
   async function getDoctors() {
-    const data = await fetch("https://hilarious-bear-vestments.cyclic.app/clinic/", {
+    const data = await fetch("https://motionless-seal-windbreaker.cyclic.app/clinic/", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -115,10 +113,15 @@
   function searchClinic() {
     let val = document.getElementById("pune").value
     for (let i = 0; i < doc.length; i++) {
-      let newdata = doc.filter(function (el) {
-        return el.name.toLowerCase().includes(val.toLowerCase())
-      })
-      renderDocData(newdata)
+      if (val == "Select city") {
+        renderDocData(doc)
+      } else {
+        let newdata = doc.filter(function (el) {
+          return el.name.toLowerCase().includes(val.toLowerCase())
+        })
+        renderDocData(newdata)
+      }
+
     }
   }
 

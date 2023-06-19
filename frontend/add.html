@@ -117,78 +117,7 @@
     </div>
 
   </div>
-  <!-- update -->
-  <!-- <div class="toggle-forms"> -->
-  <!-- <button id="form3-btn" class="active">Update Clinic</button>
-      <button id="form4-btn">Update Doctors</button>
-       -->
 
-  <!-- <div id="form3" class="form active">
-        <h1>Update Clinic</h1>
-
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name3" name="name" /><br />
-
-          <label for="address">Address:</label>
-          <textarea id="address3" name="address"></textarea><br />
-
-          <label for="number">Phone:</label>
-          <input type="number" id="number3" name="number" /><br />
-
-          <label for="email">Email:</label>
-          <input type="email2" name="email3" id="email" /><br />
-
-          <input id="submit3" type="submit" value="Submit" />
-        </form>
-      </div> -->
-
-  <!-- <div id="form4" class="form">
-        <h1>Update Doctors</h1>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name4" name="name" /><br />
-
-          <label for="Phone">Phone:</label>
-          <input type="number" id="phone4" name="number" /><br />
-
-          <label for="email">Email:</label>
-          <input type="email" name="email4" id="email" />
-
-          <label for="image">Image:</label>
-          <input type="text" id="image4" name="image" /><br />
-
-          <label for="about">About:</label>
-          <textarea id="about4" name="about"></textarea><br />
-
-          <label for="location">Location:</label>
-          <textarea id="location4" name="location"></textarea><br />
-
-          <label for="qualification">Qualification:</label>
-          <input type="text" id="qualification4" name="qualification" /><br />
-=
-
-          <label for="clinic">Clinic:</label>
-          <select id="clinic" name="clinic" required>
-                       
-          </select><br><br>
-
-          <label for="experience">Experience:</label>
-
-          <input type="number" id="experience4" name="experience" /><br />
-
-          <label for="language">Language:</label>
-          <input type="text" id="language4" name="language" /><br />
-
-<!--           <input type="text" id="exp" name="experience" /><br />
-
-          <label for="language">Language:</label>
-          <input type="text" id="languages" name="language" /><br /> 
-
-          <input id="submit4" type="submit" value="Submit" />
-        </form>
-      </div> -->
-  <!-- </div> -->
 </body>
 
 </html>
@@ -213,30 +142,10 @@
     form1.classList.remove("active");
   });
 
-  //Update clinic and doctors active
-  //   const form3Button = document.getElementById("form3-btn");
-  //   const form4Button = document.getElementById("form4-btn");
-  //   const form3 = document.getElementById("form3");
-  //   const form4 = document.getElementById("form4");
-
-  //   form3Button.addEventListener("click", function () {
-  //     form3Button.classList.add("active");
-  //     form4Button.classList.remove("active");
-  //     form3.classList.add("active");
-  //     form4.classList.remove("active");
-  //   });
-
-  //   form4Button.addEventListener("click", function () {
-  //     form4Button.classList.add("active");
-  //     form3Button.classList.remove("active");
-  //     form4.classList.add("active");
-  //     form3.classList.remove("active");
-  //   });
-
 
   function fetchData() {
     try {
-      let res = fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/`, {
+      let res = fetch(`https://motionless-seal-windbreaker.cyclic.app/clinic/`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

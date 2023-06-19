@@ -1,29 +1,17 @@
 let token1 = localStorage.getItem("token") || ""
+
 const user1 = JSON.parse(localStorage.getItem("user")) || "";
-
-
-
-// console.log(doctorid);
-
-
+let tbodyEl = document.querySelector("tbody")
 let clsbtn = document.getElementById("closeButton")
 let updateform = document.getElementById("updateForm")
 let statusvl = document.getElementById("status")
 let formel = document.getElementById("updateForm")
 
-let tbodyEl = document.querySelector("tbody")
-
-
-// window.addEventListener("load", () => {
-
-// })
-
-fetchdata()
-fetchdata1()
 
 clsbtn.addEventListener("click", () => {
     updateform.style.display = "none"
 })
+
 function fetchdata() {
     try {
         fetch(`https://motionless-seal-windbreaker.cyclic.app/doctor/byname?name=${user1.name}&email=${user1.email}`, {
@@ -35,15 +23,36 @@ function fetchdata() {
         })
             .then((res) => res.json())
             .then((data) => {
+                console.log(data.doctor[0]._id);
                 localStorage.setItem("doctorID", data.doctor[0]._id);
                 renderData(data.doctor)
+                return data.doctor[0]._id; // Return the doctorID for the next fetch request
             })
-
+            .then((doctorid) => {
+                // console.log(doctorid);
+                fetch(`https://motionless-seal-windbreaker.cyclic.app/appointment/doctorAppointment/${doctorid}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `${token1}`
+                    },
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data.data);
+                        displayData(data.data);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
-
 function renderData(doc) {
     let maincontainer = document.querySelector("#detailsdoc");
     maincontainer.innerHTML = "";
@@ -73,26 +82,7 @@ function renderData(doc) {
     maincontainer.innerHTML = newarr.join(" ");
 }
 
-function fetchdata1() {
-    let doctorid = localStorage.getItem("doctorID") || "";
-    try {
-        fetch(`https://motionless-seal-windbreaker.cyclic.app/appointment/doctorAppointment/${doctorid}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `${token1}`
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data.data)
-                displayData(data.data)
-            })
-
-    } catch (error) {
-        console.log(error)
-    }
-}
+fetchdata()
 
 function displayData(data) {
     tbodyEl.innerHTML = "";

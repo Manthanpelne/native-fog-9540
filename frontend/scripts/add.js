@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
     console.log(data, id);
 
 
-    fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/add/${data.clinic}`, {
+    fetch(`https://motionless-seal-windbreaker.cyclic.app/doctor/add/${data.clinic}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -76,7 +76,7 @@ addClinicForm.addEventListener("submit", (e) => {
         email: document.getElementById("email1").value,
     };
     console.log(data);
-    fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/add`, {
+    fetch(`https://motionless-seal-windbreaker.cyclic.app/clinic/add`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -137,7 +137,7 @@ addClinicForm.addEventListener("submit", (e) => {
 //         email: document.getElementById("email3").value,
 //     };
 
-//     fetch("https://hilarious-bear-vestments.cyclic.app/clinic/update", {
+//     fetch("https://motionless-seal-windbreaker.cyclic.app/clinic/update", {
 //         method: "PUT",
 //         headers: {
 //             "Content-Type": "application/json",
@@ -199,7 +199,7 @@ addClinicForm.addEventListener("submit", (e) => {
 //         time: document.getElementById("time4").value,
 //     };
 
-//     fetch("https://hilarious-bear-vestments.cyclic.app/doctors/update", {
+//     fetch("https://motionless-seal-windbreaker.cyclic.app/doctors/update", {
 //         method: "PUT",
 //         headers: {
 //             "Content-Type": "application/json",
@@ -244,7 +244,7 @@ let docid = localStorage.getItem("bookID")
 console.log(docid)
 userFun(docid)
 async function userFun(id) {
-    const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+    const Data = await fetch(`https://motionless-seal-windbreaker.cyclic.app/doctor/byid/${id}`, {
         method: "GET",
         headers: {
             "content-type": "application/json",

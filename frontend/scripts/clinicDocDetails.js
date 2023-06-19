@@ -4,7 +4,7 @@ console.log(newid)
 const id = newid
 getDetailsofDoc(id)
  async function getDetailsofDoc(id){
-     const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/${id}`, {
+     const Data = await fetch(`https://motionless-seal-windbreaker.cyclic.app/clinic/${id}`, {
  method: "GET",
  headers: {
    "content-type": "application/json",
