@@ -16,10 +16,6 @@ This project is deployed on netlify here - [Dent Desk]()
 ---
 
 ## About this project: 🙌
-
-![Orangefrylogo](/DentDesk.png)
-
-
   
 
 # Tech Stack Used: -
