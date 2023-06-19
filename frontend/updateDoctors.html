@@ -1,3 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>our doctors</title>
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="./styles/DoctorsPage.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/DentDesk.png">
+
+</head>
+<style>
+    #docform{
+        display: none;
+    }
+</style>
+<body>
+  <div id="navbar">
+    <div><a href="./index.html"><img style="width: 100px; height: 70px;" src="/DentDesk.png" alt=""></a></div>
+    <div><a id="toggle-dashboard">Dashboard</a></div>
+
+    <div><a href="doctors.html">Our Doctors</a></div>
+    <div><a href="clinics.html">Hospitals</a></div>
+
+    <div><a id="signup-logout">Login</a></div>
+    <div class="loginUser">
+      <img
+        src="https://th.bing.com/th?id=OIP.f3DM2upCo-p_NPRwBAwbKQHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+        alt="">
+      <p class="loginName"></p>
+    </div>
+  </div>
+
+  <div id="our">
+    <p>Home</p>
+    <p>>></p>
+    <p class="doc">Our Doctors</p>
+  </div>
+
+  <form id="docform">
+    <button id="closeButto" type="button">&times;</button>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" /><br />
+
+    <label for="Phone">Phone:</label>
+    <input type="text" id="phone" name="number" /><br />
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" />
+
+    <label for="image">Image:</label>
+    <input type="text" id="image" name="image" /><br />
+
+    <label for="about">About:</label>
+    <textarea id="about" name="about"></textarea><br />
+
+    <label for="location">Location:</label>
+    <textarea id="location" name="location"></textarea><br />
+
+    <label for="qualification">Qualification:</label>
+    <input type="text" id="qualification" name="qualification" /><br />
+
+    <label for="clinic">Clinic:</label>
+    <select id="clinic" name="clinic" >
+                  <!-- options will be dynamically added by JavaScript required-->
+    </select><br><br>
+
+    <label for="experience">Experience:</label>
+    <input type="text" id="experience" name="experience" /><br />
+
+    <label for="language">Language:</label>
+    <input type="text" id="language" name="language" /><br />
+
+    <label for="charge">Charge:</label>
+    <input type="number" id="charge" name="charge" /><br />
+
+    <label for="time">Timing:</label>
+    <input type="text" id="time" name="Timing" /><br />
+
+    <input id="submit" type="submit" value="Submit" />
+  </form>
+
+  <div id="doctors"></div>
+</body>
+
+</html>
+
+<script src="./scripts//navbar.js"></script>
+
+<script>
+let docformel = document.getElementById("docform")
+let clsbtn = document.getElementById("closeButto")
+clsbtn.addEventListener("click",()=>{
+  docformel.style.display="none"
+})
+let updateid = localStorage.getItem("docID") || "";
+
+docformel.addEventListener("submit",(e)=>{
+  console.log(updateid)
+    e.preventDefault()
+    const requestBody = {
+      name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        about: document.getElementById("about").value,
+        image: document.getElementById("image").value,
+        location: document.getElementById("location").value,
+        qualification: document.getElementById("qualification").value,
+        experience: document.getElementById("experience").value,
+        language: document.getElementById("language").value,
+        timings: document.getElementById("time").value,
+        charge: document.getElementById("charge").value,
+        clinic: document.getElementById("clinic").value,
+    };
+    console.log(requestBody)
+    console.log("object");
+     fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/update/${updateid}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `${token}`,
+        },
+        body: JSON.stringify(requestBody)
+    }).then(res => res.json())
+        .then(data => {
+          if(data.msg==="Doctor Updated SuccesFully"){
+                Swal.fire({
+                    position: "centre",
+                    icon: "success",
+                    title: "Doctor Updated SuccesFully",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+                window.location.href = "updateDoctors.html";
+                }else{
+                Swal.fire({
+                    position: "centre",
+                    icon: "error",
+                    title: `${data.msg}`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        }).catch((error) => {
+            console.log(error)
+        })
+        console.log("after");
+});
+
+
+
+   function fetchData() {
+  try {
+    let res =  fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((response) =>response.json())
+    .then((data)=>{console.log(data)
+    const selectClinic = document.getElementById("clinic");
+    selectClinic.innerHTML = "";
+    const selectClinicOption = document.createElement("option");
+    selectClinicOption.value = "select_clinic";
+    selectClinicOption.text = "Select Clinic";
+    selectClinic.appendChild(selectClinicOption);
+    data.forEach((element) => {
+      const option = document.createElement("option");
+      option.value = element._id;
+      option.text = element.name;
+      selectClinic.appendChild(option);
+    });
+    })
+    
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+fetchData();
+
+let doc = [];
+async function getDoctors() {
+  const data = await fetch("https://hilarious-bear-vestments.cyclic.app/doctor/", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (data.ok) {
+    const fetchdata = await data.json();
+    console.log(fetchdata);
+    doc.push(...fetchdata);
+    renderDocData(doc);
+  }
+}
+getDoctors();
+
+function renderDocData(doc) {
+  let secmaincontainer = document.querySelector("#doctors");
+  secmaincontainer.innerHTML = "";
+
+  let newarr = doc.map((item) => {
+    return `
+  <div class="cardagain">
+      <div>
+      <img src="${item.image}"> 
+      </div>
+      <div>
+          <h3> <h5>Name:</h5>  ${item.name}</h3>
+          <p> <h5>Phone:</h5> ${item.phone}</p>
+          <p>  <h5>Charge:</h5>  ${item.charge}</p>
+          <p>  <h5>Qualification:</h5>  ${item.qualification}</p>
+          <p> <h5>Experience:</h5>  ${item.experience}</p>
+          </div>
+          <div>
+            <p><h5>Language:</h5>  ${item.language}</p>
+            <p><h5>Expertise:</h5> ${item.about}</p> 
+            <p>  <h5>Timings:</h5>  ${item.timings}</p>
+            <p>  <h5>Location:</h5>${item.location}</p>
+            <button data-id=${item._id} onclick="clickBook()" class="book">Update Doctor</button>
+      </div>
+  </div>
+  `;
+  });
+  secmaincontainer.innerHTML = newarr.join(" ");
+}
+
+
+
+function clickBook() {
+
+    const id = event.target.dataset.id
+    docformel.style.display="block"
+    localStorage.setItem("docID",id)
+    updateClinics(id)
+async function updateClinics(id) {
+  const data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (data.ok) {
+    const data1 = await data.json();
+    console.log(data1)
+     document.getElementById("name").value=data1.name,
+      document.getElementById("email").value=data1.email,
+       document.getElementById("phone").value=data1.phone,
+      document.getElementById("about").value=data1.about,
+        document.getElementById("image").value=data1.image,
+         document.getElementById("location").value=data1.location,
+         document.getElementById("qualification").value=data1.qualification,
+        document.getElementById("experience").value=data1.experience,
+         document.getElementById("language").value=data1.language,
+         document.getElementById("time").value=data1.timings,
+         document.getElementById("charge").value=data1.charge,
+        document.getElementById("clinic").value=data1.clinic
+  }
+}
+}
+
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,3 +448,4 @@ function clickBook() {
 }
 
 </script>
+
