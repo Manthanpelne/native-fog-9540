@@ -61,7 +61,7 @@ Users Routes
 
 ###  Home Page :-
 
-![home1](https://drive.google.com/file/d/1MLi9NUqWjq3m2A-4gadxmF42Ti-GPP4z/view?usp=sharing)
+![home1]([https://drive.google.com/file/d/1MLi9NUqWjq3m2A-4gadxmF42Ti-GPP4z/view?usp=sharing](https://drive.google.com/file/d/1MLi9NUqWjq3m2A-4gadxmF42Ti-GPP4z/view?usp=sharing))
 
 ###  Clinics Page :-
 
