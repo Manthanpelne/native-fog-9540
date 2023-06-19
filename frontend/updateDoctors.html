@@ -12,10 +12,71 @@
 
 </head>
 <style>
-    #docform{
-        display: none;
-    }
+  #docform {
+    display: none;
+    width: 500px;
+    position: fixed;
+    top: 5px;
+    left: 35%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #e0dfdf;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  #docform input[type="text"],
+  #docform textarea,
+  #docform select,
+  #docform input[type="email"],
+  #docform input[type="number"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  #docform input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  #docform label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+  }
+
+  #docform input[type="submit"]:hover,
+  .status-update-btn:hover {
+    background-color: #45a049;
+  }
+
+  #closeButto {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+  }
+
+  #closeButto:hover {
+    color: #ff0000;
+  }
 </style>
+
 <body>
   <div id="navbar">
     <div><a href="./index.html"><img style="width: 100px; height: 70px;" src="/DentDesk.png" alt=""></a></div>
@@ -63,8 +124,8 @@
     <input type="text" id="qualification" name="qualification" /><br />
 
     <label for="clinic">Clinic:</label>
-    <select id="clinic" name="clinic" >
-                  <!-- options will be dynamically added by JavaScript required-->
+    <select id="clinic" name="clinic">
+      <!-- options will be dynamically added by JavaScript required-->
     </select><br><br>
 
     <label for="experience">Experience:</label>
@@ -90,121 +151,67 @@
 <script src="./scripts//navbar.js"></script>
 
 <script>
-let docformel = document.getElementById("docform")
-let clsbtn = document.getElementById("closeButto")
-clsbtn.addEventListener("click",()=>{
-  docformel.style.display="none"
-})
-let updateid = localStorage.getItem("docID") || "";
+  let docformel = document.getElementById("docform")
+  let clsbtn = document.getElementById("closeButto")
+  clsbtn.addEventListener("click", () => {
+    docformel.style.display = "none"
+  })
 
-docformel.addEventListener("submit",(e)=>{
-  console.log(updateid)
-    e.preventDefault()
-    const requestBody = {
-      name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        about: document.getElementById("about").value,
-        image: document.getElementById("image").value,
-        location: document.getElementById("location").value,
-        qualification: document.getElementById("qualification").value,
-        experience: document.getElementById("experience").value,
-        language: document.getElementById("language").value,
-        timings: document.getElementById("time").value,
-        charge: document.getElementById("charge").value,
-        clinic: document.getElementById("clinic").value,
-    };
-    console.log(requestBody)
-    console.log("object");
-     fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/update/${updateid}`, {
-        method: "PATCH",
+  function fetchData() {
+    try {
+      let res = fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/`, {
+        method: "GET",
         headers: {
-            "Content-Type": "application/json",
-            "Authorization": `${token}`,
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(requestBody)
-    }).then(res => res.json())
-        .then(data => {
-          if(data.msg==="Doctor Updated SuccesFully"){
-                Swal.fire({
-                    position: "centre",
-                    icon: "success",
-                    title: "Doctor Updated SuccesFully",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-                window.location.href = "updateDoctors.html";
-                }else{
-                Swal.fire({
-                    position: "centre",
-                    icon: "error",
-                    title: `${data.msg}`,
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-            }
-        }).catch((error) => {
-            console.log(error)
+      }).then((response) => response.json())
+        .then((data) => {
+          // console.log(data)
+          const selectClinic = document.getElementById("clinic");
+          selectClinic.innerHTML = "";
+          const selectClinicOption = document.createElement("option");
+          selectClinicOption.value = "select_clinic";
+          selectClinicOption.text = "Select Clinic";
+          selectClinic.appendChild(selectClinicOption);
+          data.forEach((element) => {
+            const option = document.createElement("option");
+            option.value = element._id;
+            option.text = element.name;
+            selectClinic.appendChild(option);
+          });
         })
-        console.log("after");
-});
 
 
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-   function fetchData() {
-  try {
-    let res =  fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/`, {
+  fetchData();
+
+  let doc = [];
+  async function getDoctors() {
+    const data = await fetch("https://hilarious-bear-vestments.cyclic.app/doctor/", {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
-    }).then((response) =>response.json())
-    .then((data)=>{console.log(data)
-    const selectClinic = document.getElementById("clinic");
-    selectClinic.innerHTML = "";
-    const selectClinicOption = document.createElement("option");
-    selectClinicOption.value = "select_clinic";
-    selectClinicOption.text = "Select Clinic";
-    selectClinic.appendChild(selectClinicOption);
-    data.forEach((element) => {
-      const option = document.createElement("option");
-      option.value = element._id;
-      option.text = element.name;
-      selectClinic.appendChild(option);
     });
-    })
-    
-
-  } catch (error) {
-    console.log(error);
+    if (data.ok) {
+      const fetchdata = await data.json();
+      // console.log(fetchdata);
+      doc.push(...fetchdata);
+      renderDocData(doc);
+    }
   }
-}
+  getDoctors();
 
-fetchData();
+  function renderDocData(doc) {
+    let secmaincontainer = document.querySelector("#doctors");
+    secmaincontainer.innerHTML = "";
 
-let doc = [];
-async function getDoctors() {
-  const data = await fetch("https://hilarious-bear-vestments.cyclic.app/doctor/", {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  if (data.ok) {
-    const fetchdata = await data.json();
-    console.log(fetchdata);
-    doc.push(...fetchdata);
-    renderDocData(doc);
-  }
-}
-getDoctors();
-
-function renderDocData(doc) {
-  let secmaincontainer = document.querySelector("#doctors");
-  secmaincontainer.innerHTML = "";
-
-  let newarr = doc.map((item) => {
-    return `
+    let newarr = doc.map((item) => {
+      return `
   <div class="cardagain">
       <div>
       <img src="${item.image}"> 
@@ -222,45 +229,139 @@ function renderDocData(doc) {
             <p>  <h5>Timings:</h5>  ${item.timings}</p>
             <p>  <h5>Location:</h5>${item.location}</p>
             <button data-id=${item._id} onclick="clickBook()" class="book">Update Doctor</button>
+            <button data-id=${item._id} class="bookdelete" onclick="delDoc()">Delete Doctor</button>
       </div>
   </div>
   `;
-  });
-  secmaincontainer.innerHTML = newarr.join(" ");
-}
+    });
+    secmaincontainer.innerHTML = newarr.join(" ");
+  }
 
 
 
-function clickBook() {
+  function clickBook() {
 
     const id = event.target.dataset.id
-    docformel.style.display="block"
-    localStorage.setItem("docID",id)
+    docformel.style.display = "block"
+    localStorage.setItem("updateID", id)
+    console.log(id)
     updateClinics(id)
-async function updateClinics(id) {
-  const data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
-    method: "GET",
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-  if (data.ok) {
-    const data1 = await data.json();
-    console.log(data1)
-     document.getElementById("name").value=data1.name,
-      document.getElementById("email").value=data1.email,
-       document.getElementById("phone").value=data1.phone,
-      document.getElementById("about").value=data1.about,
-        document.getElementById("image").value=data1.image,
-         document.getElementById("location").value=data1.location,
-         document.getElementById("qualification").value=data1.qualification,
-        document.getElementById("experience").value=data1.experience,
-         document.getElementById("language").value=data1.language,
-         document.getElementById("time").value=data1.timings,
-         document.getElementById("charge").value=data1.charge,
-        document.getElementById("clinic").value=data1.clinic
+    async function updateClinics(id) {
+      const data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      if (data.ok) {
+        const data1 = await data.json();
+        console.log(data1)
+        document.getElementById("name").value = data1.name,
+          document.getElementById("email").value = data1.email,
+          document.getElementById("phone").value = data1.phone,
+          document.getElementById("about").value = data1.about,
+          document.getElementById("image").value = data1.image,
+          document.getElementById("location").value = data1.location,
+          document.getElementById("qualification").value = data1.qualification,
+          document.getElementById("experience").value = data1.experience,
+          document.getElementById("language").value = data1.language,
+          document.getElementById("time").value = data1.timings,
+          document.getElementById("charge").value = data1.charge,
+          document.getElementById("clinic").value = data1.clinic
+      }
+    }
   }
-}
-}
+
+  docformel.addEventListener("submit", (e) => {
+    let updateid = localStorage.getItem("updateID") || "";
+    console.log('updateid', updateid)
+    e.preventDefault()
+    const requestBody = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      about: document.getElementById("about").value,
+      image: document.getElementById("image").value,
+      location: document.getElementById("location").value,
+      qualification: document.getElementById("qualification").value,
+      experience: document.getElementById("experience").value,
+      language: document.getElementById("language").value,
+      timings: document.getElementById("time").value,
+      charge: document.getElementById("charge").value,
+      clinic: document.getElementById("clinic").value,
+    };
+    console.log(requestBody)
+    // console.log("object");
+    fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/update/${updateid}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `${token}`,
+      },
+      body: JSON.stringify(requestBody)
+    }).then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.msg === "Doctor Updated SuccesFully") {
+          Swal.fire({
+            position: "centre",
+            icon: "success",
+            title: "Doctor Updated SuccesFully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          window.location.href = "updateDoctors.html";
+        } else {
+          Swal.fire({
+            position: "centre",
+            icon: "error",
+            title: `${data.msg}`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        localStorage.removeItem("updateID")
+      }).catch((error) => {
+        console.log(error)
+      })
+    // console.log("after");
+  });
+
+  function delDoc() {
+    let id = event.target.dataset.id
+    deleteClinics(id)
+    async function deleteClinics(id) {
+      const data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          "content-type": "application/json",
+          "Authorization": `${token}`,
+        },
+      });
+      if (data.ok) {
+        const fetchdata = await data.json();
+        console.log(fetchdata, fetchdata.msg)
+        if (fetchdata.msg === "Doctor Deleted SuccesFully") {
+          Swal.fire({
+            position: "centre",
+            icon: "success",
+            title: "Doctor Deleted SuccesFully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          window.location.href = "updateDoctors.html";
+        } else {
+          Swal.fire({
+            position: "centre",
+            icon: "error",
+            title: `${fetchdata.msg}`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      }
+    }
+  }
+
 
 </script>
