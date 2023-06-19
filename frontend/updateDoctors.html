@@ -40,11 +40,12 @@
   </div>
 
   <form id="docform">
+    <button id="closeButto" type="button">&times;</button>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" /><br />
 
     <label for="Phone">Phone:</label>
-    <input type="number" id="phone" name="number" /><br />
+    <input type="text" id="phone" name="number" /><br />
 
     <label for="email">Email:</label>
     <input type="email" name="email" id="email" />
@@ -67,7 +68,7 @@
     </select><br><br>
 
     <label for="experience">Experience:</label>
-    <input type="number" id="experience" name="experience" /><br />
+    <input type="text" id="experience" name="experience" /><br />
 
     <label for="language">Language:</label>
     <input type="text" id="language" name="language" /><br />
@@ -89,12 +90,70 @@
 <script src="./scripts//navbar.js"></script>
 
 <script>
+let docformel = document.getElementById("docform")
+let clsbtn = document.getElementById("closeButto")
+clsbtn.addEventListener("click",()=>{
+  docformel.style.display="none"
+})
+let updateid = localStorage.getItem("docID") || "";
+
+docformel.addEventListener("submit",(e)=>{
+  console.log(updateid)
+    e.preventDefault()
+    const requestBody = {
+      name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        about: document.getElementById("about").value,
+        image: document.getElementById("image").value,
+        location: document.getElementById("location").value,
+        qualification: document.getElementById("qualification").value,
+        experience: document.getElementById("experience").value,
+        language: document.getElementById("language").value,
+        timings: document.getElementById("time").value,
+        charge: document.getElementById("charge").value,
+        clinic: document.getElementById("clinic").value,
+    };
+    console.log(requestBody)
+    console.log("object");
+     fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/update/${updateid}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `${token}`,
+        },
+        body: JSON.stringify(requestBody)
+    }).then(res => res.json())
+        .then(data => {
+          if(data.msg==="Doctor Updated SuccesFully"){
+                Swal.fire({
+                    position: "centre",
+                    icon: "success",
+                    title: "Doctor Updated SuccesFully",
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+                window.location.href = "updateDoctors.html";
+                }else{
+                Swal.fire({
+                    position: "centre",
+                    icon: "error",
+                    title: `${data.msg}`,
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
+            }
+        }).catch((error) => {
+            console.log(error)
+        })
+        console.log("after");
+});
 
 
-    
+
    function fetchData() {
   try {
-    let res =  fetch(`http://localhost:4500/clinic/`, {
+    let res =  fetch(`https://hilarious-bear-vestments.cyclic.app/clinic/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +180,7 @@
   }
 }
 
-// fetchData();
+fetchData();
 
 let doc = [];
 async function getDoctors() {
@@ -175,8 +234,33 @@ function renderDocData(doc) {
 function clickBook() {
 
     const id = event.target.dataset.id
-    
-    
+    docformel.style.display="block"
+    localStorage.setItem("docID",id)
+    updateClinics(id)
+async function updateClinics(id) {
+  const data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+  if (data.ok) {
+    const data1 = await data.json();
+    console.log(data1)
+     document.getElementById("name").value=data1.name,
+      document.getElementById("email").value=data1.email,
+       document.getElementById("phone").value=data1.phone,
+      document.getElementById("about").value=data1.about,
+        document.getElementById("image").value=data1.image,
+         document.getElementById("location").value=data1.location,
+         document.getElementById("qualification").value=data1.qualification,
+        document.getElementById("experience").value=data1.experience,
+         document.getElementById("language").value=data1.language,
+         document.getElementById("time").value=data1.timings,
+         document.getElementById("charge").value=data1.charge,
+        document.getElementById("clinic").value=data1.clinic
+  }
+}
 }
 
 </script>
