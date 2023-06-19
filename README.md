@@ -1,12 +1,14 @@
 
   # Dent-Desk
+  
+  ![DentDesk](https://github.com/Manthanpelne/native-fog-9540/assets/119395145/7b586f82-5633-4acc-8e9f-0e7c966fd66e)
 
 A Dental Booking Appointment System offers a seamless and user-friendly platform for scheduling, tracking, and managing dental appointments, ensuring convenient access and exceptional care.
 
 ## Deployment
 
-This project is deployed on netlify here - https://dent-desk-management-app.netlify.app/index.html <br/>
-This is Backend Deployed Link - https://hilarious-bear-vestments.cyclic.app
+This project is deployed on netlify here - [https://dent-desk-management-app.netlify.app/index.html](https://dent-desk-dental-appointment-system.netlify.app/) <br/>
+This is Backend Deployed Link - [https://hilarious-bear-vestments.cyclic.app](https://motionless-seal-windbreaker.cyclic.app/)
 
 
 ---
@@ -112,16 +114,8 @@ This is Backend Deployed Link - https://hilarious-bear-vestments.cyclic.app
 - `Bcrypt`
 - `Nodemailer`
 
+
 ----
-- `Frontend link` : ""
-- `Backend link`  : ""
-----
-
-
-
-
-Deployed Site Link : 
-Deployed Backend Link : 
 
 
 
