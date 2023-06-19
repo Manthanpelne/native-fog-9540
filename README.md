@@ -64,33 +64,42 @@ Users Routes
 
 ## Here are some screenshots of website.
 
-
 ###  Home Page :-
 
+![home1](./frontend/images/home.png)
 
 ###  Clinics Page :-
 
-![home2](https://drive.google.com/file/d/1E9CWlvSB5Bh_09RQ2fTfrXYW6M4Pb3ti/view?usp=sharing)
+![home2]()
 
 ###  User Dashboard :-
 
-![home3](https://drive.google.com/file/d/1ZOQYjkwQWPqH_4FQBJ51IGqZSjKzfWNz/view?usp=sharing)
+![home3](./frontend/images/Screenshot%202023-06-19%20110655.png)
 
 ###  Admin Dashboard :-
 
-![Allproducts2](https://drive.google.com/file/d/1YHK8BHCndbsK7FtmCsWRdral4bI5iFPL/view?usp=sharing)
+![Allproducts2](./frontend/images/Screenshot%202023-06-19%20110727.png)
 
 ###  Doctors :-
 
-![Allproducts2](https://drive.google.com/file/d/1HNGig425wrw_YzgRpQS_vb0hc4VVk47G/view?usp=sharing)
+![Allproducts2](./frontend/images/Screenshot%202023-06-19%20110811.png)
 
 ###  Admin Dashboard :-
 
-![Allproducts2](https://drive.google.com/file/d/1uoLkJouhZXOb9cUfu6Ab-PsqYhGTjCNI/view?usp=sharing)
+![Allproducts2](./frontend/images/Screenshot%202023-06-19%20110933.png)
 
 
 ###  Update Clinics :-
 
-![Allproducts2](https://drive.google.com/file/d/1AL-BQeu5hrFB2t60lJJc1rH4rnCJt1WA/view?usp=sharing)
+![Allproducts2](./frontend/images/Screenshot%202023-06-19%20111512.png)
+
+###  Update Clinics :-
+
+![Allproducts2](./frontend/images/Screenshot%202023-06-19%20111558.png)
+
+###  Update Clinics :-
+
+![Allproducts2](./frontend/images/Screenshot%202023-06-19%20111626.png)
+
 
 ## Thankyou for your time 💝
