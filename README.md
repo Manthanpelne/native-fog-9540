@@ -5,8 +5,8 @@ A Dental Booking Appointment System offers a seamless and user-friendly platform
 
 ## Deployment
 
-This project is deployed on netlify here - [Dent Desk]()
-
+This project is deployed on netlify here - https://dent-desk-management-app.netlify.app/index.html <br/>
+This is Backend Deployed Link - https://hilarious-bear-vestments.cyclic.app
 
 
 ---
