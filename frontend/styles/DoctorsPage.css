@@ -44,7 +44,8 @@
 }
 
 .cardagain {
-  margin-left: 400px;
+  /* margin-left: 50px; */
+  margin: 40px;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
   display: flex;
