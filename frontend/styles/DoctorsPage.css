@@ -1,113 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 #our {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
-  }
-  /* body{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+/* body{
     font-family: 'Open Sans', sans-serif;
   } */
-  .doc {
-    color: rgb(255, 77, 0);
-  }
-
-  #filters {
-    width: 900px;
-    display: flex;
-    justify-content: space-evenly;
-    height: 60px;
-    margin: auto;
-  }
-
-  #pune {
-    font-family: 'Open Sans', sans-serif;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 250px;
-    font-size: 17px;
-    background-color: rgb(249, 118, 70);
-    color: white;
-    padding: 10px;
-  }
-  /* #pune :hover{
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-    /* background-color: black; */
-  /* } */ */
-  #doctors {
-    width: 85%;
-    margin: auto;
-    margin-top: 50px;
-  }
-
-  .cardagain {
-    font-family: 'Open Sans', sans-serif;
-    cursor: pointer;
-    display: flex;
-    border: 1px solid rgb(221, 151, 71);
-    margin: 40px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
-
-  .cardagain > div:nth-child(1) {
-    text-align: center;
-  }
- .cardagain>div p{
-  padding-top: 7px;
-  margin: 5px;
-  font-size: 17px;
- }
-  .cardagain > div img {
-    /* margin: 20px; */
-    width: 75%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: 1px solid black;
-    margin-top: 20px;
-  }
-  .cardagain h5{
-    font-size: 19px;
-  }
-  .cardagain > div {
-    width: 50%;
-    border: 1px solid rgb(244, 217, 143);
-    padding: 20px;
-    font-size: 17px;
-    font-family: sans-serif;
-    color: rgb(50, 49, 49);
-  }
-  .book,.bookdelete {
-    border: none;
-    width: 200px;
-    height: 40px;
-    background-color: rgb(244, 126, 84);
-    color: white;
-    font-size: 15px;
-    margin-top: 30px;
-    margin-left: 50px;
-    cursor: pointer;
-  }
-  .bookdelete {
-    background-color: rgba(131, 16, 16, 0.493);
-  }
-
-  @media all and (min-width:531px) and (max-width:900px){
-#navbar{
-  font-family: 'Open Sans', sans-serif;
-width: 100%;
-position: sticky;
-height: 100px;
-margin: auto;
-display: flex;
-align-items: center;
-background-color: rgb(121, 62, 62); 
-
-}
-#navbar>div a{ 
-font-size: 15px;
+.doc {
+  color: rgb(255, 77, 0);
 }
 
 #filters {
+  width: 900px;
+  display: flex;
+  justify-content: space-evenly;
+  height: 60px;
+  margin: auto;
+}
+
+#pune {
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 17px;
+  background-color: rgb(249, 118, 70);
+  color: white;
+  padding: 10px;
+}
+
+/* #pune :hover{
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+/* background-color: black; */
+/* } */
+*/ #doctors {
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.cardagain {
+  margin-left: 400px;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  display: flex;
+  border: 1px solid rgb(221, 151, 71);
+  /* margin: 40px; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cardagain>div:nth-child(1) {
+  text-align: center;
+}
+
+.cardagain>div p {
+  padding-top: 7px;
+  margin: 5px;
+  font-size: 17px;
+}
+
+.cardagain>div img {
+  /* margin: 20px; */
+  width: 75%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.cardagain h5 {
+  font-size: 19px;
+}
+
+.cardagain>div {
+  width: 50%;
+  border: 1px solid rgb(244, 217, 143);
+  padding: 20px;
+  font-size: 17px;
+  font-family: sans-serif;
+  color: rgb(50, 49, 49);
+}
+
+.book,
+.bookdelete {
+  border: none;
+  width: 200px;
+  height: 40px;
+  background-color: rgb(244, 126, 84);
+  color: white;
+  font-size: 15px;
+  margin-top: 30px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.bookdelete {
+  background-color: rgba(131, 16, 16, 0.493);
+}
+
+@media all and (min-width:531px) and (max-width:900px) {
+  #navbar {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    position: sticky;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: rgb(121, 62, 62);
+
+  }
+
+  #navbar>div a {
+    font-size: 15px;
+  }
+
+  #filters {
     width: 500px;
     display: flex;
     justify-content: space-evenly;
@@ -115,26 +126,32 @@ font-size: 15px;
     margin: auto;
   }
 
-#pune{
-  border-radius: 5px;
-width: 150px;
-font-size: 13px;
-font-weight: bold;
-}
-.cardagain:hover{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  #pune {
+    border-radius: 5px;
+    width: 150px;
+    font-size: 13px;
+    font-weight: bold;
+  }
 
-}
-.cardagain {
+  .cardagain:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  }
+
+  .cardagain {
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid rgb(221, 151, 71);
 
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-  .cardagain>div{
+
+  .cardagain>div {
+    width: 50%;
     margin: auto;
   }
+
   .book {
     border: none;
     width: 150px;
@@ -145,57 +162,63 @@ font-weight: bold;
     margin-top: 30px;
     cursor: pointer;
   }
-  .cardagain > div img {
+
+  .cardagain>div img {
     width: 85%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border: 1px solid black;
-   margin-top: 0px;
+    margin-top: 0px;
   }
 }
 
-@media all and (min-width:100px) and (max-width:530px){
-#navbar{
-width: 100%;
-position: sticky;
-height: 150px;
-margin: auto;
-display: grid;
-grid-template-columns: repeat(2,3fr);
-align-items: center;
-background-color: rgb(121, 62, 62); 
-padding-left: 30px;
+@media all and (min-width:100px) and (max-width:530px) {
+  #navbar {
+    width: 100%;
+    position: sticky;
+    height: 150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    align-items: center;
+    background-color: rgb(121, 62, 62);
+    padding-left: 30px;
 
-}
-#navbar>div a{ 
-font-size: 12px;
-}
+  }
 
-#filters {
+  #navbar>div a {
+    font-size: 12px;
+  }
+
+  #filters {
     width: 300px;
     display: grid;
-    grid-template-columns: repeat(1,3fr);
+    grid-template-columns: repeat(1, 3fr);
     flex-wrap: wrap;
     height: 60px;
     margin: auto;
   }
 
-#pune{
-  border-radius: 5px;
-width: 160px;
-font-size: 13px;
-font-weight: bold;
-}
+  #pune {
+    border-radius: 5px;
+    width: 160px;
+    font-size: 13px;
+    font-weight: bold;
+  }
 
-#doctors{
-padding-top: 30px;
-}
-.cardagain {
+  #doctors {
+    padding-top: 30px;
+  }
+
+  .cardagain {
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid rgb(221, 151, 71);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-  .cardagain>div{
+
+  .cardagain>div {
+    width: 60%;
     margin: auto;
     font-size: 12px;
   }
@@ -203,7 +226,7 @@ padding-top: 30px;
   .book {
     border-radius: 5px;
     border: none;
-    width:100px;
+    width: 100px;
     height: 20px;
     background-color: rgb(244, 126, 84);
     color: white;
@@ -213,11 +236,11 @@ padding-top: 30px;
     cursor: pointer;
   }
 
-  .cardagain > div img {
+  .cardagain>div img {
     width: 85%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border: 1px solid black;
-   margin-top: 0px;
+    margin-top: 0px;
   }
 
 }

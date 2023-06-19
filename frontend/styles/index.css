@@ -3,7 +3,46 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+#footer {
+    width: 100%;
+    margin-top: 150px;
+    height: 700px;
+    background-color: rgb(100, 38, 38);
+    color: rgb(214, 188, 145);
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    font-family: sans-serif;
+  }
+  
+  #footer > div {
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 50px;
+    cursor: pointer;
+  }
+  
+  #footer > div:hover {
+    background-color: rgb(121, 62, 62);
+  }
+  
+  #footer > div h2 {
+    margin: 5px;
+    color: rgb(187, 123, 6);
+  }
+  #footer > div p{
+    margin: 10px;
+    
+  }
+  #footer > div p:hover{
+    text-decoration: underline;
+    color: white;
+  }
+  
+  .num {
+    color: orange;
+  }
+  
+  
 body{
     background-color: rgb(250, 240, 227);
 }

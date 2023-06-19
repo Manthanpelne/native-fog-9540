@@ -26,7 +26,7 @@ body {
   letter-spacing: 1px;
 }
 #sidebar {
-  width: 300px;
+  width: 270px;
   background-color: #F1C376;
   padding: 20px;
   height: 100vh;
@@ -95,6 +95,7 @@ body {
 
 #form2,
 #form1,#form3,#form4 {
+  margin-left: 250px;
   margin: auto;
   padding: 12px 0px;
   width: 50%;
