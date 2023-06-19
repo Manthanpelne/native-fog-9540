@@ -64,7 +64,7 @@ Users Routes
 
 ###  Clinics Page :-
 
-![home2](https://drive.google.com/file/d/1E9CWlvSB5Bh_09RQ2fTfrXYW6M4Pb3ti/view?usp=sharing)
+![](https://drive.google.com/file/d/1E9CWlvSB5Bh_09RQ2fTfrXYW6M4Pb3ti/view?usp=sharing)
 
 ###  User Dashboard :-
 
