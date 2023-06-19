@@ -6,6 +6,13 @@
     <title>clinics page</title>
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/DoctorsPage.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+  </style>
+    <link rel="shortcut icon" type="image/x-icon" href="/DentDesk.png">
 </head>
 <style>
     .cardagain>div img{
@@ -13,7 +20,8 @@
         margin-top: 20px;
     }
     .cardagain{
-        width: 70%;
+      margin-left: 200px;
+        width: 60%;
         margin: auto;
         margin-top: 50px;
     }
@@ -72,6 +80,99 @@ color: #000;
 #closeButto:hover {
 color: #ff0000;
 }
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: #F1C376;
+}
+
+#sidebar {
+    width: 300px;
+    background-color:  #795548;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+#display-user-name {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F1C376;
+    color: #333;
+  }
+  
+  #display-user-name:hover {
+    background-color: #795548;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  
+  #show-name {
+    margin: 0;
+  }
+  
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+    /* color: #F1C376; */
+}
+
+#sidebar li {
+
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+ 
+}
+#sidebar li:hover{
+    text-decoration: underline;
+    color: #F1C376;
+}
+
+#content {
+    margin-left: 320px;
+    padding: 20px;
+}
+
+
+#content button {
+    border-radius: 8px;
+    background-color: #3E2723;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+#content button:hover{
+    padding: 10px 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    font-size: 18px;
+    background-color: #333;
+
+}
 </style>
 <link rel="stylesheet" href="/frontend/styles/loader.css">
     <script src="/frontend/scripts/loader.js"></script>
@@ -80,19 +181,31 @@ color: #ff0000;
   <body>
   
   <div id="loader" class="loader"></div>
-    <div id="navbar">
-        <div><img width="100px" height="70px" src="/DentDesk.png" alt="" /></div>
-        <div><a href="index.html">Home</a></div>
-        <div><a href="">Dashboard</a></div>
-        <div><a href="">Login</a></div>
-        <div><a href="">Sign Up</a></div>
-      </div>
-  
-      <div id="our">
-        <p>Home</p>
-        <p>>></p>
-        <p class="doc">Clinics</p>
-      </div>
+  <div id="sidebar">
+    <h2>ADMIN DASHBOARD</h2>
+    <ul>
+        <li><span class="material-symbols-outlined">
+                dashboard
+            </span><a href="./admin.html">Admin Panel</a></li>
+        <li> <span class="material-symbols-outlined">
+                badge
+            </span><a href="./add.html">Add Doctor/Clinic</a></li>
+        <li><span class="material-symbols-outlined">
+                account_circle
+            </span><a href="./updateclinic.html">Update/Delete CLINIC</a></li>
+        <li><span class="material-symbols-outlined">
+                outpatient_med
+            </span><a href="#">update/Delete DOCTOR</a></li>
+
+        <li><span class="material-symbols-outlined">
+                logout
+            </span><a id="Logout-anch" href="#">Logout</a></li>
+    </ul>
+</div>
+<div id="display-user-name">
+    <h2 id="show-name"></h2>
+</div>
+
 
       <form id="updateClinic">
         <button id="closeButto" type="button">&times;</button>
