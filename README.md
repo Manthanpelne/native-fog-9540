@@ -176,7 +176,7 @@ Deployed Backend Link :
 ---
 
 
-Thanks you for Checking our Project 🙏🏻
+Thanks you for Checking our Project. 🙏🏻
 =======
 # Introducing DentDesk.com
 
