@@ -1,8 +1,7 @@
 // let token = localStorage.getItem("token") || ""
 const user1 = JSON.parse(localStorage.getItem("user")) || "";
 let doctorid = localStorage.getItem("doctorID") || "";
-let AppointmentId= localStorage.getItem("AppointmentId") || "";
-console.log(AppointmentId);
+
 console.log(doctorid);
 
 
@@ -19,12 +18,12 @@ window.addEventListener("load", () => {
     fetchdata1()
 })
 
-clsbtn.addEventListener("click",()=>{
-    updateform.style.display="none"
+clsbtn.addEventListener("click", () => {
+    updateform.style.display = "none"
 })
- function fetchdata() {
+function fetchdata() {
     try {
-       fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byname?name=${user1.name}&email=${user1.email}`, {
+        fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byname?name=${user1.name}&email=${user1.email}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +73,7 @@ function renderData(doc) {
 
 function fetchdata1() {
     try {
-       fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/doctorAppointment/${doctorid}`, {
+        fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/doctorAppointment/${doctorid}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -133,7 +132,7 @@ function displayData(data) {
 
             updateform.style.display = 'block'
 
-               fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/appoint/${AppointmentId}`, {
+            fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/appoint/${AppointmentId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -142,7 +141,7 @@ function displayData(data) {
             }).then(res => res.json())
                 .then(data => {
                     console.log(data.appointment.status)
-                statusvl.value=data.appointment.status
+                    statusvl.value = data.appointment.status
                 }).catch((error) => {
                     console.log(error)
                 })
@@ -153,14 +152,17 @@ function displayData(data) {
         tbodyEl.append(tr);
     });
 }
-formel.addEventListener("submit",(e)=>{
+formel.addEventListener("submit", (e) => {
     e.preventDefault()
     const requestBody = {
         status: statusvl.value
     };
     console.log(requestBody)
-    console.log("object");
-     fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/doctorAppointment/${AppointmentId}`, {
+    let AppointmentId = localStorage.getItem("AppointmentId") || "";
+    console.log(AppointmentId);
+    // console.log("app"+ AppointmentId);
+
+    fetch(`https://hilarious-bear-vestments.cyclic.app/appointment/doctorAppointment/${AppointmentId}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -169,7 +171,7 @@ formel.addEventListener("submit",(e)=>{
         body: JSON.stringify(requestBody)
     }).then(res => res.json())
         .then(data => {
-                if(data.msg==="Appointment Updated"){
+            if (data.msg === "Appointment Updated") {
                 Swal.fire({
                     position: "centre",
                     icon: "success",
@@ -180,7 +182,7 @@ formel.addEventListener("submit",(e)=>{
                 setTimeout(() => {
                     window.location.href = "Doctordashboard.html";
                 }, 2500);
-                }else{
+            } else {
                 Swal.fire({
                     position: "centre",
                     icon: "error",
@@ -192,5 +194,5 @@ formel.addEventListener("submit",(e)=>{
         }).catch((error) => {
             console.log(error)
         })
-        console.log("after");
+    console.log("after");
 });
