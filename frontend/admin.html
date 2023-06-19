@@ -31,7 +31,7 @@
                 </span><a href="./updateclinic.html">Update/Delete CLINIC</a></li>
             <li><span class="material-symbols-outlined">
                     outpatient_med
-                </span><a href="#">update/Delete DOCTOR</a></li>
+                </span><a href="./updateDoctors.html">update/Delete DOCTOR</a></li>
 
             <li><span class="material-symbols-outlined">
                     logout
@@ -114,7 +114,7 @@
         
         let x
         try {
-            x = await fetch(`${URL}/clinic/`, {
+            x = await fetch(`${URL}/doctor/`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -128,6 +128,7 @@
             console.log(error);
         }
         let da = await x.json()
+        console.log(da);
         // console.log(data1);
         // console.log(data2);
         scheduled_Doctor.textContent = da.length

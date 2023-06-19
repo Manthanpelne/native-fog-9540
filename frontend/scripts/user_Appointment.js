@@ -23,6 +23,7 @@ const FetchData = () => {
         .then((data) => {
             // console.log(data.data[0].doctor.name);
             FilterByStatus(data.data)
+            console.log(data.data);
             DisplayDataInTable(data.data)
             dateandSort(data.data)
             // DisplayDoctors(data.data)
@@ -41,7 +42,7 @@ const DisplayDataInTable = (data) => {
     data.forEach((ele) => {
         let tr = document.createElement("tr");
         let td1 = document.createElement("td");
-        td1.innerText = ele.doctor.name;
+        td1.innerText = ele.doctor.name 
         td1.style.color = "black"; // Set the color to black
 
         let td2 = document.createElement("td");
