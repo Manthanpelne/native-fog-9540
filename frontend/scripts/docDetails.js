@@ -6,7 +6,7 @@ const newid = localStorage.getItem("bookID")
 const id = newid
 getDetailsofDoc(id)
 async function getDetailsofDoc(id) {
-  const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/doctor/byid/${id}`, {
+  const Data = await fetch(`https://motionless-seal-windbreaker.cyclic.app/doctor/byid/${id}`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -62,7 +62,7 @@ let a = []
 let userid = localStorage.getItem("userID")
 userFun(userid)
 async function userFun(id) {
-  const Data = await fetch(`https://hilarious-bear-vestments.cyclic.app/user/${id}`, {
+  const Data = await fetch(`https://motionless-seal-windbreaker.cyclic.app/user/${id}`, {
     method: "GET",
     headers: {
       "content-type": "application/json",

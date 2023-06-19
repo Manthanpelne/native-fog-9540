@@ -7,13 +7,14 @@
   <title>our doctors</title>
   <link rel="stylesheet" href="./styles/index.css" />
   <link rel="stylesheet" href="./styles/DoctorsPage.css">
+  <link rel="stylesheet" href="./styles/add.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-</style>
-<link rel="shortcut icon" type="image/x-icon" href="./images/DentDesk.png">
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+  </style>
+  <link rel="shortcut icon" type="image/x-icon" href="./images/DentDesk.png">
 
 </head>
 <style>
@@ -21,110 +22,84 @@
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-}
-a{
+  }
+
+  a {
     text-decoration: none;
     color: white;
-}
-a:hover{
+  }
+
+  @media screen and (max-width: 1000px) {
+    #doctors {
+      margin-top: 400px;
+    }
+
+    .cardagain:hover {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+
+    .cardagain {
+      width: auto;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid rgb(221, 151, 71);
+
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    .cardagain>div {
+      width: auto;
+      margin: auto;
+    }
+
+    .book {
+      border: none;
+      width: 150px;
+      height: 40px;
+      background-color: rgb(244, 126, 84);
+      color: white;
+      font-size: 15px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+
+    .cardagain>div img {
+      width: 85%;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border: 1px solid black;
+      margin-top: 0px;
+    }
+  }
+
+
+
+  
+
+
+
+  a:hover {
     color: #F1C376;
-}
-.cardagain {
-  width: 70%;
-  margin-left: 350px;
-  /* margin: 40px; */
-  font-family: 'Open Sans', sans-serif;
-  cursor: pointer;
-  display: flex;
-  border: 1px solid rgb(221, 151, 71);
-  /* margin: 40px; */
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.cardagain>div:nth-child(1) {
-  text-align: center;
-}
-
-#sidebar {
-    width: 300px;
-    background-color:  #795548;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    overflow-y: auto;
-}
-
-#sidebar h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: white;
-}
-#display-user-name {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #F1C376;
-    color: #333;
   }
-  
-  #display-user-name:hover {
-    background-color: #795548;
-    color: white;
-    border: 1px solid black;
+
+  .cardagain {
+    width: 70%;
+    margin-left: 350px;
+    /* margin: 40px; */
+    font-family: 'Open Sans', sans-serif;
     cursor: pointer;
+    display: flex;
+    border: 1px solid rgb(221, 151, 71);
+    /* margin: 40px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-  
-  #show-name {
-    margin: 0;
+
+  .cardagain>div:nth-child(1) {
+    text-align: center;
   }
-  
-#sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    text-decoration: none;
-    /* color: #F1C376; */
-}
-
-#sidebar li {
-
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 20px;
- 
-}
-#sidebar li:hover{
-    text-decoration: underline;
-    color: #F1C376;
-}
-
-#content {
-    margin-left: 320px;
-    padding: 20px;
-}
 
 
-#content button {
-    border-radius: 8px;
-    background-color: #3E2723;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    margin-left: 5px;
-}
-#content button:hover{
-    padding: 10px 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    font-size: 18px;
-    background-color: #333;
 
-}
   #docform {
     display: none;
     width: 500px;
@@ -188,8 +163,6 @@ a:hover{
   #closeButto:hover {
     color: #ff0000;
   }
-
-
 </style>
 
 
@@ -197,27 +170,27 @@ a:hover{
   <div id="sidebar">
     <h2>ADMIN DASHBOARD</h2>
     <ul>
-        <li><span class="material-symbols-outlined">
-                dashboard
-            </span><a href="./admin.html">Admin Panel</a></li>
-        <li> <span class="material-symbols-outlined">
-                badge
-            </span><a href="./add.html">Add Doctor/Clinic</a></li>
-        <li><span class="material-symbols-outlined">
-                account_circle
-            </span><a href="./updateclinic.html">Update/Delete CLINIC</a></li>
-        <li><span class="material-symbols-outlined">
-                outpatient_med
-            </span><a href="./updateDoctors.html">update/Delete DOCTOR</a></li>
+      <li><span class="material-symbols-outlined">
+          dashboard
+        </span><a href="./admin.html">Admin Panel</a></li>
+      <li> <span class="material-symbols-outlined">
+          badge
+        </span><a href="./add.html">Add Doctor/Clinic</a></li>
+      <li><span class="material-symbols-outlined">
+          account_circle
+        </span><a href="./updateclinic.html">Update/Delete CLINIC</a></li>
+      <li><span class="material-symbols-outlined">
+          outpatient_med
+        </span><a href="./updateDoctors.html">update/Delete DOCTOR</a></li>
 
-        <li><span class="material-symbols-outlined">
-                logout
-            </span><a id="Logout-anch" href="#">Logout</a></li>
+      <li><span class="material-symbols-outlined">
+          logout
+        </span><a id="Logout-anch" href="#">Logout</a></li>
     </ul>
-</div>
-<div id="display-user-name">
+  </div>
+  <div id="display-user-name">
     <h2 id="show-name"></h2>
-</div>
+  </div>
 
   <form id="docform">
     <button id="closeButto" type="button">&times;</button>
@@ -267,9 +240,8 @@ a:hover{
 
 </html>
 
-<script src="./scripts//navbar.js"></script>
-
 <script>
+  let token = localStorage.getItem("token")||""
   let docformel = document.getElementById("docform")
   let clsbtn = document.getElementById("closeButto")
   clsbtn.addEventListener("click", () => {
@@ -480,7 +452,21 @@ a:hover{
         }
       }
     }
-  }
+}
 
 
+</script>
+
+<script>
+    let userLS = JSON.parse(localStorage.getItem("user")) || []
+
+
+
+let show_name = document.getElementById("show-name")
+let display_user_name = document.getElementById("display-user-name")
+if (token) {
+  show_name.textContent = `Mr . ${userLS.name}`
+} else {
+  display_user_name.style.display = "none"
+}
 </script>

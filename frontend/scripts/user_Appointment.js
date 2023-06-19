@@ -3,7 +3,7 @@
 let token = localStorage.getItem("token")
 let newArray = []
 // const BASE_SERVER_URL = "http://localhost:4500"
-const BASE_SERVER_URL = "https://hilarious-bear-vestments.cyclic.app"
+const BASE_SERVER_URL = "https://motionless-seal-windbreaker.cyclic.app"
 let tbody = document.getElementById("tbody")
 let filterele = document.getElementById("filter")
 let sort = document.querySelector("#sort");

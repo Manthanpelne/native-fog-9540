@@ -2,93 +2,95 @@ let form = document.getElementById("formcont");
 
 let arr = []
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let data = {
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-    };
-    fetch(`
-    https://hilarious-bear-vestments.cyclic.app/user/login`, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            arr.push(res.user._id)
-            localStorage.setItem("userID",arr)
-            if (res.msg == "login Success") {
-                const user = {
-                    name: res.user.name,
-                    email:res.user.email,
-                    role: res.user.role,
-                };
-                localStorage.setItem("user", JSON.stringify(user));
-                localStorage.setItem("token", res.accessToken);
-                Swal.fire({
-                    position: "centre",
-                    icon: "success",
-                    title: "Login Success",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-                
-                setTimeout(() => {
-                    if (user.role === "Admin") {
-                        window.location.href = "admin.html";
-                    } else {
-                        window.location.href = "index.html";
-                    }
-                }, 2500);
-            } else {
-                Swal.fire({
-                    position: "centre",
-                    icon: "error",
-                    title: `${res.msg}`,
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-            }
-        })
-        .catch((err) => console.log(err));
-}); 
+  e.preventDefault();
+  let data = {
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+  };
+  fetch(`
+  https://motionless-seal-windbreaker.cyclic.app/user/login`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      // arr.push(res.user._id)
+      // localStorage.setItem("userID", arr)
+      if (res.msg == "login Success") {
+        const user = {
+          name: res.user.name,
+          email: res.user.email,
+          role: res.user.role,
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("token", res.accessToken);
+        arr.push(res.user._id)
+        localStorage.setItem("userID", arr)
+        Swal.fire({
+          position: "centre",
+          icon: "success",
+          title: "Login Success",
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
-  document.getElementById("forget").addEventListener("click", function () {
-    // Display SweetAlert modal
-    Swal.fire({
-      title: "Reset Password",
-      input: "email",
-      inputPlaceholder: "Enter your email",
-      showCancelButton: true,
-      confirmButtonText: "Submit",
-    }).then((result) => {
-      // Handle submit button click
-      if (result.isConfirmed) {
-        // Send API request to your backend route for password reset
-        fetch("https://hilarious-bear-vestments.cyclic.app/user/reset-password", {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: result.value,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            // Display success message or error message from the response
-            Swal.fire(data.msg);
-          })
-          .catch((error) => {
-            console.error(error);
-            // Display error message
-            Swal.fire("An error occurred. Please try again.");
-          });
+        setTimeout(() => {
+          if (user.role === "Admin") {
+            window.location.href = "admin.html";
+          } else {
+            window.location.href = "index.html";
+          }
+        }, 2500);
+      } else {
+        Swal.fire({
+          position: "centre",
+          icon: "error",
+          title: `${res.msg}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
-    });
+    })
+    .catch((err) => console.log(err));
+});
+
+document.getElementById("forget").addEventListener("click", function () {
+  // Display SweetAlert modal
+  Swal.fire({
+    title: "Reset Password",
+    input: "email",
+    inputPlaceholder: "Enter your email",
+    showCancelButton: true,
+    confirmButtonText: "Submit",
+  }).then((result) => {
+    // Handle submit button click
+    if (result.isConfirmed) {
+      // Send API request to your backend route for password reset
+      fetch("https://motionless-seal-windbreaker.cyclic.app/user/reset-password", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: result.value,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Display success message or error message from the response
+          Swal.fire(data.msg);
+        })
+        .catch((error) => {
+          console.error(error);
+          // Display error message
+          Swal.fire("An error occurred. Please try again.");
+        });
+    }
   });
+});
 // let googleBtn = document.getElementById("gbtn");
 
 // googleBtn.addEventListener("click", () => {
@@ -135,7 +137,7 @@ form.addEventListener("submit", (e) => {
 
 //     // Submit form
 //     console.log(data)
-//     fetch("https://hilarious-bear-vestments.cyclic.app/user/login", {
+//     fetch("https://motionless-seal-windbreaker.cyclic.app/user/login", {
 //         method: "post",
 //         headers: {
 //             "Content-Type": "application/json"
@@ -173,7 +175,7 @@ form.addEventListener("submit", (e) => {
 //     // console.log(form[0].value,form[1].value);
 // })
 // function fetchLogin(data) {
-//     fetch("https://hilarious-bear-vestments.cyclic.app/user/login", {
+//     fetch("https://motionless-seal-windbreaker.cyclic.app/user/login", {
 //         method: "post",
 //         headers: {
 //             "Content-Type": "application/json"

@@ -1,4 +1,4 @@
-const BASE_SERVER_URL = `https://hilarious-bear-vestments.cyclic.app`
+const BASE_SERVER_URL = `https://motionless-seal-windbreaker.cyclic.app`
 
 let formele = document.querySelector("form")
 

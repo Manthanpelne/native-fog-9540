@@ -1,5 +1,5 @@
 let Logout_anch = document.getElementById("Logout-anch")
-const BASE_SERVER_URL = "https://hilarious-bear-vestments.cyclic.app"
+const BASE_SERVER_URL = "https://motionless-seal-windbreaker.cyclic.app"
 Logout_anch.addEventListener("click", async () => {
     try {
         let res = await fetch(`${BASE_SERVER_URL}/user/logout`, {

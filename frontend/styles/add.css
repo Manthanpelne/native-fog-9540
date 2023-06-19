@@ -26,6 +26,7 @@ body {
   letter-spacing: 1px;
 }
 #sidebar {
+  top: 0;
   width: 270px;
   background-color: #F1C376;
   padding: 20px;
@@ -312,6 +313,12 @@ input[type="submit"]:hover {
 /* Media queries */
 @media screen and (max-width: 799px) {
   /* Move the sidebar above the form */
+
+  .toggle-forms{
+    margin-top: 370px;
+    /* position: fixed; */
+    
+  }
   #sidebar {
     top: 0;
     left: 0;
