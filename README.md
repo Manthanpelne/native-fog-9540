@@ -41,9 +41,8 @@ The CRUD operations on products can only be done by admin because Admin Authenti
 
 ## Backend : -
 
-| Node.js                                                                                                                         | Express.js                                                                                                                      | MongoDB                                                                                                                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| <img width="70px" src="https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/229164589-4e724000-542d-4deb-9e11-cca7739c2b01.png"> | <img width="75px" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/233825866-91f342c0-f567-4f9f-af03-e9acc86a784d.png"> |
+| Node.js                                                                                                                         | Express.js                                                                      | MongoDB                                                           
+| <img width="70px" src="https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/229164589-4e724000-542d-4deb-9e11-cca7739c2b01.png"> | <img width="75px" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"> |  |
 
 ---
 
