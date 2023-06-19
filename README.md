@@ -18,7 +18,14 @@ And for Admin site there is a special middleware called Admin Authenticator.
 The CRUD operations on products can only be done by admin because Admin Authenticator sees it the user who is making request role is Admin or not.
 
 ---
+#Group Members:-
+We are group of 4 team members:
+- Saloni Kumari
+- Kuldeep Negi
+- Manthan Pelne
+- Shahzad Ahmed
 
+  
 # Features :-
 
 - Users interact with it and their data will be safe forever.
@@ -57,11 +64,9 @@ Users Routes
 
 ## Here are some screenshots of website.
 
-## Here are some screenshots of website.
 
 ###  Home Page :-
 
-![home1]([https://drive.google.com/file/d/1MLi9NUqWjq3m2A-4gadxmF42Ti-GPP4z/view?usp=sharing](https://drive.google.com/file/d/1MLi9NUqWjq3m2A-4gadxmF42Ti-GPP4z/view?usp=sharing))
 
 ###  Clinics Page :-
 
