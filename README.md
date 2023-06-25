@@ -3,7 +3,7 @@
   
   ![DentDesk](https://github.com/Manthanpelne/native-fog-9540/assets/119395145/7b586f82-5633-4acc-8e9f-0e7c966fd66e)
 
-A Dental Booking Appointment System offers a seamless and user-friendly platform for scheduling, tracking, and managing dental appointments, ensuring convenient access and exceptional care.
+Dent Desk is a comprehensive dental appointment booking system encompassing authentication, authorization, RBAC, user appointment scheduling, doctor approval, admin management, advanced filtering options, backend development, user appointment tracking, responsive design, and automated email notifications using Nodemailer for appointment status updates
 
 ## Deployment
 
